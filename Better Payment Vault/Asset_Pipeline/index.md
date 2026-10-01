@@ -36,6 +36,13 @@ Bu klasör Better Payment logo sistemi, favicon, web görselleri, motion kaynakl
 | P0 | Wordmark ve yatay lockup | `0 · Envanterde` | sembol + tipografi seçimi |
 | P1 | Siyah, beyaz ve renkli exportlar | `0 · Envanterde` | master geometrisi onayı |
 | P1 | Hero payment-provider network grafiği | `0 · Envanterde` | logo ve web token kilidi |
+| P1 | Hero artwork (Higgsfield) | `0 · Envanterde` | ADR-005 kabulü ve Brand Lock |
+| P1 | İkon/obje seti (12–16 parça, web + docs) | `0 · Envanterde` | ADR-005 kabulü ve Brand Lock |
+
+## Referanslar
+
+- [[Asset_Pipeline/Logo/Referans/README]]: yedi logo referansı
+- [[Asset_Pipeline/Web/Referans/README]]: beş landing page referansı
 
 ## İlgili
 

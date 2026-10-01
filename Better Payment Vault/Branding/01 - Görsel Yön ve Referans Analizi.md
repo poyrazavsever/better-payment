@@ -108,3 +108,14 @@ Provider bağlantıları rastgele dekor değil, durum taşıyan bir sistem olaca
 - reduced-motion görünümünde aynı bilgi statik bağlarla korunur.
 
 Bu yaklaşım referansların dinamik merkez kompozisyon hissini taşır fakat özgün ürün davranışına dayanır.
+
+## 2026-10-01 ek yön: bütüncül görsel evren
+
+Kullanıcı beş landing page referansı daha paylaştı: [[Asset_Pipeline/Web/Referans/README]]. Logo referansları dosyalarıyla birlikte [[Asset_Pipeline/Logo/Referans/README]] altında.
+
+- Hedef his: sade, şık, fresh ve güvenilir; light-first.
+- Hero'da güçlü bir görsel, ona eşlik eden Better Payment'a ait ikon/obje seti ve gerçek ürün durumunu gösteren kartlar.
+- Maskot yok; bütünlük logo geometrisinden türeyen ortak bir görsel dil ile sağlanır.
+- Aynı dil dokümantasyona da uygulanır.
+
+Önerilen karar: [[Kararlar/ADR-005 - Sahip Olunan Görsel Evren]].

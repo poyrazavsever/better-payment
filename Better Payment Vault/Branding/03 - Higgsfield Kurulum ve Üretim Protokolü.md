@@ -25,6 +25,19 @@ Kurulan skill'ler:
 - `higgsfield-websites`
 - `higgsfield-youtube-thumbnail`
 
+## Makine bazlı durum
+
+| Makine | CLI | Auth / workspace | Skill'ler | `brandkit/state.json` | Export araçları |
+|---|---|---|---|---|---|
+| İlk kurulum makinesi | `1.1.26` | doğrulandı | proje içi `.agents/skills/` | var (yerel) | eksik |
+| Windows `D:\Yazılım` (2026-10-01) | `1.1.26` | doğrulandı, `Private` workspace | global `~/.agents/skills/` (sekiz skill) | yok; Brandkit ilk turunda yeniden oluşturulacak | `rsvg-convert` ve ImageMagick eksik |
+
+Notlar:
+
+- Bu makinede Python `python3` değil `python` komutuyla çalışır; Brandkit script'leri `python` ile çağrılır.
+- Brandkit state yerel olduğu için makineler arasında taşınmaz. Onaylanan her slot (palet, logo, tipografi) bu vault'a da yazılır; böylece başka makinede state aynı kararlarla yeniden kurulabilir.
+- Windows'ta ürün checkout'u `D:\Yazılım\better-payment`, vault clone'u `D:\Yazılım\better-payment-vault`. Ürün checkout'unda `brandkit/`, `.agents/skills/` ve `skills-lock.json` `.git/info/exclude` ile PR dışında tutulur.
+
 ## Bu proje için aktif kapsam
 
 - **Brandkit:** palet, logo, tipografi, Brand Lock ve launch görsel sistemi.

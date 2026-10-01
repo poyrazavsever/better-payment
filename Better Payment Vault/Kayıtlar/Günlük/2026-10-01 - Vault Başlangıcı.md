@@ -24,6 +24,9 @@ Better Payment için plan, araştırma, ADR, review ve topluluk çalışmaların
 - [#108](https://github.com/czaydev/better-payment/issues/108) için [PR #122](https://github.com/czaydev/better-payment/pull/122) açıldı; merge edildiğinde issue otomatik kapanacak.
 - [#106](https://github.com/czaydev/better-payment/issues/106) için #108 sonrasına sıra niyeti belirtildi.
 - [#106](https://github.com/czaydev/better-payment/issues/106) uygulaması tamamlandı ve [PR #121](https://github.com/czaydev/better-payment/pull/121) açıldı. PR, merge edildiğinde issue'yu otomatik kapatacak.
+- Windows makinesinde vault ayrı klasöre clone edildi ve `setup-vault.ps1` ile kuruldu; ürün checkout'una `upstream` remote ve Brandkit/skill dosyaları için yerel exclude eklendi. Higgsfield auth ve global skill'ler doğrulandı: [[Branding/03 - Higgsfield Kurulum ve Üretim Protokolü]].
+- Yedi logo referansı ve beş landing page referansı dosyalarıyla vault'a eklendi: [[Asset_Pipeline/Logo/Referans/README]] · [[Asset_Pipeline/Web/Referans/README]].
+- Bütüncül görsel evren yönü için [[Kararlar/ADR-005 - Sahip Olunan Görsel Evren]] önerildi.
 
 ## Kararlar ve öğrenilenler
 

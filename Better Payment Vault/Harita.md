@@ -27,6 +27,7 @@ durum: aktif
 - [[Kararlar/ADR-002 - SDK Önce Aşamalı Ürün Vizyonu]]
 - [[Kararlar/ADR-003 - Branding Önce Light First ve Tek PR]]
 - [[Kararlar/ADR-004 - Vault Tabanlı Asset Pipeline]]
+- [[Kararlar/ADR-005 - Sahip Olunan Görsel Evren]]
 
 ## Branding
 
@@ -41,6 +42,8 @@ durum: aktif
 - [[Asset_Pipeline/index]]
 - [[Asset_Pipeline/Rehber - Asset Üretimi]]
 - [[Asset_Pipeline/roadmap]]
+- [[Asset_Pipeline/Logo/Referans/README]]
+- [[Asset_Pipeline/Web/Referans/README]]
 - [[Asset_Pipeline/Logo/index]]
 
 ## Araştırma
