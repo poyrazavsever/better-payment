@@ -31,3 +31,12 @@ durum: brief-kilitli
 Logo sistemi henüz seçilmedi. Mevcut `apps/web/public/logo.svg` gözlem kaynağıdır; yeni sembol onaylanana kadar authoritative final sayılmaz ve değiştirilmez.
 
 İlgili: [[Branding/04 - Logo Sistemi Taslağı]] · [[Asset_Pipeline/Rehber - Asset Üretimi]].
+
+## Aday turları
+
+| Tur | Adaylar | Sonuç |
+|---|---|---|
+| v1 (2026-10-01) | 01 B/P blok monogram · 02 routing rayları · 03 eşik/transfer | hepsi reddedildi: piksel/blok dili, çok parçalı yapı, sandık görünümü |
+| v2 (2026-10-01) | 04 bp ligatürü · 05 birleşen yollar · 06 doğrulanmış dönüş | kullanıcı değerlendirmesinde |
+
+Öğrenilen: kare kütle, piksel blok ve çok parçalı katmanlı yapılar istenmiyor; eğri, akıcı, kalın ve az parçalı formlar tercih ediliyor.
