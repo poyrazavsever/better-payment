@@ -15,12 +15,12 @@ Yalnız PR gönderen bir contributor olmak değil; güvenilirlik, triage, review
 
 ## Sıra
 
-1. Nightly sandbox hatasını düzelt ve koşuyu yeşile döndür.
-2. Küçük bakım işi: #108 veya #106.
-3. Orta ölçekli katkı: #111 veya #103.
-4. #116 RFC'ye tasarım katkısı.
-5. Issue triage ve PR review ritmi.
-6. Release shadowing.
+1. Açık PR #121 ve #122'nin review/merge takibini tamamla.
+2. [[Araştırma/İnceleme - 2026-10-01 Lansman ve Web Sitesi Önceliği]] doğrultusunda lansman epic'i ve alt issue'ları netleştir.
+3. Homepage yenilemesi, demo/güven kanıtı ve duyuru hattında ölçülebilir sahiplik al.
+4. Soft launch geri bildirimlerini issue ve dokümantasyona dönüştür.
+5. Orta ölçekli teknik katkı: #111, #103 veya #116 tasarım katkısı.
+6. Issue triage, PR review ve release shadowing ritmi.
 7. Triage → Write → Maintain yetki ilerlemesi.
 
 ## Hedef eşik
@@ -30,4 +30,3 @@ Yalnız PR gönderen bir contributor olmak değil; güvenilirlik, triage, review
 - Bir release'e eşlik etme.
 - En az iki nitelikli PR review.
 - Birkaç hafta sürdürülebilir triage ve iletişim.
-

@@ -29,6 +29,7 @@ durum: aktif
 ## Araştırma
 
 - [[Araştırma/İnceleme - 2026-10-01 Teknik ve Topluluk Durumu]]
+- [[Araştırma/İnceleme - 2026-10-01 Lansman ve Web Sitesi Önceliği]]
 
 ## Rehberler
 

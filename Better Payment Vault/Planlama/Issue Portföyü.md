@@ -43,12 +43,17 @@ durum: aktif
 
 ## Web ve DX
 
+- **Yeni bir tracking issue gerekli:** website launch readiness + visual refresh. Mevcut issue'lar doğrudan redesign ve duyuru sahipliği sunmuyor.
+- #48 eski homepage iddialarını düzeltti ve kapandı; görsel yenileme kapsamı değildi.
+- #59 TR/EN altyapısını tamamladı ve kapandı; ilk lansman için dil tabanı hazır.
+- #98 Next.js + Prisma uçtan uca örnek uygulama, lansman için en güçlü açık demo/proof issue'su; yüksek öncelik adayı.
+- #111 ve #112–#115 uluslararası erişimi genişletir fakat ilk TR/EN lansmanını bloklamaz.
 - #93 NestJS, #94 Nuxt, #95 SvelteKit, #96 React Router.
 - #97 Elysia atanmış; üstlenme.
-- #98 Next.js + Prisma uçtan uca örnek uygulama.
 - #107 release PR otomasyonu.
 - #84 Arapça localized errors.
-- #112–#114, #111 tamamlanmadan başlamaz; #115 tracking issue.
+
+Ayrıntılı değerlendirme: [[Araştırma/İnceleme - 2026-10-01 Lansman ve Web Sitesi Önceliği]].
 
 ## Büyük ürün bahisleri
 
