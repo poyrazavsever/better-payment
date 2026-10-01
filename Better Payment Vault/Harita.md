@@ -36,6 +36,7 @@ durum: aktif
 - [[Branding/02 - Web Motion ve Çok Dil Sözleşmesi]]
 - [[Branding/03 - Higgsfield Kurulum ve Üretim Protokolü]]
 - [[Branding/04 - Logo Sistemi Taslağı]]
+- [[Branding/05 - Brand Lock]]
 
 ## Asset Pipeline
 

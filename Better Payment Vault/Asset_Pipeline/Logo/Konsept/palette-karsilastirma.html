@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Better Payment · Palet Karşılaştırması</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --font: "Geist", system-ui, sans-serif;
+  --mono: "Geist Mono", ui-monospace, monospace;
+  --success:#087A55; --success-bg:#E6F5EF;
+  --warning:#A86207; --warning-bg:#FDF3E3;
+  --danger:#C8322B;  --danger-bg:#FDECEB;
+}
+[data-p="A"]{--canvas:#F6F9FD;--surface:#FFFFFF;--ink:#0B1526;--muted:#55627A;--line:#DFE6F0;--primary:#1A56F0;--on-primary:#FFFFFF;--tint:#E3ECFF;--accent:#7FB2FF;
+  --atmos: radial-gradient(60% 70% at 50% 0%, #DCE8FF 0%, rgba(246,249,253,0) 70%);}
+[data-p="B"]{--canvas:#F8F8FC;--surface:#FFFFFF;--ink:#13132B;--muted:#5A5A78;--line:#E4E3F0;--primary:#4338F2;--on-primary:#FFFFFF;--tint:#ECEAFF;--accent:#A9A3FF;
+  --atmos: radial-gradient(60% 70% at 50% 0%, #E6E3FF 0%, rgba(248,248,252,0) 70%);}
+[data-p="C"]{--canvas:#FAFAF7;--surface:#FFFFFF;--ink:#101114;--muted:#5C5F66;--line:#E6E5DF;--primary:#0F5EFF;--on-primary:#FFFFFF;--tint:#EAF1FF;--accent:#14B88A;
+  --atmos: none;}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--font);background:#EEF0F3;color:#16181D;-webkit-font-smoothing:antialiased}
+.page{max-width:1180px;margin:0 auto;padding:32px 16px 64px}
+.intro h1{font-size:28px;letter-spacing:-.02em;margin:0 0 6px}
+.intro p{margin:0;color:#4B5160;max-width:760px;line-height:1.5}
+
+/* overview strip */
+.overview{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0}
+.ov{border-radius:14px;background:#fff;border:2px solid transparent;padding:14px;cursor:pointer;text-align:left;font:inherit;color:inherit}
+.ov[aria-pressed="true"]{border-color:#16181D}
+.ov strong{display:block;font-size:15px;margin-bottom:10px}
+.ov .bar{display:flex;height:44px;border-radius:8px;overflow:hidden;border:1px solid #0000000f}
+.ov .bar span{flex:1}
+.ov .bar span.big{flex:3}
+.ov small{display:block;color:#5B6170;margin-top:8px;line-height:1.4}
+
+/* board */
+.board{background:var(--canvas);color:var(--ink);border-radius:18px;overflow:hidden;border:1px solid #00000012}
+.sec{padding:28px clamp(16px,4vw,40px);border-top:1px solid var(--line)}
+.sec:first-child{border-top:0}
+.label{font-size:13px;color:var(--muted);margin:0 0 14px;font-weight:500}
+
+/* swatches */
+.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.sw div{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.sw i{display:block;height:64px}
+.sw p{margin:0;padding:8px 10px 10px;font-size:13px;line-height:1.35}
+.sw code{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.sw em{display:block;font-style:normal;font-size:11.5px;color:var(--muted)}
+
+/* hero */
+.hero{position:relative;background:var(--atmos), var(--canvas);padding:56px clamp(16px,4vw,40px) 44px}
+.nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:44px;font-size:14px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.01em}
+.mark{width:26px;height:26px;border-radius:7px;background:var(--primary);display:grid;place-items:center}
+.mark::after{content:"";width:10px;height:10px;background:var(--on-primary);border-radius:2px}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;color:var(--muted)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
+.hero h2{font-size:clamp(32px,4.6vw,52px);line-height:1.04;letter-spacing:-.035em;margin:0 0 16px;font-weight:700}
+.hero h2 span{color:var(--muted)}
+.hero p.lead{font-size:17px;line-height:1.55;color:var(--muted);margin:0 0 26px;max-width:470px}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:10px;font-size:14.5px;font-weight:500;text-decoration:none}
+.btn.pri{background:var(--primary);color:var(--on-primary)}
+.btn.sec{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+.install{margin-top:18px;display:inline-flex;gap:10px;font-family:var(--mono);font-size:13.5px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;color:var(--ink)}
+.install b{color:var(--muted);font-weight:400}
+
+/* network */
+.net{position:relative;aspect-ratio:1/0.86;background:var(--surface);border:1px solid var(--line);border-radius:18px}
+.net svg{position:absolute;inset:0;width:100%;height:100%}
+.node{position:absolute;transform:translate(-50%,-50%);background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:9px 13px;font-size:13.5px;font-weight:500;white-space:nowrap;box-shadow:0 1px 2px #0000000a}
+.node.hub{background:var(--primary);color:var(--on-primary);border-color:var(--primary);padding:14px 18px;font-weight:600;border-radius:14px}
+.node.active{border-color:var(--primary);box-shadow:0 0 0 4px var(--tint)}
+.legend{position:absolute;left:14px;bottom:12px;display:flex;gap:14px;font-size:12px;color:var(--muted)}
+.legend span::before{content:"";display:inline-block;width:16px;height:2px;margin-right:6px;vertical-align:middle;background:var(--primary)}
+.legend span.ret::before{background:var(--success)}
+
+/* states */
+.states{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
+.card .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.pill{font-size:12px;font-weight:600;padding:4px 9px;border-radius:999px}
+.pill.pending{color:var(--warning);background:var(--warning-bg)}
+.pill.success{color:var(--success);background:var(--success-bg)}
+.pill.failure{color:var(--danger);background:var(--danger-bg)}
+.card h3{margin:0 0 6px;font-size:15px}
+.card p{margin:0 0 12px;color:var(--muted);font-size:13.5px;line-height:1.45}
+.card pre{margin:0;font-family:var(--mono);font-size:12px;line-height:1.55;background:var(--canvas);border:1px solid var(--line);border-radius:9px;padding:10px 12px;overflow:auto;color:var(--ink)}
+.prov{font-size:12px;color:var(--muted);font-family:var(--mono)}
+
+/* docs */
+.docs{display:grid;grid-template-columns:200px 1fr;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.side{border-right:1px solid var(--line);padding:16px 10px;font-size:13.5px}
+.side b{display:block;font-size:12px;color:var(--muted);font-weight:500;margin:10px 8px 6px}
+.side a{display:block;padding:6px 8px;border-radius:7px;color:var(--ink);text-decoration:none}
+.side a.on{background:var(--tint);color:var(--primary);font-weight:600}
+.art{padding:22px 26px}
+.art h3{margin:0 0 8px;font-size:22px;letter-spacing:-.02em}
+.art p{margin:0 0 14px;line-height:1.6;font-size:15px}
+.art p a{color:var(--primary);text-decoration:underline;text-underline-offset:3px}
+.callout{border:1px solid var(--line);border-left:3px solid var(--primary);background:var(--tint);border-radius:8px;padding:10px 14px;font-size:14px;line-height:1.5;margin-bottom:14px}
+.code{font-family:var(--mono);font-size:13px;line-height:1.6;background:var(--canvas);border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;color:var(--ink);margin:0}
+.code .k{color:var(--primary)} .code .s{color:var(--success)} .code .c{color:var(--muted)}
+.ideas{margin:0;padding-left:18px;line-height:1.6}
+.notes{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.notes h4{margin:0 0 6px;font-size:14px}
+.notes p,.notes li{font-size:14px;line-height:1.55;color:var(--muted)}
+.foot{margin-top:18px;font-size:13px;color:#5B6170;line-height:1.5}
+
+@media (max-width:860px){
+  .overview,.states,.notes{grid-template-columns:1fr}
+  .hero-grid{grid-template-columns:1fr}
+  .nav ul{display:none}
+  .docs{grid-template-columns:1fr}
+  .side{border-right:0;border-bottom:1px solid var(--line)}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="intro">
+    <h1>Better Payment · Palet Karşılaştırması</h1>
+    <p>Üç palet aynı içerik üzerinde gösteriliyor: hero, ödeme durum kartları ve dokümantasyon kesiti. Font şimdilik nötr (mevcut Geist); tipografi ayrı bir kapı. Logo yerine geçici bir kare işaret kullanıldı.</p>
+  </header>
+
+  <div class="overview" role="group" aria-label="Palet seçimi">
+    <button class="ov" data-k="A" aria-pressed="true">
+      <strong>A · Açık Hava</strong>
+      <div class="bar"><span class="big" style="background:#F6F9FD"></span><span style="background:#E3ECFF"></span><span style="background:#7FB2FF"></span><span style="background:#1A56F0"></span><span style="background:#0B1526"></span></div>
+      <small>Güven önce. Net mavi, havadar açık mavi atmosfer.</small>
+    </button>
+    <button class="ov" data-k="B" aria-pressed="false">
+      <strong>B · İndigo Sinyal</strong>
+      <div class="bar"><span class="big" style="background:#F8F8FC"></span><span style="background:#ECEAFF"></span><span style="background:#A9A3FF"></span><span style="background:#4338F2"></span><span style="background:#13132B"></span></div>
+      <small>Ayırt edicilik önce. Maviye yaslanan indigo, lila ikinci ton.</small>
+    </button>
+    <button class="ov" data-k="C" aria-pressed="false">
+      <strong>C · Teknik Defter</strong>
+      <div class="bar"><span class="big" style="background:#FAFAF7"></span><span style="background:#EAF1FF"></span><span style="background:#14B88A"></span><span style="background:#0F5EFF"></span><span style="background:#101114"></span></div>
+      <small>Teknik ciddiyet önce. Mürekkep sistemi taşır, mavi yalnız sinyal.</small>
+    </button>
+  </div>
+
+  <main class="board" id="board" data-p="A">
+    <section class="hero">
+      <div class="nav">
+        <div class="brand"><span class="mark" aria-hidden="true"></span>Better Payment</div>
+        <ul><li>Dokümantasyon</li><li>Sağlayıcılar</li><li>Örnekler</li><li>GitHub</li></ul>
+      </div>
+      <div class="hero-grid">
+        <div>
+          <h2>Türkiye'nin ödeme sağlayıcıları. <span>Tek TypeScript API'si.</span></h2>
+          <p class="lead">iyzico, PayTR, Parampos ve Akbank için aynı istek ve sonuç tipleri. Her callback senin anahtarlarınla doğrulanır, sonra güvenilir.</p>
+          <div class="btns">
+            <a class="btn pri" href="#">Dokümantasyonu aç →</a>
+            <a class="btn sec" href="#">GitHub'da incele</a>
+          </div>
+          <div class="install"><b>$</b>npm install better-payment</div>
+        </div>
+        <div class="net" aria-label="Sağlayıcı ağı taslağı">
+          <svg viewBox="0 0 100 86" preserveAspectRatio="none" aria-hidden="true">
+            <g fill="none" stroke-width=".45" vector-effect="non-scaling-stroke">
+              <path d="M50 43 L20 18" stroke="var(--primary)" stroke-width="2" vector-effect="non-scaling-stroke"/>
+              <path d="M50 43 L80 18" stroke="var(--line)" stroke-width="2" vector-effect="non-scaling-stroke"/>
+              <path d="M50 43 L20 68" stroke="var(--line)" stroke-width="2" vector-effect="non-scaling-stroke"/>
+              <path d="M50 43 L80 68" stroke="var(--line)" stroke-width="2" vector-effect="non-scaling-stroke"/>
+              <path d="M22 22 Q30 40 47 46" stroke="var(--success)" stroke-width="2" stroke-dasharray="5 5" vector-effect="non-scaling-stroke"/>
+            </g>
+          </svg>
+          <div class="node active" style="left:20%;top:21%">iyzico</div>
+          <div class="node" style="left:80%;top:21%">PayTR</div>
+          <div class="node hub" style="left:50%;top:50%">betterPayment()</div>
+          <div class="node" style="left:20%;top:79%">Parampos</div>
+          <div class="node" style="left:80%;top:79%">Akbank</div>
+          <div class="legend"><span>istek</span><span class="ret">doğrulanmış dönüş</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <p class="label">Renkler ve kontrast (WCAG, zemin üzerinde)</p>
+      <div class="sw" id="swatches"></div>
+    </section>
+
+    <section class="sec">
+      <p class="label">Gerçek SDK durumları</p>
+      <div class="states">
+        <article class="card">
+          <div class="top"><span class="pill pending">pending</span><span class="prov">iyzico</span></div>
+          <h3>3D Secure bekleniyor</h3>
+          <p>Müşteri bankanın doğrulama sayfasında. Sonuç callback ile gelecek.</p>
+<pre>{ status: "pending",
+  threeDSHtmlContent: "…" }</pre>
+        </article>
+        <article class="card">
+          <div class="top"><span class="pill success">success</span><span class="prov">parampos</span></div>
+          <h3>Callback doğrulandı</h3>
+          <p>İmza senin anahtarlarınla kontrol edildi, ödeme bankada tamamlandı.</p>
+<pre>payment.on("payment.succeeded",
+  (e) =&gt; markOrderPaid(e.conversationId))</pre>
+        </article>
+        <article class="card">
+          <div class="top"><span class="pill failure">failure</span><span class="prov">paytr</span></div>
+          <h3>Sahte callback reddedildi</h3>
+          <p>Hash eşleşmedi. Hiçbir şey başarılı sayılmadı.</p>
+<pre>{ status: "failure",
+  code: "INVALID_HASH" }</pre>
+        </article>
+      </div>
+    </section>
+
+    <section class="sec">
+      <p class="label">Dokümantasyon kesiti</p>
+      <div class="docs">
+        <nav class="side" aria-label="Docs menüsü">
+          <b>Başlangıç</b>
+          <a href="#">Kurulum</a>
+          <a href="#">Hızlı başlangıç</a>
+          <b>Kavramlar</b>
+          <a href="#" class="on">Sonuçlar ve durumlar</a>
+          <a href="#">Callback doğrulama</a>
+          <a href="#">Hata kodları</a>
+        </nav>
+        <article class="art">
+          <h3>Sonuçlar ve durumlar</h3>
+          <p>Her işlem <code>status</code> taşıyan bir sonuçla döner: <code>success</code>, <code>failure</code>, <code>pending</code> veya <code>cancelled</code>. Ayrıntılar için <a href="#">hata kodları</a> sayfasına bak.</p>
+          <div class="callout">Bağlantı koparsa sonuç <code>pending</code> ve <code>NETWORK_ERROR</code> olur. Tekrar denemeden önce <code>getPayment()</code> ile kontrol et.</div>
+<pre class="code"><span class="k">const</span> result = <span class="k">await</span> payment.paytr.getPayment(orderId);
+<span class="k">if</span> (result.status === <span class="s">"success"</span>) markOrderPaid(orderId);
+<span class="c">// ödeme, iade ve iptal otomatik tekrar denenmez</span></pre>
+        </article>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="notes" id="notes"></div>
+    </section>
+  </main>
+
+  <p class="foot">Not: success <code>#087A55</code>, warning <code>#A86207</code>, danger <code>#C8322B</code> üç palette ortak semantik renklerdir ve beyaz üzerinde 4.5:1 eşiğini geçer. Accent renkleri yalnız dekoratif yüzey ve logo ikinci tonu içindir; metin rengi olarak kullanılmaz.</p>
+</div>
+
+<script>
+const DATA = {
+  A:{colors:[["Canvas","#F6F9FD","sayfa zemini"],["Surface","#FFFFFF","kart, kod, panel"],["Ink","#0B1526","metin · 17.3:1"],["Muted","#55627A","ikincil metin · 5.8:1"],["Line","#DFE6F0","çizgi, kenarlık"],["Route Blue","#1A56F0","birincil · beyaz yazı 5.8:1"],["Sky Tint","#E3ECFF","vurgu zemini"],["Air","#7FB2FF","dekor, logo ikinci tonu"]],
+     ideas:["Tek girişin iki raya ayrıldığı dolu mavi routing işareti","Route Blue ve Air iki tonuyla modüler geçit monogramı"],
+     plus:"En tanıdık ve en güven veren yön. Finans ve ödeme kategorisinde hemen 'ciddi altyapı' okunur. Açık mavi atmosfer, referanslardaki ferah ışıklı hero hissini verir.",
+     minus:"Kategoride en yaygın renk ailesi. Ayırt ediciliği logo, ikon seti ve görsel evren taşımak zorunda."},
+  B:{colors:[["Canvas","#F8F8FC","sayfa zemini"],["Surface","#FFFFFF","kart, kod, panel"],["Ink","#13132B","metin · 17.2:1"],["Muted","#5A5A78","ikincil metin · 6.3:1"],["Line","#E4E3F0","çizgi, kenarlık"],["Signal Indigo","#4338F2","birincil · beyaz yazı 6.8:1"],["Lilac Tint","#ECEAFF","vurgu zemini"],["Lilac","#A9A3FF","dekor, logo ikinci tonu"]],
+     ideas:["İndigo zemin üzerinde beyaz negatif alanlı eşik/transfer işareti","İndigo ve lila iki tonlu, kalın kütleli B/P ritmi"],
+     plus:"Referanslara en yakın yön (gate ikonu, Clerk, Stripe ailesi). Akılda kalıcı, modern ve geliştirici altyapı markası gibi okunur. Kontrastı en güçlü palet.",
+     minus:"Stripe moruna komşu; ton bilinçli olarak daha maviye çekildi ama logo aşamasında karışma riski dikkatle kontrol edilmeli."},
+  C:{colors:[["Paper","#FAFAF7","sayfa zemini"],["Surface","#FFFFFF","kart, kod, panel"],["Ink","#101114","metin · 18.1:1"],["Muted","#5C5F66","ikincil metin · 6.1:1"],["Line","#E6E5DF","çizgi, kenarlık"],["Signal Blue","#0F5EFF","birincil · beyaz yazı 5.2:1"],["Blue Tint","#EAF1FF","vurgu zemini"],["Verified Mint","#14B88A","dekor; doğrulanmış sonuç anlamı"]],
+     ideas:["Siyah mürekkep modüler blok işareti, mavi tek sinyal parçası","Doğrulanmış dönüşü anlatan iki parçalı yönlü form"],
+     plus:"En sakin ve en 'açık kaynak altyapı' tonu. Renk anlam taşır: mavi aksiyon, nane doğrulanmış sonuç. Uzun docs okumasında en az yorucu.",
+     minus:"Daha az 'fresh' ve daha az sıcak. Hero'daki mavi atmosfer hissi zayıflar; görsel evrenin enerjisi artwork'e kalır."}
+};
+const board=document.getElementById('board');
+function render(k){
+  board.dataset.p=k;
+  document.querySelectorAll('.ov').forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.k===k)));
+  const d=DATA[k];
+  document.getElementById('swatches').innerHTML=d.colors.map(([n,h,r])=>`<div><i style="background:${h}"></i><p><strong>${n}</strong><br><code>${h}</code><em>${r}</em></p></div>`).join('');
+  document.getElementById('notes').innerHTML=`<div><h4>Güçlü yanı</h4><p>${d.plus}</p><h4>Riski</h4><p>${d.minus}</p></div><div><h4>Desteklediği logo yönleri</h4><ul class="ideas">${d.ideas.map(i=>`<li>${i}</li>`).join('')}</ul></div>`;
+}
+document.querySelectorAll('.ov').forEach(b=>b.addEventListener('click',()=>render(b.dataset.k)));
+render('A');
+</script>
+</body>
+</html>
