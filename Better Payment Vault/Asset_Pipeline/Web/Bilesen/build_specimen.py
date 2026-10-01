@@ -38,6 +38,8 @@ ASSETS = {
     "param": data(WEB / "param.svg", "image/svg+xml"),
     "akbank": data(WEB / "akbank.svg", "image/svg+xml"),
 }
+ASSETS["v_events"] = data(BK / "visual/anim/icon-events.mp4", "video/mp4")
+ASSETS["p_events"] = data(BK / "visual/anim/icon-events-poster.png", "image/png")
 for n in ("unified-api", "callback", "refund", "installments", "sandbox", "docs", "events", "plugin", "edge"):
     ASSETS["i_" + n] = icon(n)
 
@@ -141,8 +143,11 @@ code,.mono{font-family:var(--mono)}
 /* ---------- cards ---------- */
 .feat{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;transition:transform .35s var(--spring),box-shadow .3s var(--ease),border-color .2s}
 .feat:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--line-strong)}
-.feat .tile{width:64px;height:64px;border-radius:16px;background:var(--tint);display:grid;place-items:center;margin-bottom:16px}
-.feat .tile img{width:52px;height:52px;transition:transform .45s var(--spring)}.feat:hover .tile img{transform:translateY(-3px) rotate(-4deg) scale(1.06)}
+.feat .tile{width:96px;height:96px;display:grid;place-items:center;margin:-6px 0 10px -8px}
+.feat .tile>*{width:96px;height:96px;object-fit:contain;mix-blend-mode:multiply;transition:transform .45s var(--spring)}
+.feat .tile img{animation:float 5s ease-in-out infinite}.feat:nth-child(2n) .tile img{animation-delay:-1.7s}.feat:nth-child(3n) .tile img{animation-delay:-3.1s}
+@keyframes float{50%{transform:translateY(-5px) rotate(-2deg)}}
+.feat:hover .tile>*{transform:translateY(-4px) rotate(-5deg) scale(1.08);animation-play-state:paused}
 .feat h4{font:700 17px/1.25 var(--display);letter-spacing:-.01em;margin:0 0 6px}
 .feat p{margin:0 0 14px;color:var(--muted);font-size:14.5px;line-height:1.55}
 .status{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px}
@@ -255,11 +260,11 @@ BODY = f"""
 <div class="callout info">{INFO}<div>Sıfır runtime bağımlılığı. Node.js 20+ ve edge runtime'larda çalışır.</div></div>
 </div></div></section>
 
-<section class="spec"><h2>4 · Özellik kartları</h2><p class="d">Buzlu cam ikon açık lila kutucukta. Hover'da kart yaylı yükselir, ikon hafifçe döner.</p>
+<section class="spec"><h2>4 · Özellik kartları</h2><p class="d">İkonlar artık zeminsiz ve daha büyük. "Tek event akışı" kartı Higgsfield ile üretilmiş gerçek döngü animasyonu (Kling 3.0, 5 sn döngü, 136 KB); diğerleri karşılaştırma için kodla hafifçe süzülüyor. Hover'da kart yükselir, ikon döner.</p>
 <div class="grid g3">
 <article class="feat"><div class="tile"><img src="{A['i_unified-api']}" alt=""></div><h4>Tek API, dört sağlayıcı</h4><p>iyzico, PayTR, Parampos ve Akbank için aynı istek ve sonuç tipleri.</p><a class="link more" href="#">Sağlayıcılar {CHEV}</a></article>
 <article class="feat"><div class="tile"><img src="{A['i_callback']}" alt=""></div><h4>Callback'ler doğrulanır</h4><p>Her 3D Secure callback'i senin anahtarlarınla kontrol edilir, sonra güvenilir.</p><a class="link more" href="#">Güvenlik modeli {CHEV}</a></article>
-<article class="feat"><div class="tile"><img src="{A['i_events']}" alt=""></div><h4>Tek event akışı</h4><p>Bütün sağlayıcılar için doğrulanmış sonuçlar tek listener'a düşer.</p><a class="link more" href="#">Events {CHEV}</a></article>
+<article class="feat"><div class="tile"><video src="{A['v_events']}" poster="{A['p_events']}" autoplay muted loop playsinline aria-hidden="true"></video></div><h4>Tek event akışı <span class="badge brand" style="vertical-align:middle;margin-left:4px">animasyon testi</span></h4><p>Bütün sağlayıcılar için doğrulanmış sonuçlar tek listener'a düşer.</p><a class="link more" href="#">Events {CHEV}</a></article>
 <article class="feat"><div class="tile"><img src="{A['i_plugin']}" alt=""></div><h4>Plugin sistemi</h4><p>İşlem öncesi ve sonrası hook'lar, kendi endpoint'lerin.</p><a class="link more" href="#">Plugin yaz {CHEV}</a></article>
 <article class="feat"><div class="tile"><img src="{A['i_edge']}" alt=""></div><h4>Edge'de çalışır</h4><p>Yalnız fetch ve WebCrypto. Vercel Edge, Workers, Deno, Bun.</p><a class="link more" href="#">Edge rehberi {CHEV}</a></article>
 <article class="feat"><div class="tile"><img src="{A['i_sandbox']}" alt=""></div><h4>Test araçları</h4><p>MockProvider ile gerçek kart girmeden uçtan uca test.</p><a class="link more" href="#">Testing {CHEV}</a></article>
