@@ -20,9 +20,9 @@ durum: aktif
 
 - [x] seçilen SVG geometry fingerprint ile Brandkit state'e kaydedildi
 - [x] color, black ve reverse-white SVG/PNG masterlar üretildi
-- [ ] 16/20/24/32 px optik small mark ve favicon üretildi (favicon üretildi; 16 px optik versiyon onay bekliyor)
+- [x] 16/20/24/32 px optik small mark ve favicon üretildi (kullanıcı kararı: ayrı optik versiyon yok, favicon olduğu gibi)
 - [x] 48/64/128/512/1024 px raster export matrisi tamamlandı
-- [ ] light yüzey ve küçük boyut contact sheet'i geçti
+- [x] light yüzey ve küçük boyut contact sheet'i geçti
 
 ## Faz C — Wordmark ve lockup
 

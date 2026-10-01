@@ -34,7 +34,7 @@ Seçilen sembol: **Birleşen yollar** · kayıt [[Branding/05 - Brand Lock]].
 
 - `x` = sembol yüksekliğinin %25'i. Lockup'ın her yanında en az `x` boşluk.
 - Yatay lockup dijitalde en az 120 px genişlik; altında yalnız sembol veya app icon.
-- Sembol tek başına en az 24 px. 16 px'de iki şerit arasındaki boşluk kapanıyor; favicon için optik küçük boyut versiyonu kullanıcı onayı bekliyor.
+- Sembol tek başına en az 24 px önerilir. 16 px'de iki şerit arasındaki boşluk kapanır; kullanıcı kararı (2026-10-01): favicon olduğu gibi kalır, ayrı optik versiyon yapılmaz.
 
 ## Yasaklar
 

@@ -32,7 +32,7 @@ Bu klasör Better Payment logo sistemi, favicon, web görselleri, motion kaynakl
 | Öncelik | Set | Durum | Sonraki kapı |
 |---:|---|---|---|
 | P0 | Better Payment sembol v1 | `5 · Aile doğrulandı` | ürün koduna bağlama (Faz 3) |
-| P0 | Favicon/small mark ailesi | `4 · Master temiz` | 16 px optik versiyon için kullanıcı onayı |
+| P0 | Favicon/small mark ailesi | `5 · Aile doğrulandı` | ürün koduna bağlama (Faz 3); 16 px olduğu gibi kalır |
 | P0 | Wordmark ve yatay lockup | `5 · Aile doğrulandı` | ürün koduna bağlama (Faz 3) |
 | P1 | Siyah, beyaz ve renkli exportlar | `5 · Aile doğrulandı` | — |
 | P1 | Hero payment-provider network grafiği | `0 · Envanterde` | logo ve web token kilidi |
