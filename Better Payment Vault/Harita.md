@@ -26,6 +26,7 @@ durum: aktif
 - [[Kararlar/ADR-001 - Vault Yerel ve PR Dışı]]
 - [[Kararlar/ADR-002 - SDK Önce Aşamalı Ürün Vizyonu]]
 - [[Kararlar/ADR-003 - Branding Önce Light First ve Tek PR]]
+- [[Kararlar/ADR-004 - Vault Tabanlı Asset Pipeline]]
 
 ## Branding
 
@@ -33,6 +34,14 @@ durum: aktif
 - [[Branding/01 - Görsel Yön ve Referans Analizi]]
 - [[Branding/02 - Web Motion ve Çok Dil Sözleşmesi]]
 - [[Branding/03 - Higgsfield Kurulum ve Üretim Protokolü]]
+- [[Branding/04 - Logo Sistemi Taslağı]]
+
+## Asset Pipeline
+
+- [[Asset_Pipeline/index]]
+- [[Asset_Pipeline/Rehber - Asset Üretimi]]
+- [[Asset_Pipeline/roadmap]]
+- [[Asset_Pipeline/Logo/index]]
 
 ## Araştırma
 

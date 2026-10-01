@@ -10,6 +10,7 @@ const vault = join(root, 'Better Payment Vault');
 const mode = process.argv[2] ?? 'check';
 const errors = [];
 const requiredFrontmatter = ['tur', 'alan', 'guncelleme', 'ozet'];
+const assetExtensions = new Set(['.png', '.jpg', '.jpeg', '.webp', '.gif', '.svg', '.ico']);
 const localPrefixes = [
   'Better Payment Vault/',
   '.local-tools/',
@@ -92,6 +93,14 @@ async function index(files) {
   if (!existsSync(map)) errors.push('Vault map is missing.');
   const markdownCount = files.filter((file) => extname(file).toLowerCase() === '.md').length;
   console.log(`Vault index: ${markdownCount} Markdown files; canonical map present.`);
+}
+
+async function assets(files) {
+  const assetFiles = files.filter((file) => assetExtensions.has(extname(file).toLowerCase()));
+  for (const file of assetFiles) {
+    if ((await stat(file)).size === 0) errors.push(`${display(file)}: empty asset file`);
+  }
+  console.log(`Asset check inspected ${assetFiles.length} visual files.`);
 }
 
 function gitLines(args) {
@@ -191,11 +200,13 @@ if (mode === 'new-adr') {
 const files = await walk(vault);
 if (mode === 'index') await index(files);
 else if (mode === 'lint') await lint(files);
+else if (mode === 'assets') await assets(files);
 else if (mode === 'pr-safety') await prSafety();
 else if (mode === 'pre-push') await prePush();
 else if (mode === 'check') {
   await index(files);
   await lint(files);
+  await assets(files);
   await prSafety();
 } else {
   console.error(`Unknown vault command: ${mode}`);
