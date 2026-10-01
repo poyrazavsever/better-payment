@@ -42,20 +42,25 @@ Elenen adaylar: A · Açık Hava (`#1A56F0`), C · Teknik Defter (`#0F5EFF`). Pa
 
 Not: Signal Indigo Stripe moruna komşu; logo aşamasında yedi referansla karışma kontrolü zorunlu.
 
-## Tipografi (K3)
+## Tipografi (K3) — fixed
 
-Durum: üç aday kullanıcı seçiminde. Panolar `Asset_Pipeline/Logo/Konsept/type-T*.png` ve `tipografi-karsilastirma.html`.
+Kullanıcı 2026-10-01'de **T1 · Güvenli Geometri** çiftini seçti. Brandkit state: `approve_typography`, typography revision `1`.
 
-| Aday | Display | Body | Mono |
+| Rol | Font | Ağırlık | Kaynak |
 |---|---|---|---|
-| T1 · Güvenli Geometri | Manrope 800 | Inter 400 | JetBrains Mono |
-| T2 · Keskin Altyapı | Onest 700 | Geist 400 | Geist Mono |
-| T3 · Geniş İfade | Unbounded 600 | Inter 400 | IBM Plex Mono |
+| display / heading / wordmark | Manrope | 800 display, 700 heading | [Google Fonts](https://fonts.google.com/specimen/Manrope) |
+| body / UI | Inter | 400, 500, 600 | [Google Fonts](https://fonts.google.com/specimen/Inter) |
+| code | JetBrains Mono | 400, 500 | [Google Fonts](https://fonts.google.com/specimen/JetBrains+Mono) |
 
-Seçim kriteri: Google Fonts, `latin-ext` ve `cyrillic` kapsamı. Plus Jakarta Sans, Bricolage Grotesque, Instrument Sans, Space Grotesk Kiril eksikliği nedeniyle aday dışı. Golos Text render testinde Türkçe `ğ` harfini doğru çizmediği için T3'ten çıkarıldı.
+- Üçü de `latin-ext` ve `cyrillic` kapsar; Türkçe ve Kiril render testi geçti.
+- Web'de `next/font/google` ile self-host edilir; Geist ve Geist Mono branding PR'ında kaldırılır.
+- Brandkit state şeması yalnız display/body tutar; mono kararı bu notta kanoniktir.
+- Arapça (#114) için ayrı fallback font, ilgili locale işinde seçilir.
+
+Elenen adaylar: T2 Onest + Geist + Geist Mono, T3 Unbounded + Inter + IBM Plex Mono. Panolar `Asset_Pipeline/Logo/Konsept/type-T*.png`.
 
 ## Logo (K4–K6)
 
-Durum: tipografiden sonra. Brief: [[Asset_Pipeline/Logo/Brief - Better Payment Logo v1]].
+Durum: sıradaki kapı K4 (logo yolu). Palet ve tipografi kilitli. Brief: [[Asset_Pipeline/Logo/Brief - Better Payment Logo v1]].
 
 İlgili: [[Branding/00 - Branding Ana Planı]] · [[Branding/03 - Higgsfield Kurulum ve Üretim Protokolü]]

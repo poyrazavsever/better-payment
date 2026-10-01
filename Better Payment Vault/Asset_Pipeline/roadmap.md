@@ -12,7 +12,7 @@ durum: aktif
 - [x] Daily asset pipeline incelendi ve Better Payment'a uyarlandı
 - [x] altı inspiration referansı biçim dili açısından ayrıştırıldı
 - [x] logo brief'i ve anti-copy sınırları kilitlendi
-- [ ] üç light-first paletten biri seçildi
+- [x] üç light-first paletten biri seçildi (B · İndigo Sinyal)
 - [ ] aynı Recraft parametreleriyle tam üç editable SVG sembol üretildi
 - [ ] bir sembol açıkça seçildi
 
@@ -26,8 +26,8 @@ durum: aktif
 
 ## Faz C — Wordmark ve lockup
 
-- [ ] 2–3 tipografi yönü sunuldu ve biri seçildi (Faz A'da, logodan önce yapılır)
-- [ ] `Better Payment` yazımı kilitlendi
+- [x] 2–3 tipografi yönü sunuldu ve biri seçildi (T1 · Manrope + Inter + JetBrains Mono)
+- [x] `Better Payment` yazımı kilitlendi
 - [ ] symbol-only, wordmark-only ve horizontal lockup tamamlandı
 - [ ] clear space, minimum boyut ve yanlış kullanım kaydı tamamlandı
 

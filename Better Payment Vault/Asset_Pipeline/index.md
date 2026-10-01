@@ -31,7 +31,7 @@ Bu klasör Better Payment logo sistemi, favicon, web görselleri, motion kaynakl
 
 | Öncelik | Set | Durum | Sonraki kapı |
 |---:|---|---|---|
-| P0 | Better Payment sembol v1 | `1 · Brief kilitli` | palet seçimi ve üç SVG aday |
+| P0 | Better Payment sembol v1 | `1 · Brief kilitli` | K4 logo yolu, sonra üç SVG aday (palet + tipografi kilitli) |
 | P0 | Favicon/small mark ailesi | `0 · Envanterde` | sembol seçimi |
 | P0 | Wordmark ve yatay lockup | `0 · Envanterde` | sembol seçimi (tipografi Faz 1'de kilitlenir) |
 | P1 | Siyah, beyaz ve renkli exportlar | `0 · Envanterde` | master geometrisi onayı |

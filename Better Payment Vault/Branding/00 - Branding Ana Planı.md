@@ -37,7 +37,7 @@ Kullanıcı kararı: **önce palet ve tipografi, sonra logo.**
 | Faz | Kapsam | Higgsfield kredisi | Bağımlılık | Onay kapısı |
 |---|---|---|---|---|
 | 0 | Kurulum, referanslar, vault | yok | — | tamamlandı |
-| 1 | Brand Lock taslağı + palet + tipografi | yok (yerel HTML önizleme) | Faz 0 | K1 isim/ton, K2 palet, K3 tipografi |
+| 1 | Brand Lock taslağı + palet + tipografi | yok (yerel HTML önizleme) | Faz 0 | tamamlandı: K1 Better Payment, K2 İndigo Sinyal, K3 Manrope + Inter + JetBrains Mono |
 | 2 | Logo: sembol, favicon ailesi, wordmark, lockup | var (Recraft ×3) | K2, K3 | K4 logo yolu, K5 sembol, K6 lockup |
 | 3 | Light design system (kod) | yok | Faz 1–2 | K7 token + component specimen |
 | 4 | Görsel evren: hero artwork + ikon seti | var | Faz 1–2 | K8 hero artwork, K9 ikon seti |
