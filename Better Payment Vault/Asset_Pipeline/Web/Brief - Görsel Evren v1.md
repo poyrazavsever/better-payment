@@ -69,6 +69,10 @@ Tek API · callback doğrulama · 3D Secure · iade · iptal · taksit · durum 
 | 2 · Obje takımyıldızı | ikon objeleri kenarlarda, merkez boş | görsel evrenle en bütünlüklü; sol üst obje logoya, tepsi butonlara biniyor |
 | 3 · Tek kahraman obje | sağda büyük cam birleşme heykeli | en temiz; heykel kod tabanlı sağlayıcı ağının merkezi olabilir |
 
-Dosyalar `Hero/hero-candidate-*.jpg` (1600 px önizleme), karşılaştırma `QA/hero-yonleri.html`. Durum: kullanıcı seçiminde.
+Dosyalar `Hero/hero-candidate-*.jpg` (1600 px önizleme), karşılaştırma `QA/hero-yonleri.html`.
+
+**Seçim (2026-10-01): 1 · Birleşen şeritler.** Kullanıcı: "Kesinlikle A şıkkı... Birleşen şeritler oldukça güzel olmuş."
+
+İçerik alanını temiz bırakan iki kompozisyon üretildi: `Hero/hero-A2-master.jpg` (şeritler sağ alt), `Hero/hero-A3-master.jpg` (alt bant). Prototip: `Bilesen/hero-buton-prototip-v1.html`. Durum: A2/A3 seçimi bekliyor.
 
 Maliyet (Faz 4 toplam): stil testi 19.5 + ikon üretimi 20 × 6.5 = 130 + arka plan temizleme 15 + hero 19.5 = yaklaşık 184 kredi.

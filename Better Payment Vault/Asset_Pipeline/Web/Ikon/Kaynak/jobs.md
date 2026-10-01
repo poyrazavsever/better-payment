@@ -29,3 +29,5 @@ durum: aktif
 | hero-candidate-3 | `328b38e4-b800-44eb-b0fc-13ff37c7abb9` | — |
 
 Model: GPT Image 2 (high, 2k, opaque), stil referansý `Konsept/icon-style-test-B.jpg`. Temizleme: `image_background_remover`. Vault'taki þeffaf masterlar 1024 px; 2048 px kaynaklar job ID ile Higgsfield'dan alýnabilir.
+A2 55b02c5b-3a65-4ae4-9748-4d1a26bb51f9
+A3 ff9ac8e8-771f-416e-91eb-ed8e49725d22
