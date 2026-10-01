@@ -1,0 +1,3 @@
+.local-githooks/* text eol=lf
+.local-tools/*.mjs text eol=lf
+*.md text eol=lf

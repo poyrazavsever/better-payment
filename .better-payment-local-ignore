@@ -1,0 +1,6 @@
+# Local planning system for this clone. This file ignores itself.
+/.better-payment-local-ignore
+/Better Payment Vault/
+/.local-tools/
+/.local-githooks/
+/.vault-sync-staging/
