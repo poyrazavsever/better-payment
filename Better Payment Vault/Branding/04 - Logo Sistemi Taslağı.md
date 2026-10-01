@@ -2,42 +2,45 @@
 tur: marka-sistemi
 alan: branding
 guncelleme: 2026-10-01
-ozet: "Better Payment sembol ve logo ailesinin onay kapıları ile taslak kullanım sözleşmesi."
-durum: onerilen
+ozet: "Better Payment logo ailesi: sembol, uygulama ikonu, favicon, wordmark ve lockup'ların dosyaları ve kullanım kuralları."
+durum: aktif
 ---
-# Logo Sistemi Taslağı
+# Logo Sistemi
 
-## Mevcut durum
+Seçilen sembol: **Birleşen yollar** · kayıt [[Branding/05 - Brand Lock]].
 
-Yeni logo henüz seçilmedi. [[Asset_Pipeline/Logo/Brief - Better Payment Logo v1]] kilitli; palet ve SVG aday aşaması bekleniyor.
+## Aile
 
-## Hedef aile
-
-| Kod | Varyant | Varsayılan kullanım |
+| Kod | Dosya kökü (`Asset_Pipeline/Logo/Varyantlar/`) | Kullanım |
 |---|---|---|
-| `better-payment-symbol` | yalnız sembol | favicon, avatar, provider-network merkezi |
-| `better-payment-wordmark` | yalnız `Better Payment` | dar header ve metin ağırlıklı imza |
-| `better-payment-horizontal` | sembol + wordmark | web header, docs ve sosyal cover |
-| `better-payment-small` | optik sadeleştirilmiş sembol | 16/20/24/32 px |
+| symbol | `symbol/better-payment-symbol-{color,ink,black,white}.svg` + 16–1024 px PNG | avatar, provider-network merkezi, ikon |
+| app icon | `app-icon/better-payment-app-icon.svg` (indigo yuvarlak kare, beyaz sembol) + 16–1024 px | uygulama ikonu, PWA, sosyal avatar |
+| avatar | `app-icon/better-payment-avatar-square.svg` + 400/1024 px | GitHub, npm, X; platform daire kırpar |
+| favicon | `favicon/favicon.svg`, `favicon.ico` (16/32/48), `apple-touch-icon.png`, `icon-192/512.png` | `apps/web/app/` |
+| wordmark | `wordmark/better-payment-wordmark-{color,black,white}.svg` | yalnız metin imzası |
+| horizontal | `lockup/better-payment-horizontal-{color,black,white,on-indigo}.svg` | navbar, docs, README, sosyal kapak |
+| stacked | `lockup/better-payment-stacked-{color,black,white}.svg` | kare alanlar, sunum kapağı |
+
+Üretim: `Varyantlar/build_family.py` onaylı Brandkit exportundaki path'leri değiştirmeden yerleştirir; wordmark Manrope 800 (OFL) HarfBuzz ile dizilip outline'a çevrilir.
 
 ## Renk modları
 
-- color: seçilen light-first palette
-- black: saf veya palette ink tek-renk üretim
-- reverse-white: koyu ve doygun yüzey
+- color: sembol `#4338F2`, yazı Ink `#13132B` — açık zeminlerin varsayılanı
+- white: koyu ve indigo zemin
+- black: tek renk baskı
+- ink: sembol tek başına koyu tonda gerektiğinde
 
-Tüm modlar seçilen SVG'nin aynı canonical geometry fingerprint ailesinden türetilir. Varyant için logo yeniden üretilmez.
+## Clear space ve minimum boyut
 
-## Yazım
+- `x` = sembol yüksekliğinin %25'i. Lockup'ın her yanında en az `x` boşluk.
+- Yatay lockup dijitalde en az 120 px genişlik; altında yalnız sembol veya app icon.
+- Sembol tek başına en az 24 px. 16 px'de iki şerit arasındaki boşluk kapanıyor; favicon için optik küçük boyut versiyonu kullanıcı onayı bekliyor.
 
-Metin içinde ürün adı `Better Payment` yazılır. Wordmark üretimi tipografi seçimine kadar başlamaz; image model ile yazı çizdirilmez.
+## Yasaklar
 
-## Geçici yasaklar
+- sembolü yeniden çizmek, oranını veya şerit boşluğunu değiştirmek
+- gradient, gölge, outline veya lila ile iki tonlu yeniden boyamak (onaysız)
+- wordmark'ı başka fontla veya canlı metinle yeniden yazmak
+- sembolü döndürmek veya yönünü çevirmek
 
-- aday seçilmeden favicon veya wordmark final ilan etmek
-- seçilen işareti elle yeniden çizmek
-- renk varyantında oran veya negatif alan değiştirmek
-- referans marka biçimlerini doğrudan kullanmak
-- yeni markayı mevcut ürün dosyalarına seçim/QA öncesi bağlamak
-
-Üretim ve QA kaydı: [[Asset_Pipeline/Logo/index]] · [[Asset_Pipeline/Şablon/Logo QA Matrisi]].
+Üretim kaydı: [[Asset_Pipeline/Logo/index]] · QA: `Asset_Pipeline/Logo/QA/logo-family-contact-sheet.png`.

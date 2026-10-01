@@ -30,7 +30,7 @@ Kurulan skill'ler:
 | Makine | CLI | Auth / workspace | Skill'ler | `brandkit/state.json` | Export araçları |
 |---|---|---|---|---|---|
 | İlk kurulum makinesi | `1.1.26` | doğrulandı | proje içi `.agents/skills/` | var (yerel) | eksik |
-| Windows `D:\Yazılım` (2026-10-01) | `1.1.26` | doğrulandı, `Private` workspace | global `~/.agents/skills/` (sekiz skill) | yok; Brandkit ilk turunda yeniden oluşturulacak | `rsvg-convert` ve ImageMagick eksik |
+| Windows `D:\Yazılım` (2026-10-01) | `1.1.26` | doğrulandı, `Private` workspace | global `~/.agents/skills/` (sekiz skill) | var; Brand Lock v1 onaylı | MSYS2 (`C:\msys64\ucrt64\bin`): rsvg-convert 2.63, ImageMagick 7.1; PATH'e eklenmedi. Python: fonttools, uharfbuzz |
 
 Notlar:
 

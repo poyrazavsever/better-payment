@@ -59,8 +59,17 @@ Kullanıcı 2026-10-01'de **T1 · Güvenli Geometri** çiftini seçti. Brandkit 
 
 Elenen adaylar: T2 Onest + Geist + Geist Mono, T3 Unbounded + Inter + IBM Plex Mono. Panolar `Asset_Pipeline/Logo/Konsept/type-T*.png`.
 
-## Logo (K4–K6)
+## Logo (K4–K6) — fixed
 
-Durum: sıradaki kapı K4 (logo yolu). Palet ve tipografi kilitli. Brief: [[Asset_Pipeline/Logo/Brief - Better Payment Logo v1]].
+- K4 logo yolu: yeniden tasarım.
+- K5 sembol: **5 · Birleşen yollar** (v2 turu), kullanıcı seçimi 2026-10-01. İki şerit soldan girer ve tek şeride birleşir: birden çok sağlayıcı, tek API.
+- Recraft job `33d4c349-be03-4b25-9d58-f64dd0876b1a`, tek renk `#4338F2`.
+- Geometry fingerprint `24ec3a2c50c19b18734155f2f4df39042fba6404242dc380f293d2fedee58d57`; Brandkit state logo revision `1`.
+- Kaynak: `Asset_Pipeline/Logo/Master/better-payment-symbol-recraft-source.svg`; Brandkit exportları aynı klasörde.
+- K6 lockup: Manrope 800, −0.02em, outline; sembol yüksekliği = 1.55 × cap height, aralık = 0.32 × sembol yüksekliği, sembol cap height'a optik ortalı.
+
+Brand Lock v1 tamam: palet + tipografi + logo onaylı (`essential_kit: true`).
+
+Ayrıntılı aile ve kurallar: [[Branding/04 - Logo Sistemi Taslağı]].
 
 İlgili: [[Branding/00 - Branding Ana Planı]] · [[Branding/03 - Higgsfield Kurulum ve Üretim Protokolü]]

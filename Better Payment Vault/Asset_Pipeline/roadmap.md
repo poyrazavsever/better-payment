@@ -13,23 +13,23 @@ durum: aktif
 - [x] altı inspiration referansı biçim dili açısından ayrıştırıldı
 - [x] logo brief'i ve anti-copy sınırları kilitlendi
 - [x] üç light-first paletten biri seçildi (B · İndigo Sinyal)
-- [ ] aynı Recraft parametreleriyle tam üç editable SVG sembol üretildi
-- [ ] bir sembol açıkça seçildi
+- [x] aynı Recraft parametreleriyle tam üç editable SVG sembol üretildi
+- [x] bir sembol açıkça seçildi
 
 ## Faz B — Logo ailesi
 
-- [ ] seçilen SVG geometry fingerprint ile Brandkit state'e kaydedildi
-- [ ] color, black ve reverse-white SVG/PNG masterlar üretildi
-- [ ] 16/20/24/32 px optik small mark ve favicon üretildi
-- [ ] 48/64/128/512/1024 px raster export matrisi tamamlandı
+- [x] seçilen SVG geometry fingerprint ile Brandkit state'e kaydedildi
+- [x] color, black ve reverse-white SVG/PNG masterlar üretildi
+- [ ] 16/20/24/32 px optik small mark ve favicon üretildi (favicon üretildi; 16 px optik versiyon onay bekliyor)
+- [x] 48/64/128/512/1024 px raster export matrisi tamamlandı
 - [ ] light yüzey ve küçük boyut contact sheet'i geçti
 
 ## Faz C — Wordmark ve lockup
 
 - [x] 2–3 tipografi yönü sunuldu ve biri seçildi (T1 · Manrope + Inter + JetBrains Mono)
 - [x] `Better Payment` yazımı kilitlendi
-- [ ] symbol-only, wordmark-only ve horizontal lockup tamamlandı
-- [ ] clear space, minimum boyut ve yanlış kullanım kaydı tamamlandı
+- [x] symbol-only, wordmark-only ve horizontal lockup tamamlandı
+- [x] clear space, minimum boyut ve yanlış kullanım kaydı tamamlandı
 
 ## Faz D — Ürün bağlantısı
 

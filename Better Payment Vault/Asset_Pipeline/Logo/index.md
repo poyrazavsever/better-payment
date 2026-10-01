@@ -37,6 +37,6 @@ Logo sistemi henüz seçilmedi. Mevcut `apps/web/public/logo.svg` gözlem kayna�
 | Tur | Adaylar | Sonuç |
 |---|---|---|
 | v1 (2026-10-01) | 01 B/P blok monogram · 02 routing rayları · 03 eşik/transfer | hepsi reddedildi: piksel/blok dili, çok parçalı yapı, sandık görünümü |
-| v2 (2026-10-01) | 04 bp ligatürü · 05 birleşen yollar · 06 doğrulanmış dönüş | kullanıcı değerlendirmesinde |
+| v2 (2026-10-01) | 04 bp ligatürü · 05 birleşen yollar · 06 doğrulanmış dönüş | **05 seçildi**; 04 "bq" okunuyor, 06 harf/mıknatıs gibi |
 
 Öğrenilen: kare kütle, piksel blok ve çok parçalı katmanlı yapılar istenmiyor; eğri, akıcı, kalın ve az parçalı formlar tercih ediliyor.
