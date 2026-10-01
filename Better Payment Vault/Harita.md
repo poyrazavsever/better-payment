@@ -25,6 +25,14 @@ durum: aktif
 
 - [[Kararlar/ADR-001 - Vault Yerel ve PR Dışı]]
 - [[Kararlar/ADR-002 - SDK Önce Aşamalı Ürün Vizyonu]]
+- [[Kararlar/ADR-003 - Branding Önce Light First ve Tek PR]]
+
+## Branding
+
+- [[Branding/00 - Branding Ana Planı]]
+- [[Branding/01 - Görsel Yön ve Referans Analizi]]
+- [[Branding/02 - Web Motion ve Çok Dil Sözleşmesi]]
+- [[Branding/03 - Higgsfield Kurulum ve Üretim Protokolü]]
 
 ## Araştırma
 

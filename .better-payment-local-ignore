@@ -4,3 +4,6 @@
 /.local-tools/
 /.local-githooks/
 /.vault-sync-staging/
+/.agents/skills/
+/skills-lock.json
+/brandkit/
