@@ -61,6 +61,8 @@ Amaç: kod yazılmadan önce her bileşenin görünümü, durumları ve hareketi
 - Hover: yazı ve ikon birlikte hareket eder. Prototipte üç yorum: *Zıpla ve düş* (yukarı çık, yukarıdan hızla düşüp hafif sekme, 0.62 sn), *Yuvarla* (yukarı kay, kopya aşağıdan yaylı gelir, 0.45 sn), *Sade* (yalnız ikon).
 - Varyantlar: primary, secondary, koyu zemin; sm/md/lg; focus halkası; `prefers-reduced-motion`.
 - Prototip: `Bilesen/hero-buton-prototip-v1.html`.
+- v1 geri bildirimi (2026-10-01): hareket yorumları "fena değil ama içime sinmedi"; parıltı (shiny) efekti istendi.
+- v2: `Bilesen/hero-buton-prototip-v2.html` — *Parıltı* (çapraz ışık şeridi hover başına bir kez, 0.75 sn, gölge derinleşir), *Parıltı + chevron*, *Sürekli ışıltı* (ana buton 4.5 sn arayla); v1 hareketleri karşılaştırma için duruyor.
 
 ### K7b — Bileşen specimen
 

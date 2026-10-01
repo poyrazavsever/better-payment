@@ -57,6 +57,21 @@ nav ul{display:flex;gap:2.2vw;list-style:none;margin:0;padding:0;font-size:clamp
 [data-m=nudge] .btn .ic{transition:transform .35s var(--spring)}
 [data-m=nudge] .btn.pri:hover .row:not(.ghost) .ic{transform:translateX(4px)}
 [data-m=nudge] .btn.sec:hover .row:not(.ghost) .ic{transform:rotate(-8deg) scale(1.08)}
+/* shine family: a diagonal light sheen sweeps across once per hover */
+.btn{overflow:hidden;isolation:isolate}
+.btn::after{content:"";position:absolute;inset:-1px;border-radius:inherit;pointer-events:none;z-index:-0;
+  background:linear-gradient(105deg,transparent 30%,var(--sheen) 47%,var(--sheen-soft) 53%,transparent 68%);
+  transform:translateX(-130%);opacity:0}
+.btn.pri{--sheen:rgba(255,255,255,.55);--sheen-soft:rgba(255,255,255,.18)}
+.btn.sec{--sheen:rgba(67,56,242,.14);--sheen-soft:rgba(67,56,242,.05)}
+.dark .btn.sec{--sheen:rgba(255,255,255,.22);--sheen-soft:rgba(255,255,255,.06)}
+:is([data-m=shine],[data-m=shine-chev],[data-m=shine-idle]) .btn:is(:hover,:focus-visible)::after{opacity:1;transform:translateX(130%);transition:transform .75s cubic-bezier(.2,.7,.2,1),opacity .1s}
+[data-m=shine-chev] .btn .ic{transition:transform .35s var(--spring)}
+[data-m=shine-chev] .btn.pri:hover .row:not(.ghost) .ic,[data-m=shine-chev] .btn.sec:hover .row:not(.ghost) .ic:last-child{transform:translateX(3px)}
+[data-m=shine-idle] .btn.pri:not(:hover)::after{opacity:1;animation:idle-sheen 4.5s cubic-bezier(.2,.7,.2,1) infinite 1s}
+@keyframes idle-sheen{0%{transform:translateX(-130%)}22%{transform:translateX(130%)}100%{transform:translateX(130%)}}
+:is([data-m=shine],[data-m=shine-chev],[data-m=shine-idle]) .btn.pri:hover{box-shadow:0 1px 0 #ffffff40 inset,0 10px 24px -8px #4338F2cc}
+@media (prefers-reduced-motion:reduce){.btn::after{display:none}}
 @media (prefers-reduced-motion:reduce){.btn .row{animation:none!important;transition:none!important;transform:none!important}.btn .ghost{display:none}}
 .lab{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:14px}
 .lab h2{font-family:Manrope;font-size:18px;margin:0 0 4px}.lab p{color:var(--muted);margin:0 0 16px;font-size:14px}
@@ -67,9 +82,9 @@ nav ul{display:flex;gap:2.2vw;list-style:none;margin:0;padding:0;font-size:clamp
 @media(max-width:860px){.copy{max-width:80%;top:16%}.grid{grid-template-columns:1fr}nav ul{display:none}}
 """
 
-BODY = f"""<div class="page" data-m="hop" id="root">
+BODY = f"""<div class="page" data-m="shine" id="root">
 <div class="bar"><b>Hero:</b><span class="seg" id="hero"><button aria-pressed="true" data-v="A2">A2 · sağ alt</button><button aria-pressed="false" data-v="A3">A3 · alt bant</button></span>
-<b>Buton hover:</b><span class="seg" id="motion"><button aria-pressed="true" data-v="hop">Zıpla ve düş</button><button aria-pressed="false" data-v="roll">Yuvarla</button><button aria-pressed="false" data-v="nudge">Sade (ikon)</button></span></div>
+<b>Buton hover:</b><span class="seg" id="motion"><button aria-pressed="true" data-v="shine">Parıltı</button><button aria-pressed="false" data-v="shine-chev">Parıltı + chevron</button><button aria-pressed="false" data-v="shine-idle">Sürekli ışıltı</button><button aria-pressed="false" data-v="hop">Zıpla ve düş</button><button aria-pressed="false" data-v="roll">Yuvarla</button></span></div>
 <div class="frame" id="frame">
 <nav><img src="{logo}" alt="Better Payment"><ul><li>Dokümantasyon</li><li>Sağlayıcılar</li><li>Örnekler</li><li>GitHub</li></ul></nav>
 <div class="copy"><h1>Türkiye'nin ödeme sağlayıcıları.<br><span>Tek TypeScript API'si.</span></h1>
@@ -80,7 +95,7 @@ BODY = f"""<div class="page" data-m="hop" id="root">
 <div class="cell"><small>Primary · sm / md / lg</small>{btn("pri sm", "Başla", chev)}{PRI}{btn("pri lg", "Dokümantasyonu aç", chev)}</div>
 <div class="cell"><small>Secondary</small>{btn("sec sm", "GitHub", gh, True)}{SEC}{btn("sec", "npm'de gör", chev)}</div>
 <div class="cell dark"><small>Koyu zemin</small>{PRI}{SEC}</div>
-</div><p class="note">Zıpla ve düş: yazı ve ikon birlikte yukarı çıkar, yukarıdan hızla düşüp hafif sekmeyle oturur (0.62 sn). Yuvarla: içerik yukarı kayar, aynısı aşağıdan yaylı gelir (0.45 sn). Ok yerine chevron kullanıldı.</p></section>
+</div><p class="note">Zıpla ve düş: yazı ve ikon birlikte yukarı çıkar, yukarıdan hızla düşüp hafif sekmeyle oturur (0.62 sn). Yuvarla: içerik yukarı kayar, aynısı aşağıdan yaylı gelir (0.45 sn). Parıltı: çapraz ışık şeridi hover başına bir kez süzülür (0.75 sn), ana butonda gölge hafifçe derinleşir. Sürekli ışıltı: ana buton 4.5 sn arayla kendiliğinden parlar. Ok yerine chevron kullanıldı.</p></section>
 </div>"""
 
 JS = """const H={A2:"%s",A3:"%s"};
