@@ -20,26 +20,39 @@ Durumlar: `fixed` (onaylı) · `proposed` (aday) · `unknown`.
 | Ton | sade, şık, fresh, güvenilir, teknik | fixed · K1 |
 | Görsel eksenler | restrained↔expressive `55` · geometric↔organic `35` · familiar↔experimental `60` | fixed · state'e yazıldı |
 
-## Palet (K2)
+## Palet (K2) — fixed
 
-Durum: üç aday kullanıcı seçiminde. Panolar: `Asset_Pipeline/Logo/Konsept/palette-A.png`, `palette-B.png`, `palette-C.png`, interaktif karşılaştırma `palette-karsilastirma.html`.
+Kullanıcı 2026-10-01'de **B · İndigo Sinyal** paletini seçti. Brandkit state: `approve_palette`, palette revision `1`.
 
-| Rol | A · Açık Hava | B · İndigo Sinyal | C · Teknik Defter |
+| Rol | İsim | Hex | Not |
 |---|---|---|---|
-| Canvas | `#F6F9FD` | `#F8F8FC` | `#FAFAF7` |
-| Surface | `#FFFFFF` | `#FFFFFF` | `#FFFFFF` |
-| Ink | `#0B1526` (17.3:1) | `#13132B` (17.2:1) | `#101114` (18.1:1) |
-| Muted | `#55627A` (5.8:1) | `#5A5A78` (6.3:1) | `#5C5F66` (6.1:1) |
-| Line | `#DFE6F0` | `#E4E3F0` | `#E6E5DF` |
-| Primary | `#1A56F0` Route Blue (beyaz 5.8:1) | `#4338F2` Signal Indigo (beyaz 6.8:1) | `#0F5EFF` Signal Blue (beyaz 5.2:1) |
-| Tint | `#E3ECFF` | `#ECEAFF` | `#EAF1FF` |
-| Accent (yalnız dekor) | `#7FB2FF` Air | `#A9A3FF` Lilac | `#14B88A` Verified Mint |
+| background | Canvas | `#F8F8FC` | sayfa zemini |
+| surface | Surface | `#FFFFFF` | kart, kod, panel |
+| text | Ink | `#13132B` | 17.2:1 |
+| secondary text | Muted | `#5A5A78` | 6.3:1 |
+| border | Line | `#E4E3F0` | çizgi |
+| primary | Signal Indigo | `#4338F2` | beyaz yazı 6.8:1 |
+| tint surface | Lilac Tint | `#ECEAFF` | vurgu zemini |
+| accent | Lilac | `#A9A3FF` | yalnız dekor ve logo ikinci tonu; metin değil |
+| semantic | Success | `#087A55` | beyaz üzerinde 5.4:1 |
+| semantic | Warning | `#A86207` | 4.8:1 |
+| semantic | Danger | `#C8322B` | 5.3:1 |
 
-Ortak semantik renkler (beyaz üzerinde ≥ 4.5:1): success `#087A55`, warning `#A86207`, danger `#C8322B`.
+Elenen adaylar: A · Açık Hava (`#1A56F0`), C · Teknik Defter (`#0F5EFF`). Panolar `Asset_Pipeline/Logo/Konsept/palette-*.png`.
+
+Not: Signal Indigo Stripe moruna komşu; logo aşamasında yedi referansla karışma kontrolü zorunlu.
 
 ## Tipografi (K3)
 
-Durum: palet seçiminden sonra 2–3 çift sunulacak.
+Durum: üç aday kullanıcı seçiminde. Panolar `Asset_Pipeline/Logo/Konsept/type-T*.png` ve `tipografi-karsilastirma.html`.
+
+| Aday | Display | Body | Mono |
+|---|---|---|---|
+| T1 · Güvenli Geometri | Manrope 800 | Inter 400 | JetBrains Mono |
+| T2 · Keskin Altyapı | Onest 700 | Geist 400 | Geist Mono |
+| T3 · Geniş İfade | Unbounded 600 | Inter 400 | IBM Plex Mono |
+
+Seçim kriteri: Google Fonts, `latin-ext` ve `cyrillic` kapsamı. Plus Jakarta Sans, Bricolage Grotesque, Instrument Sans, Space Grotesk Kiril eksikliği nedeniyle aday dışı. Golos Text render testinde Türkçe `ğ` harfini doğru çizmediği için T3'ten çıkarıldı.
 
 ## Logo (K4–K6)
 

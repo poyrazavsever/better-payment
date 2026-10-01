@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Better Payment · Tipografi Karşılaştırması</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Onest:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Unbounded:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --canvas:#F8F8FC;--surface:#FFFFFF;--ink:#13132B;--muted:#5A5A78;--line:#E4E3F0;
+  --primary:#4338F2;--on-primary:#FFFFFF;--tint:#ECEAFF;--accent:#A9A3FF;
+  --success:#087A55;--success-bg:#E6F5EF;--warning:#A86207;--warning-bg:#FDF3E3;--danger:#C8322B;--danger-bg:#FDECEB;
+  --atmos: radial-gradient(60% 70% at 50% 0%, #E6E3FF 0%, rgba(248,248,252,0) 70%);
+}
+[data-t="1"]{--display:"Manrope",sans-serif;--body:"Inter",sans-serif;--mono:"JetBrains Mono",monospace;--dw:800;--dtrack:-.035em;--hw:700}
+[data-t="2"]{--display:"Onest",sans-serif;--body:"Geist",sans-serif;--mono:"Geist Mono",monospace;--dw:700;--dtrack:-.035em;--hw:600}
+[data-t="3"]{--display:"Unbounded",sans-serif;--body:"Inter",sans-serif;--mono:"IBM Plex Mono",monospace;--dw:600;--dtrack:-.025em;--hw:500}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:system-ui,sans-serif;background:#EEEEF4;color:#16181D;-webkit-font-smoothing:antialiased}
+.page{max-width:1180px;margin:0 auto;padding:32px 16px 48px}
+.intro h1{font-size:28px;letter-spacing:-.02em;margin:0 0 6px}
+.intro p{margin:0;color:#4B5160;max-width:780px;line-height:1.5}
+
+.overview{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0}
+.ov{border-radius:14px;background:#fff;border:2px solid transparent;padding:16px;cursor:pointer;text-align:left;font:inherit;color:inherit}
+.ov[aria-pressed="true"]{border-color:#16181D}
+.ov .nm{display:block;font-size:13px;color:#5B6170;margin-bottom:8px}
+.ov .wm{display:block;font-size:26px;line-height:1.1;color:#13132B}
+.ov small{display:block;color:#5B6170;margin-top:10px;line-height:1.4;font-size:12.5px}
+
+.board{background:var(--canvas);color:var(--ink);border-radius:18px;overflow:hidden;border:1px solid #00000012;font-family:var(--body)}
+.sec{padding:30px clamp(16px,4vw,40px);border-top:1px solid var(--line)}
+.label{font-size:13px;color:var(--muted);margin:0 0 16px;font-weight:500;font-family:var(--body)}
+
+/* wordmark */
+.wmrow{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.lock{display:flex;align-items:center;gap:14px}
+.mark{width:56px;height:56px;border-radius:14px;background:var(--primary);display:grid;place-items:center;flex:none}
+.mark::after{content:"";width:22px;height:22px;background:var(--on-primary);border-radius:4px}
+.lock .name{font-family:var(--display);font-weight:var(--dw);font-size:48px;letter-spacing:var(--dtrack);line-height:1}
+.small-locks{display:flex;gap:28px;align-items:center;margin-left:auto}
+.small-locks .lock .mark{width:24px;height:24px;border-radius:6px}
+.small-locks .lock .mark::after{width:9px;height:9px;border-radius:2px}
+.small-locks .lock{gap:8px}
+.small-locks .lock .name{font-size:17px;letter-spacing:-.01em}
+.small-locks .rev{background:var(--primary);padding:10px 14px;border-radius:10px}
+.small-locks .rev .name{color:#fff}
+.small-locks .rev .mark{background:#fff}
+.small-locks .rev .mark::after{background:var(--primary)}
+
+/* hero */
+.hero{background:var(--atmos),var(--canvas);padding:54px clamp(16px,4vw,40px) 46px}
+.hero h2{font-family:var(--display);font-weight:var(--dw);font-size:clamp(34px,5vw,58px);line-height:1.04;letter-spacing:var(--dtrack);margin:0 0 18px;max-width:900px}
+.hero h2 span{color:var(--muted)}
+.hero h3{font-family:var(--display);font-weight:var(--dw);font-size:clamp(22px,2.6vw,30px);line-height:1.12;letter-spacing:var(--dtrack);margin:26px 0 0;color:var(--muted)}
+.lead{font-size:18px;line-height:1.6;color:var(--muted);margin:0 0 24px;max-width:560px}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;height:44px;padding:0 20px;border-radius:10px;font-size:14.5px;font-weight:500;text-decoration:none;font-family:var(--body)}
+.btn.pri{background:var(--primary);color:#fff}
+.btn.sec{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+.install{margin-top:18px;display:inline-flex;gap:10px;font-family:var(--mono);font-size:14px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.install b{color:var(--muted);font-weight:400}
+
+/* scale */
+.scale{display:grid;gap:14px}
+.scale .row{display:grid;grid-template-columns:120px 1fr;align-items:baseline;gap:16px;border-bottom:1px dashed var(--line);padding-bottom:12px}
+.scale .row:last-child{border-bottom:0}
+.scale small{font-size:12px;color:var(--muted);font-family:var(--mono)}
+.s-h1{font-family:var(--display);font-weight:var(--dw);font-size:40px;letter-spacing:var(--dtrack);line-height:1.1}
+.s-h2{font-family:var(--display);font-weight:var(--hw);font-size:28px;letter-spacing:-.02em;line-height:1.15}
+.s-h3{font-family:var(--display);font-weight:var(--hw);font-size:20px;letter-spacing:-.01em}
+.s-body{font-size:16px;line-height:1.65;max-width:720px}
+.s-small{font-size:13.5px;color:var(--muted);line-height:1.5}
+.s-mono{font-family:var(--mono);font-size:14px}
+.glyphs{font-family:var(--display);font-weight:var(--hw);font-size:24px;line-height:1.4;letter-spacing:0}
+.glyphs .b{font-family:var(--body);font-weight:400;font-size:16px;color:var(--muted);display:block}
+
+/* docs + states */
+.split{display:grid;grid-template-columns:1.25fr 1fr;gap:16px}
+.docs{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px 26px}
+.docs h4{font-family:var(--display);font-weight:var(--hw);font-size:24px;letter-spacing:-.02em;margin:0 0 10px}
+.docs p{margin:0 0 14px;line-height:1.65;font-size:15px}
+.docs code{font-family:var(--mono);font-size:.88em;background:var(--tint);color:var(--primary);padding:1px 5px;border-radius:5px}
+.docs table{width:100%;border-collapse:collapse;font-size:14px;margin:4px 0 16px}
+.docs th,.docs td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+.docs th{font-weight:600;color:var(--muted);font-size:12.5px}
+.docs td.num{font-variant-numeric:tabular-nums;text-align:right}
+.code{font-family:var(--mono);font-size:13.5px;line-height:1.65;background:var(--canvas);border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;margin:0}
+.code .k{color:var(--primary)} .code .s{color:var(--success)} .code .c{color:var(--muted)}
+.states{display:grid;gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
+.card .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.pill{font-size:12px;font-weight:600;padding:4px 9px;border-radius:999px;font-family:var(--body)}
+.pill.pending{color:var(--warning);background:var(--warning-bg)}
+.pill.success{color:var(--success);background:var(--success-bg)}
+.pill.failure{color:var(--danger);background:var(--danger-bg)}
+.prov{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.card h5{font-family:var(--display);font-weight:var(--hw);font-size:16px;margin:0 0 4px;letter-spacing:-.01em}
+.card p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.45}
+.amount{font-family:var(--display);font-weight:var(--hw);font-size:22px;margin-top:8px;font-variant-numeric:tabular-nums}
+
+.notes{display:grid;grid-template-columns:1fr 1fr;gap:20px;font-family:var(--body)}
+.notes h4{margin:0 0 6px;font-size:14px}
+.notes p,.notes li{font-size:14px;line-height:1.55;color:var(--muted)}
+.notes a{color:var(--primary)}
+.foot{margin-top:18px;font-size:13px;color:#5B6170;line-height:1.5}
+
+@media (max-width:860px){
+  .overview,.split,.notes{grid-template-columns:1fr}
+  .small-locks{margin-left:0}
+  .lock .name{font-size:36px}
+  .scale .row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="intro">
+    <h1>Better Payment · Tipografi Karşılaştırması</h1>
+    <p>Palet sabit: B · İndigo Sinyal (onaylı). Üç yazı tipi çifti aynı içerik üzerinde: wordmark, hero, yazı hiyerarşisi, docs, kod ve durum kartları. Mavi kare geçici işarettir, logo değildir. Her çiftin başlık, gövde ve kod fontu Türkçe ve Kiril (Rusça) karakterleri tam destekler.</p>
+  </header>
+
+  <div class="overview" role="group" aria-label="Tipografi seçimi">
+    <button class="ov" data-k="1" aria-pressed="true">
+      <span class="nm">T1 · Güvenli Geometri</span>
+      <span class="wm" style="font-family:Manrope;font-weight:800;letter-spacing:-.035em">Better Payment</span>
+      <small>Manrope + Inter + JetBrains Mono</small>
+    </button>
+    <button class="ov" data-k="2" aria-pressed="false">
+      <span class="nm">T2 · Keskin Altyapı</span>
+      <span class="wm" style="font-family:Onest;font-weight:700;letter-spacing:-.035em">Better Payment</span>
+      <small>Onest + Geist + Geist Mono</small>
+    </button>
+    <button class="ov" data-k="3" aria-pressed="false">
+      <span class="nm">T3 · Geniş İfade</span>
+      <span class="wm" style="font-family:Unbounded;font-weight:600;letter-spacing:-.025em;font-size:22px">Better Payment</span>
+      <small>Unbounded + Inter + IBM Plex Mono</small>
+    </button>
+  </div>
+
+  <main class="board" id="board" data-t="1">
+    <section class="sec" style="border-top:0">
+      <p class="label">Wordmark taslağı (geçici işaretle; final lockup logo seçiminden sonra çizilecek)</p>
+      <div class="wmrow">
+        <div class="lock"><span class="mark" aria-hidden="true"></span><span class="name">Better Payment</span></div>
+        <div class="small-locks">
+          <div class="lock"><span class="mark" aria-hidden="true"></span><span class="name">Better Payment</span></div>
+          <div class="lock rev"><span class="mark" aria-hidden="true"></span><span class="name">Better Payment</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero">
+      <h2>Türkiye'nin ödeme sağlayıcıları. <span>Tek TypeScript API'si.</span></h2>
+      <p class="lead">iyzico, PayTR, Parampos ve Akbank için aynı istek ve sonuç tipleri. Her callback senin anahtarlarınla doğrulanır, sonra güvenilir.</p>
+      <div class="btns"><a class="btn pri" href="#">Dokümantasyonu aç →</a><a class="btn sec" href="#">GitHub'da incele</a></div>
+      <div class="install"><b>$</b>npm install better-payment</div>
+      <h3>Turkish payment providers. One typed API.</h3>
+    </section>
+
+    <section class="sec">
+      <p class="label">Yazı hiyerarşisi</p>
+      <div class="scale">
+        <div class="row"><small>display · 40</small><div class="s-h1">Ödemeyi doğrula, sonra güven.</div></div>
+        <div class="row"><small>heading · 28</small><div class="s-h2">Callback doğrulama nasıl çalışır?</div></div>
+        <div class="row"><small>heading · 20</small><div class="s-h3">3D Secure tamamlama akışı</div></div>
+        <div class="row"><small>body · 16</small><div class="s-body">Banka, ödeme sonucunu <em>callbackUrl</em> adresine POST eder. Better Payment imzayı senin kimlik bilgilerinle kontrol eder; eşleşmezse sonuç <strong>failure</strong> olur ve hiçbir şey başarılı sayılmaz.</div></div>
+        <div class="row"><small>small · 13.5</small><div class="s-small">Ödeme, iade ve iptal istekleri otomatik olarak tekrar denenmez.</div></div>
+        <div class="row"><small>mono · 14</small><div class="s-mono">payment.iyzico.completeThreeDSPayment(body) // 0O 1lI {}[]</div></div>
+        <div class="row"><small>karakterler</small><div class="glyphs">ĞğŞşİıÇçÖöÜü · Платежи через единый API · ₺1.250,00<span class="b">Iğdır'da ısıtıcı şöyle çalışır · Ödeme işleminiz başarıyla tamamlandı · Оплата прошла успешно</span></div></div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <p class="label">Docs ve ürün arayüzü</p>
+      <div class="split">
+        <article class="docs">
+          <h4>Sonuçlar ve durumlar</h4>
+          <p>Her işlem <code>status</code> taşıyan bir sonuçla döner. Bağlantı koparsa sonuç <code>pending</code> ve <code>NETWORK_ERROR</code> olur; tekrar denemeden önce <code>getPayment()</code> ile kontrol et.</p>
+          <table>
+            <thead><tr><th>Sağlayıcı</th><th>3D Secure</th><th style="text-align:right">Taksit</th></tr></thead>
+            <tbody>
+              <tr><td>iyzico</td><td>✓</td><td class="num">2–12</td></tr>
+              <tr><td>PayTR</td><td>✓ iFrame</td><td class="num">hesap oranları</td></tr>
+              <tr><td>Parampos</td><td>✓ TP_WMD_UCD</td><td class="num">hesap oranları</td></tr>
+            </tbody>
+          </table>
+<pre class="code"><span class="k">const</span> result = <span class="k">await</span> payment.paytr.getPayment(orderId);
+<span class="k">if</span> (result.status === <span class="s">"success"</span>) markOrderPaid(orderId);
+<span class="c">// sipariş kimliğin ödeme kimliğindir</span></pre>
+        </article>
+        <div class="states">
+          <article class="card"><div class="top"><span class="pill pending">pending</span><span class="prov">iyzico</span></div><h5>3D Secure bekleniyor</h5><p>Müşteri bankanın doğrulama sayfasında.</p><div class="amount">₺1.250,00</div></article>
+          <article class="card"><div class="top"><span class="pill success">success</span><span class="prov">parampos</span></div><h5>Callback doğrulandı</h5><p>İmza kontrol edildi, ödeme bankada tamamlandı.</p></article>
+          <article class="card"><div class="top"><span class="pill failure">failure</span><span class="prov">paytr</span></div><h5>Sahte callback reddedildi</h5><p>Hash eşleşmedi · <span class="prov">INVALID_HASH</span></p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec"><div class="notes" id="notes"></div></section>
+  </main>
+
+  <p class="foot">Final ölçüler, satır aralıkları ve harf aralıkları design system fazında token olarak belirlenecek; buradaki ölçek yalnız karşılaştırma içindir.</p>
+</div>
+
+<script>
+const DATA={
+  1:{plus:"Geometrik ve açık formlar güven ve tazelik verir; finans ve ödeme ürünlerinde iyi okunur. Ağır kalınlıkta wordmark kompakt ve sağlam durur. Inter gövdede en güvenli seçim; uzun docs okumasında yormaz.",
+     minus:"Manrope ve Inter çok kullanılan aileler; ayırt ediciliği logo ve görsel evren taşır. Manrope ince kalınlıklarda biraz yumuşak kalabilir.",
+     fit:"Logo brief'indeki kalın kütleli, geometrik sembolle doğal uyum. 35/100 geometrik eksenine en yakın çift.",
+     links:[["Manrope","https://fonts.google.com/specimen/Manrope"],["Inter","https://fonts.google.com/specimen/Inter"],["JetBrains Mono","https://fonts.google.com/specimen/JetBrains+Mono"]]},
+  2:{plus:"Onest sıkı ve karakterli bir grotesk; başlıklara Geist'ten daha fazla kişilik katar ama aynı teknik tonu korur. Geist gövde ve Geist Mono kod, mevcut site ve docs ile süreklilik sağlar; geçiş en az riskli.",
+     minus:"Mevcut siteye en yakın his; yenilenme algısı en düşük olabilir. Geist, Vercel ekosistemiyle güçlü biçimde ilişkilendiriliyor.",
+     fit:"Modüler blok ve keskin kenarlı sembollerle iyi çalışır; dengeli 55/100 ifade ekseni.",
+     links:[["Onest","https://fonts.google.com/specimen/Onest"],["Geist","https://fonts.google.com/specimen/Geist"],["Geist Mono","https://fonts.google.com/specimen/Geist+Mono"]]},
+  3:{plus:"Geniş ve cesur formu markayı kategoride hemen ayırır; wordmark tek başına akılda kalır. Inter sakin ve okunur gövdeyle dengeler. (İlk aday Golos Text, Türkçe ğ harfini doğru çizmediği için elendi.)",
+     minus:"Geniş harfler uzun Türkçe başlıklarda ve mobilde çok yer kaplar; dikkatli kullanılmazsa kripto veya oyun markası gibi okunabilir. Yalnız kısa başlıklarda kullanılmalı.",
+     fit:"60/100 deneysellik eksenini en çok zorlayan çift; sade bir sembolle birlikte güçlü bir kontrast kurar.",
+     links:[["Unbounded","https://fonts.google.com/specimen/Unbounded"],["Inter","https://fonts.google.com/specimen/Inter"],["IBM Plex Mono","https://fonts.google.com/specimen/IBM+Plex+Mono"]]}
+};
+const board=document.getElementById('board');
+function render(k){
+  board.dataset.t=k;
+  document.querySelectorAll('.ov').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.k===String(k))));
+  const d=DATA[k];
+  document.getElementById('notes').innerHTML=`<div><h4>Güçlü yanı</h4><p>${d.plus}</p><h4>Riski</h4><p>${d.minus}</p></div><div><h4>Logo ile uyumu</h4><p>${d.fit}</p><h4>Fontlar</h4><ul>${d.links.map(([n,u])=>`<li><a href="${u}" target="_blank" rel="noopener">${n}</a></li>`).join('')}</ul></div>`;
+}
+document.querySelectorAll('.ov').forEach(b=>b.addEventListener('click',()=>render(b.dataset.k)));
+render(1);
+</script>
+</body>
+</html>
