@@ -51,4 +51,24 @@ Stil referansı: `Konsept/icon-style-test-B.jpg`. Üretim düz `#F8F8FC` zeminde
 
 Bulgular: beyaz zeminde cam gövde soluk kalır, indigo çekirdek okunurluğu taşır; 40 px altında detay kaybolur. Docs'ta en az 40 px veya Lilac Tint kutucuk içinde kullanılması önerilir.
 
-Durum: kullanıcı onayı bekliyor. Maliyet: stil testi 19.5 + ikonlar 5 × 6.5 + temizleme 3 = 55 kredi.
+Durum: kullanıcı ilk üç ikonu onayladı (2026-10-01): "Açıkçası bayıldım."
+
+## İkon seti v1 — tam set (15)
+
+Tek API · callback doğrulama · 3D Secure · iade · iptal · taksit · durum sorgu · event/listener · plugin · edge runtime · sandbox · çok dil · güvenli handler · idempotency · dokümantasyon.
+
+- Şeffaf masterlar `Ikon/Seffaf/icon-*.png` (1024 px, kırpılmış ve ortalanmış). Job kayıtları `Ikon/Kaynak/jobs.md`. İnceleme `QA/ikon-seti-v1.html`.
+- Yeniden üretilenler: çok dil (ilk deneme eksi işareti gibi), idempotency (duraklat düğmesi gibi), iptal (kod parantezi gibi). Reddedilen taslaklar `Konsept/*-rejected.jpg`.
+- “Sağlayıcı ekleme” ikonu listeden çıkarıldı; plugin ikonu aynı anlamı taşıyor.
+
+## Hero adayları
+
+| Aday | Kompozisyon | Gözlem |
+|---|---|---|
+| 1 · Birleşen şeritler | büyük cam şeritler alttan/sağdan birleşir | en sinematik; şeritler gövde metni ve butonların altına giriyor |
+| 2 · Obje takımyıldızı | ikon objeleri kenarlarda, merkez boş | görsel evrenle en bütünlüklü; sol üst obje logoya, tepsi butonlara biniyor |
+| 3 · Tek kahraman obje | sağda büyük cam birleşme heykeli | en temiz; heykel kod tabanlı sağlayıcı ağının merkezi olabilir |
+
+Dosyalar `Hero/hero-candidate-*.jpg` (1600 px önizleme), karşılaştırma `QA/hero-yonleri.html`. Durum: kullanıcı seçiminde.
+
+Maliyet (Faz 4 toplam): stil testi 19.5 + ikon üretimi 20 × 6.5 = 130 + arka plan temizleme 15 + hero 19.5 = yaklaşık 184 kredi.
