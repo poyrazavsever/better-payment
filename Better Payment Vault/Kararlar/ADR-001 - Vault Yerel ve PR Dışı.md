@@ -29,6 +29,7 @@ Vault kişisel planlar, maintainer hazırlığı, mesaj taslakları ve çalışm
 - `git add -f` ile yanlışlıkla ekleme hook tarafından yakalanır.
 - Yeni bilgisayarda vault ayrı clone edilir; ürün repository'sine karışmadan güncellenebilir.
 - Fork herkese açıksa `personal/vault` branch'i de herkese açıktır; secret, credential, kart verisi ve özel müşteri bilgisi kesinlikle yazılmaz.
+- Git hook'ları kazaları önleyen bir savunma katmanıdır, mutlak güvenlik sınırı değildir; `--no-verify` ile aşılabilir. Bu nedenle değiştirilemez sınır ayrı orphan branch ve ayrı clone kullanımıdır. Her upstream PR öncesinde `git diff --name-only upstream/main...HEAD` çıktısında vault yollarının sıfır olduğu ayrıca doğrulanır; bu koşulu sağlamayan PR açılmaz.
 - Vault yedeklemesi ve geçmişi GitHub PR sürecinden tamamen ayrı kalır.
 
 ## Doğrulama
@@ -39,4 +40,5 @@ git config --get core.hooksPath
 node .local-tools/vault.mjs check
 git status --short --untracked-files=all
 git branch --show-current
+git diff --name-only upstream/main...HEAD
 ```
