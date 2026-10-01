@@ -15,6 +15,7 @@ Bu klasördeki görseller yalnız `style-reference` rolündedir. Hiçbiri Better
 
 - Dosyalar yalnız kişisel moodboard kaydıdır; ürün koduna, upstream PR'a, Higgsfield upload'una veya yayınlanan bir asset'e girmez.
 - `personal/vault` fork herkese açıksa bu dosyalar da herkese açık görünür. Yeni referans eklerken bu bilinçle, düşük çözünürlüklü ve yalnız gerekli görseller eklenir.
+- Kullanıcı kararı (2026-10-01): açık görünürlük şimdilik kabul edildi. Referans görselleri branding PR'ı tamamlanana kadar kalır, sonra kaldırılır; analiz notları korunur.
 
 ## Dosyalar
 

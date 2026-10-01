@@ -26,7 +26,7 @@ durum: aktif
 
 ## Faz C — Wordmark ve lockup
 
-- [ ] 2–3 tipografi yönü sunuldu ve biri seçildi
+- [ ] 2–3 tipografi yönü sunuldu ve biri seçildi (Faz A'da, logodan önce yapılır)
 - [ ] `Better Payment` yazımı kilitlendi
 - [ ] symbol-only, wordmark-only ve horizontal lockup tamamlandı
 - [ ] clear space, minimum boyut ve yanlış kullanım kaydı tamamlandı

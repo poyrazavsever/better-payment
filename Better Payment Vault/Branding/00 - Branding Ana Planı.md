@@ -2,180 +2,191 @@
 tur: plan
 alan: branding
 guncelleme: 2026-10-01
-ozet: "Better Payment görsel kimlik, web, motion, çok dil ve lansman yenilemesinin faz bazlı ana planı."
+ozet: "Better Payment branding yenilemesinin faz bazlı ana planı: önce palet ve tipografi, sonra logo, sonra web/docs ve lansman."
 durum: aktif
 ---
 # Better Payment Branding Ana Planı
 
-Kanonik karar: [[Kararlar/ADR-003 - Branding Önce Light First ve Tek PR]].
+Kanonik kararlar: [[Kararlar/ADR-003 - Branding Önce Light First ve Tek PR]] · [[Kararlar/ADR-005 - Sahip Olunan Görsel Evren]].
 
 ## Hedef
 
-Better Payment'ı “bir başka geliştirici landing page'i” görünümünden çıkarıp güvenilir, teknik olarak net, Türkiye ödeme ekosistemine özgü ve lansmana hazır bir marka deneyimine dönüştürmek.
+Better Payment'ı “bir başka geliştirici landing page'i” görünümünden çıkarıp sade, şık, fresh ve güvenilir; teknik olarak net, Türkiye ödeme ekosistemine özgü ve lansmana hazır bir marka deneyimine dönüştürmek. Web sitesi, dokümantasyon, ikonlar ve lansman görselleri aynı markaya ait görünmeli.
 
 ## Değişmez yön
 
-- Light mode önce.
+- Light mode önce; dark mode ayrı bir takip işi.
 - Beyaz/açık yüzeyler ve güven veren mavi tonları.
-- Güçlü tipografi, daha az dekoratif UI kalıbı.
+- Güçlü tipografi, daha az dekoratif UI kalıbı; eyebrow yok.
 - Merkezi Better Payment markası ile provider'lar arasında anlamlı bağlantı sistemi.
-- Çok dil mimarisi branding ile birlikte.
-- İnce, amaçlı scroll/motion; reduced-motion desteği.
+- Hero artwork + ikon/obje seti + gerçek durum kartları ile bütüncül görsel evren (ADR-005); maskot yok.
+- Aynı dil docs'a da uygulanır.
+- İnce, amaçlı motion; reduced-motion desteği.
 - AI slop yok: her görsel kararın ürün gerçeğine dayanması gerekir.
 
-## Faz 0 — Kurulum ve koruma sınırı
+## Sıra kararı (2026-10-01)
+
+Kullanıcı kararı: **önce palet ve tipografi, sonra logo.**
+
+- Brandkit'te tipografi bağımsız bir slottur; logo ise onaylı palet revizyonuna bağlıdır. Bu yüzden `palet → tipografi → logo` sırası güvenlidir.
+- Tipografi önceden kilitlendiği için logo seçilir seçilmez wordmark ve lockup aynı fazda tamamlanır.
+- Palet değişirse üretilen logo geçersiz olur; tipografi değişirse sembol etkilenmez, yalnız lockup yeniden yapılır.
+
+## Faz özeti
+
+| Faz | Kapsam | Higgsfield kredisi | Bağımlılık | Onay kapısı |
+|---|---|---|---|---|
+| 0 | Kurulum, referanslar, vault | yok | — | tamamlandı |
+| 1 | Brand Lock taslağı + palet + tipografi | yok (yerel HTML önizleme) | Faz 0 | K1 isim/ton, K2 palet, K3 tipografi |
+| 2 | Logo: sembol, favicon ailesi, wordmark, lockup | var (Recraft ×3) | K2, K3 | K4 logo yolu, K5 sembol, K6 lockup |
+| 3 | Light design system (kod) | yok | Faz 1–2 | K7 token + component specimen |
+| 4 | Görsel evren: hero artwork + ikon seti | var | Faz 1–2 | K8 hero artwork, K9 ikon seti |
+| 5 | Hero ve homepage | yok | Faz 3–4 | K10 hero prototipi, K11 tam homepage |
+| 6 | Docs teması | yok | Faz 3–4 | K12 docs ekranları |
+| 7 | Çok dilli mimari (#111) | yok | Faz 5–6 | K13 locale davranışı |
+| 8 | Motion polish | yok | Faz 5–7 | K14 motion davranışı |
+| 9 | Lansman görselleri ve metadata | var | Faz 2, 4 | K15 launch kit |
+| 10 | QA, tek branding PR, temizlik | yok | hepsi | PR review |
+
+Faz 3 ve Faz 4 Brand Lock tamamlandıktan sonra paralel yürüyebilir; biri kod, diğeri üretim işidir.
+
+## Faz 0 — Kurulum ve referanslar
 
 **Durum:** tamamlandı.
 
-- Higgsfield CLI `1.1.26` kuruldu ve hesap/workspace doğrulandı.
-- Sekiz companion skill kuruldu.
-- Aktif üretim araçları `higgsfield-brandkit` ve gerektiğinde `higgsfield-generate` olarak sınırlandı.
-- Brandkit onay state'i yerel `brandkit/state.json` altında oluşturuldu.
-- Skill dosyaları, lock dosyası ve Brandkit state'i ürün PR'larından yerel ignore ile ayrıldı.
-- Başlangıç görsel eksenleri kaydedildi: dengeli/hafif expressive, geometrik ağırlıklı, kontrollü experimental.
+- Higgsfield CLI `1.1.26`, auth ve workspace iki makinede doğrulandı; sekiz skill kurulu.
+- Yedi logo ve beş web referansı vault'ta: [[Asset_Pipeline/Logo/Referans/README]] · [[Asset_Pipeline/Web/Referans/README]].
+- ADR-005 kabul edildi.
 
-**Çıkış kriteri:** CLI authenticated, local state hazır, ürün branch'i temiz.
+## Faz 1 — Brand Lock temeli: palet ve tipografi
 
-## Faz 1 — Brand Lock ve temel kimlik
+**Çıktı:** onaylı palet + onaylı tipografi; Brandkit state ve vault'a yazılmış Brand Lock v0.
 
-### 1A. Mevcut logonun kaderi
+### 1A. Brand Lock taslağı (K1)
 
-Mevcut `apps/web/public/logo.svg` baseline olarak ölçülecek. Üç seçenekten biri açıkça seçilecek:
+- Brandkit state bu makinede sıfırdan kurulur; vault'taki eksenler ve yasaklar kaydedilir.
+- **İsim yazımı kararı:** site şu an `better-payment` (npm paket adı) kullanıyor; vault `Better Payment` diyor. Marka adı, wordmark yazımı ve paket adının nerede kullanılacağı kilitlenir.
+- Ton: sade, şık, fresh, güvenilir, teknik.
+- Yasaklar: [[Branding/01 - Görsel Yön ve Referans Analizi]] yasak kalıpları.
 
-1. koru ve yalnız kullanım sistemini güçlendir,
-2. aynı merkezi fikri sadeleştirerek refine et,
-3. yeni bir sembol sistemi oluştur.
+### 1B. Palet (K2)
 
-Bu seçim yapılmadan logo authoritative olarak kilitlenmez.
+- Üç light-first palet panosu; deterministik HTML, kredi harcamaz.
+- Her pano: canvas, surface, ink, muted, border, primary mavi, sınırlı accent, success, warning, danger, info.
+- Her pano aynı mini homepage hero'su, bir docs sayfası kesiti, kod bloğu ve durum kartları (`pending`, `success`, `failure`) üzerinde gösterilir.
+- WCAG kontrast değerleri panoda yazılır.
+- Mavi sabit yön; exact ton seçimle belirlenir. Mor/indigo komşuluğu (gate, Stripe, Clerk sinyali) bir seçenek olarak temsil edilir.
 
-### 1B. Palet
+### 1C. Tipografi (K3)
 
-- Üç anlamlı light-first palet panosu hazırlanacak.
-- Her pano exact hex, semantic rol, kontrast davranışı ve destekleyebileceği logo mekanizmalarını içerecek.
-- Mavi tercih sabit yönlendirmedir fakat exact palet değildir.
-- Kullanıcı seçimi Brandkit state'e kaydedilmeden logo aşamasına geçilmez.
+- Seçilen palet üzerinde 2–3 gerçek font çifti: display, body ve kod için mono.
+- Google Fonts veya açık lisanslı font; Next.js `next/font` ile self-host edilebilir olmalı.
+- Zorunlu kapsam: Türkçe (`ğ ş ı İ ç ö ü`) ve latin-ext. #113 Rusça için Kiril kapsamı kontrol edilir; Arapça (#114) ayrı fallback font gerektirir, seçimi bloklamaz.
+- Önizleme gerçek içerikle: hero başlığı TR/EN, docs paragrafı, tablo, kod bloğu.
+- Mevcut Geist/Geist Mono baseline olarak bir seçenekte tutulabilir.
 
-### 1C. Logo
+**Çıkış kriteri:** K1, K2 ve K3 onaylı; Brand Lock v0 vault'a yazıldı.
 
-- Koruma/refine kararı seçilirse mevcut geometri deterministik biçimde ele alınır.
-- Yeni logo kararı seçilirse Recraft V4.1 vector ile tam üç farklı SVG mekanizma üretilir.
-- Referans görseller logo modeline kopyalama hedefi olarak verilmez.
-- Seçim, küçük boyut testi ve geometri fingerprint'inden sonra kilitlenir.
+## Faz 2 — Logo sistemi
 
-### 1D. Tipografi
+**Çıktı:** sembol, favicon ailesi, renk modları, wordmark ve yatay lockup.
 
-- Seçilmiş palet ve logo ile iki veya üç gerçek font çifti gösterilir.
-- Türkçe ve planlanan dillerin karakter kapsamı doğrulanır.
-- Display ve body rolleri en fazla iki aileyle çözülür.
-- Tipografi kullanıcı onayıyla state'e kaydedilir.
+1. **K4 logo yolu:** koru / sadeleştir / yeniden tasarla. Öneri: yeniden tasarla; mevcut çok katmanlı gradient logo referansların sinyaliyle (az parça, flat, favicon'da güçlü) uyuşmuyor.
+2. Brief: [[Asset_Pipeline/Logo/Brief - Better Payment Logo v1]]; onaylı palet renkleriyle Recraft V4.1 vector, aynı parametrelerle tam üç aday.
+3. **K5 sembol seçimi:** yedi referansla yan yana karışma kontrolü, 16/32 px testi.
+4. Geometry fingerprint; color/black/reverse-white; favicon SVG/ICO/16/32/48; PWA 192/512.
+5. **K6 lockup:** onaylı tipografiyle wordmark ve yatay lockup; clear space ve minimum boyut.
 
-**Çıkış kriteri:** palette + logo + typography onaylı; Brand Lock v1 hazır.
+Bu fazın export adımı için `rsvg-convert` ve ImageMagick kullanıcı izniyle kurulur.
 
-## Faz 2 — Light design system
+**Çıkış kriteri:** Brand Lock v1 (palet + tipografi + logo) tamam.
 
-- Semantic color token'ları: canvas, surface, ink, muted, border, primary, accent, success, warning, danger.
-- Tipografi rolleri: display, heading, body, code, label; gereksiz uppercase/eyebrow kalıbı yok.
-- Grid, spacing, radius, border ve shadow kuralları.
-- Button, link, navigation, code block, provider node, stat/proof ve CTA bileşenleri.
-- Light moda kilitli HTML ve CSS; tema toggle kaldırılır.
-- WCAG kontrast kontrolü.
+## Faz 3 — Light design system
 
-**Çıkış kriteri:** token'lar ve temel component specimen'ı onaylı.
+Branch açılış koşulu: [PR #121](https://github.com/czaydev/better-payment/pull/121) ve [PR #122](https://github.com/czaydev/better-payment/pull/122) sonuçlanmış, `upstream/main` güncel. Branch: `codex/branding-refresh`.
 
-## Faz 3 — Hero sistemi
+- `globals.css` semantic token'ları; aynı token'lar Fumadocs değişkenlerine bağlanır.
+- Tipografi rolleri: display, heading, body, code, label.
+- Grid, spacing, radius, border, shadow kuralları.
+- Button, link, navigation, code block, provider node, durum kartı, CTA.
+- Tema toggle kaldırılır; HTML light'a kilitlenir.
+- Onaylı logo ve favicon'lar `apps/web/public/brand/` ve `app/` altına bağlanır.
+- **K7:** token ve component specimen sayfası.
 
-- Merkezde Better Payment sembol/lockup.
-- Çevrede iyzico, PayTR, Parampos ve Akbank sağlayıcı düğümleri.
-- Bağlantılar dekoratif orbit değil; tek API'ye giriş, provider yönlendirme ve doğrulanmış callback dönüşünü anlatan akışlar.
-- İlk yüklemede kontrollü reveal; pointer/focus ile provider detayları; scroll ile hafif derinlik.
-- Mobilde düğümler okunur ve tek kolon/horizontal akışa dönüşür.
-- `prefers-reduced-motion` durumunda statik ama eksiksiz kompozisyon.
-- Hero copy'sinde eyebrow badge kullanılmaz.
+## Faz 4 — Görsel evren (ADR-005)
 
-**Çıkış kriteri:** desktop/mobile ve reduced-motion prototipi onaylı.
+- Hero artwork brief'i `Asset_Pipeline/Web/` altında; Brand Lock değerleri prompt'a birebir kopyalanır.
+- Hero artwork: 2–3 aday, **K8**.
+- İkon/obje seti: önce 3 parçalık stil testi, onaydan sonra 12–16 parçalık set tek turda, **K9**.
+- Optimize AVIF/WebP export; 24/48/96 px okunurluk testi.
 
-## Faz 4 — Homepage yeniden yapılandırma
+## Faz 5 — Hero ve homepage
 
-Önerilen anlatı sırası:
+- Kod tabanlı provider network hero; artwork zemin/çerçeve; gerçek SDK durum kartları. **K10**.
+- Anlatı sırası:
+  1. Net değer önerisi + provider network hero.
+  2. Türkiye'de ödeme entegrasyonunun parçalanmışlığı.
+  3. Tek API ve güvenlik modeli.
+  4. Gerçek provider yetenek matrisi.
+  5. Kod ile çalışan akışın yan yana kanıtı.
+  6. #98 veya MockProvider demo girişi.
+  7. Docs, GitHub ve npm CTA'ları.
+  8. Katkı ve sandbox doğrulama çağrısı.
+- TR/EN eksiksiz. **K11**.
 
-1. Net değer önerisi + provider network hero.
-2. Türkiye'de ödeme entegrasyonunun gerçek parçalanmışlığı.
-3. Better Payment'ın tek API ve güvenlik modeli.
-4. Provider kapsamı; gerçek yetenek matrisi.
-5. Kod ile çalışan akışın yan yana kanıtı.
-6. #98 veya daha küçük MockProvider demo girişi.
-7. Dokümantasyon, GitHub ve npm CTA'ları.
-8. Katkı ve sandbox doğrulama çağrısı.
+## Faz 6 — Docs teması
 
-Mevcut “her bölümde eyebrow + başlık + kart grid” ritmi kırılacak. Bölümler aynı görsel şablonun tekrarları olmayacak.
+- Fumadocs sayfaları aynı token, tipografi ve ikon setiyle.
+- Docs ana sayfası ve kategori girişlerinde ikonlar; kod blokları ve callout'lar yeni sistemde.
+- **K12:** docs ana sayfası, bir provider sayfası ve bir referans sayfası ekran görüntüleri.
 
-**Çıkış kriteri:** tüm homepage light modda, güncel claim'lerle ve iki dilde tamam.
+## Faz 7 — Çok dilli mimari
 
-## Faz 5 — Çok dilli mimari ve içerik
+- [#111](https://github.com/czaydev/better-payment/issues/111) kapsamı: locale config, dil menüsü, `Accept-Language`, fallback, RTL hazırlığı.
+- Bu işe başlamadan #111 issue'su sahiplenilir; atanmamış durumda.
+- TR/EN aynı bilgi mimarisinde; üçüncü locale yalnız config + dictionary + içerik ile eklenebilir. **K13**.
 
-- #111 kapsamındaki locale config, language menu, `Accept-Language`, fallback ve RTL hazırlığı branding bileşenleriyle birlikte ele alınır.
-- Türkçe ve İngilizce zorunlu, eksiksiz ve aynı bilgi mimarisine sahip olur.
-- Yeni diller partial fallback ile eklenebilir.
-- Motion ve layout dil uzunluğundan bozulmaz.
-- Final copy, translation anahtarları ve metadata aynı PR'da güncellenir.
+## Faz 8 — Motion polish
 
-**Çıkış kriteri:** TR/EN tam; üçüncü locale ekleme yalnız config + dictionary + içerik gerektiriyor.
+- Layout ve içerik kilitlendikten sonra: reveal, provider akışı, kod/sonuç geçişleri, CTA mikro etkileşimleri.
+- Scroll hijacking yok; `prefers-reduced-motion` eşdeğeri; Core Web Vitals regresyonu yok. **K14**.
 
-## Faz 6 — Motion ve scroll polish
+## Faz 9 — Lansman görselleri ve metadata
 
-- Motion ancak layout ve içerik kilitlendikten sonra eklenir.
-- Scroll reveal, provider bağlantı akışı, code/result geçişleri ve CTA mikro etkileşimleri.
-- Scroll hijacking, sürekli hareket ve decorative parallax yok.
-- Motion token'ları tek yerden yönetilir.
-- Core Web Vitals ve ana thread bütçesi korunur.
+- OG/Twitter görselleri TR/EN, sosyal avatar ve cover, duyuru kartları, isteğe bağlı kısa video storyboard'u.
+- Metin ve logo deterministik SVG/HTML katmanında.
+- `SoftwareApplication`/`WebSite` structured data, Twitter metadata. **K15**.
 
-**Çıkış kriteri:** motion anlam taşıyor, reduced-motion eşdeğeri var, performans regresyonu yok.
+## Faz 10 — QA, PR ve temizlik
 
-## Faz 7 — Lansman görselleri ve video
-
-Brand Lock onaylandıktan sonra Higgsfield ile:
-
-- Open Graph ve sosyal paylaşım görselleri,
-- launch announcement görsel serisi,
-- kısa ürün tanıtım videosu veya motion storyboard,
-- GitHub/NPM duyuru kartları
-
-üretilir. Exact logo ve metin gerektiğinde deterministik SVG/HTML katmanıyla uygulanır. Üretilen hiçbir asset otomatik yayınlanmaz.
-
-**Çıkış kriteri:** TR/EN launch kit, doğrulanmış copy ve platform ölçüleri hazır.
-
-## Faz 8 — QA ve tek branding PR
-
-- Web build, lint ve typecheck.
-- Desktop/mobile; Chrome/Safari/Firefox makul kapsama.
-- Light theme, TR/EN ve fallback kontrolleri.
-- Klavye, focus, screen reader semantiği ve reduced-motion.
-- Lighthouse/Core Web Vitals bütçesi.
-- Sosyal preview ve metadata doğrulaması.
+- Web build, lint, typecheck; desktop/tablet/mobile; TR/EN/fallback; klavye, focus, reduced-motion; Lighthouse.
 - Önce/sonra ekran görüntüleri ve faz bazlı commit listesi.
-
-**Çıkış kriteri:** tek branding PR review'a hazır; onaylanmamış taslak veya yerel Higgsfield state'i diff'te yok.
+- PR: `feat(web): refresh Better Payment branding and launch experience`.
+- Diff'te vault, `brandkit/`, skill dosyaları veya onaylanmamış taslak yok.
+- **Temizlik:** branding PR merge edildikten sonra üçüncü taraf referans görselleri vault'tan kaldırılır (kullanıcı kararı, 2026-10-01); analiz notları korunur.
 
 ## Önerilen commit sırası
 
 1. `brand: add approved identity assets and tokens`
 2. `refactor(web): establish light design system`
-3. `feat(web): build provider network hero`
-4. `feat(web): redesign homepage narrative`
-5. `feat(web): generalize locale architecture`
-6. `feat(web): add accessible motion system`
-7. `brand: add launch metadata and social assets`
-8. `test(web): add branding visual and accessibility checks`
+3. `feat(web): add brand illustration and icon set`
+4. `feat(web): build provider network hero`
+5. `feat(web): redesign homepage narrative`
+6. `feat(docs): apply brand system to documentation`
+7. `feat(web): generalize locale architecture`
+8. `feat(web): add accessible motion system`
+9. `brand: add launch metadata and social assets`
+10. `test(web): add branding visual and accessibility checks`
 
-## Onay kapıları
+## Tahmini takvim
 
-1. Logo yolu: preserve / refine / redesign.
-2. Palet seçimi.
-3. Logo seçimi veya mevcut logo varyant sistemi.
-4. Tipografi seçimi.
-5. Hero prototype.
-6. Full homepage.
-7. Motion davranışı.
-8. Launch asset seti.
+Takvim onay hızına bağlıdır; her kapı bir oturumda kapanırsa:
+
+| Dönem | Fazlar |
+|---|---|
+| 1. hafta | Faz 1 (palet, tipografi) ve Faz 2 (logo ailesi) |
+| 2. hafta | Faz 3 (design system) ve Faz 4 (görsel evren), paralel |
+| 3. hafta | Faz 5 (hero, homepage) ve Faz 6 (docs) |
+| 4. hafta | Faz 7–9 ve Faz 10 PR |
 
 Bir kapı açıkken ona bağlı sonraki çıktı final kabul edilmez.

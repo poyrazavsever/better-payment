@@ -3,7 +3,7 @@ tur: adr
 alan: branding
 guncelleme: 2026-10-01
 ozet: "Hero artwork, ikon/obje seti ve gerçek durum kartlarından oluşan, web ve docs'a yayılan Better Payment görsel evreni kararı."
-durum: onerilen
+durum: kabul
 ---
 # ADR-005: Sahip Olunan Görsel Evren
 
@@ -39,6 +39,6 @@ durum: onerilen
 
 ## Doğrulama
 
-- Kullanıcı bu ADR'yi `kabul` durumuna çekene kadar görsel evren üretimi başlamaz.
+- 2026-10-01: kullanıcı tarafından kabul edildi. Görsel evren üretimi Brand Lock v1 (palet + tipografi + logo) sonrasında başlar.
 - Hero artwork ve ikon seti için ayrı brief: `Asset_Pipeline/Web/`.
 - QA: ikon setinin 24/48/96 px'de okunurluğu, aynı ışık yönü, palet dışı renk yok, desktop/mobile hero LCP ölçümü.

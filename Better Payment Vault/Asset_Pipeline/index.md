@@ -33,11 +33,11 @@ Bu klasör Better Payment logo sistemi, favicon, web görselleri, motion kaynakl
 |---:|---|---|---|
 | P0 | Better Payment sembol v1 | `1 · Brief kilitli` | palet seçimi ve üç SVG aday |
 | P0 | Favicon/small mark ailesi | `0 · Envanterde` | sembol seçimi |
-| P0 | Wordmark ve yatay lockup | `0 · Envanterde` | sembol + tipografi seçimi |
+| P0 | Wordmark ve yatay lockup | `0 · Envanterde` | sembol seçimi (tipografi Faz 1'de kilitlenir) |
 | P1 | Siyah, beyaz ve renkli exportlar | `0 · Envanterde` | master geometrisi onayı |
 | P1 | Hero payment-provider network grafiği | `0 · Envanterde` | logo ve web token kilidi |
-| P1 | Hero artwork (Higgsfield) | `0 · Envanterde` | ADR-005 kabulü ve Brand Lock |
-| P1 | İkon/obje seti (12–16 parça, web + docs) | `0 · Envanterde` | ADR-005 kabulü ve Brand Lock |
+| P1 | Hero artwork (Higgsfield) | `0 · Envanterde` | Brand Lock v1 |
+| P1 | İkon/obje seti (12–16 parça, web + docs) | `0 · Envanterde` | Brand Lock v1 |
 
 ## Referanslar
 

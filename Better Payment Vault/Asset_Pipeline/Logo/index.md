@@ -11,10 +11,10 @@ durum: brief-kilitli
 
 1. [[Asset_Pipeline/Logo/Brief - Better Payment Logo v1]]
 2. palet review ve kullanıcı seçimi
-3. Recraft V4.1 ile tam üç symbol-only SVG aday
-4. kullanıcı seçimi ve geometry fingerprint
-5. color/black/white + favicon family
-6. tipografi seçimi
+3. tipografi seçimi (2026-10-01 kararı: logodan önce)
+4. Recraft V4.1 ile tam üç symbol-only SVG aday
+5. kullanıcı seçimi ve geometry fingerprint
+6. color/black/white + favicon family
 7. wordmark ve horizontal lockup
 8. ürün bağlantısı
 
