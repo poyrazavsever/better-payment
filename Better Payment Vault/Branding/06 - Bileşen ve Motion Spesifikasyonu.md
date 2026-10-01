@@ -37,7 +37,7 @@ Kullanıcı kararı 2026-10-01.
 
 ## Bileşen seti (K7b)
 
-Durum: specimen v1 kullanıcı tarafından büyük ölçüde beğenildi (özellikle docs ikonları); özellik kartı ikonları güncellendi, animasyon kararı bekliyor. Prototip `Asset_Pipeline/Web/Bilesen/bilesen-seti-v1.html`, üretici `build_specimen.py`.
+Durum: specimen v1 kullanıcı tarafından büyük ölçüde beğenildi (özellikle docs ikonları); özellik kartı ikonları güncellendi, animasyon kararı: tüm ikonlar animasyonlu. Prototip `Asset_Pipeline/Web/Bilesen/bilesen-seti-v1.html`, üretici `build_specimen.py`.
 
 | Bileşen | Önerilen karar |
 |---|---|
@@ -47,14 +47,14 @@ Durum: specimen v1 kullanıcı tarafından büyük ölçüde beğenildi (özelli
 | İkon butonu | 36 px kare, kenarlıklı, hover lila zemin |
 | Kod bloğu | dosya adı başlığı, kopyala butonu (onayda yeşil "Kopyalandı", 1.6 sn); sözdizimi: anahtar kelime indigo, string yeşil, fonksiyon mor `#6A3FD8`, yorum soluk italik |
 | Paket yöneticisi sekmeleri | npm / pnpm / yarn / bun; seçim göstergesi yaylı kayar |
-| Özellik kartı | **zeminsiz** cam ikon 96 px (kullanıcı geri bildirimi: ikon arkasında renk olmasın); animasyonlu ikon testi: Higgsfield video döngüsü + `mix-blend-mode: multiply` ([[Asset_Pipeline/Web/Animasyon/README]]); hover'da kart 3 px yükselir, ikon döner ve büyür |
+| Özellik kartı | **zeminsiz** cam ikon 96 px (kullanıcı geri bildirimi: ikon arkasında renk olmasın); **animasyonlu ikon** (tüm set, kullanıcı kararı): Higgsfield video döngüsü + `mix-blend-mode: multiply` ([[Asset_Pipeline/Web/Animasyon/README]]); hover'da kart 3 px yükselir, ikon döner ve büyür |
 | Durum kartı | dört gerçek durum; `pending` noktası nabız atar |
 | Rozetler | Yeni (marka), sürüm (mono), Added in, Edge uyumlu, Deneysel |
 | Sağlayıcı düğümü | repo'daki resmi logolar; seçili düğüm indigo kenar + lila halka; yetenek rozetleri; doğrulama durumu metinle |
 | Callout | bilgi indigo, uyarı amber, tehlike kırmızı, başarı yeşil |
 | Docs | kenar menüde küçük cam kategori ikonları, aktif sayfa lila; satır içi kod lila zemin; tablo + durum rozetleri |
 | Bölüm başlığı | eyebrow yok; Manrope 800, 34 px |
-| CTA bandı | indigo zemin, ters (beyaz) primary sürekli ışıltılı, cam obje dekoru sağda |
+| CTA bandı | indigo zemin, ters (beyaz) primary sürekli ışıltılı, cam obje dekoru sağda; mobilde (≤ 900 px) dekor %18 opaklık ve köşeye kayar, yazı ve butonlarla çakışmaz (kullanıcı geri bildirimi) |
 | Footer | lockup + açıklama, üç sütun, alt satırda telif ve dil |
 
 Radius: 10 / 12 / 16 / 20 px. Gölge: kartlarda yalnız hover'da yumuşak derin gölge.

@@ -38,8 +38,9 @@ ASSETS = {
     "param": data(WEB / "param.svg", "image/svg+xml"),
     "akbank": data(WEB / "akbank.svg", "image/svg+xml"),
 }
-ASSETS["v_events"] = data(BK / "visual/anim/icon-events.mp4", "video/mp4")
-ASSETS["p_events"] = data(BK / "visual/anim/icon-events-poster.png", "image/png")
+for _n in ("unified-api", "callback", "events", "plugin", "edge", "sandbox"):
+    ASSETS["v_" + _n] = data(BK / f"visual/anim/web/icon-{_n}.mp4", "video/mp4")
+    ASSETS["p_" + _n] = data(BK / f"visual/anim/web/icon-{_n}-poster.png", "image/png")
 for n in ("unified-api", "callback", "refund", "installments", "sandbox", "docs", "events", "plugin", "edge"):
     ASSETS["i_" + n] = icon(n)
 
@@ -67,7 +68,7 @@ CSS = r"""
 --spring:cubic-bezier(.34,1.56,.64,1);--ease:cubic-bezier(.2,.7,.2,1);
 --shadow-sm:0 1px 2px rgba(19,19,43,.05);--shadow-md:0 10px 30px -14px rgba(19,19,43,.22)}
 *{box-sizing:border-box}html,body{margin:0}
-body{background:#EEEEF4;color:var(--ink);font-family:var(--body);-webkit-font-smoothing:antialiased}
+body{overflow-x:hidden;background:#EEEEF4;color:var(--ink);font-family:var(--body);-webkit-font-smoothing:antialiased}
 .page{max-width:1200px;margin:0 auto;padding:28px 16px 64px}
 .intro h1{font:800 30px/1.1 var(--display);letter-spacing:-.03em;margin:0 0 6px}
 .intro p{color:var(--muted);margin:0 0 22px;max-width:780px;line-height:1.55}
@@ -75,7 +76,7 @@ body{background:#EEEEF4;color:var(--ink);font-family:var(--body);-webkit-font-sm
 .spec>h2{font:700 19px/1.2 var(--display);letter-spacing:-.015em;margin:0 0 4px}
 .spec>p.d{color:var(--muted);font-size:14px;margin:0 0 18px;line-height:1.5}
 .stage{background:var(--canvas);border:1px solid var(--line);border-radius:var(--r-lg);padding:24px}
-.grid{display:grid;gap:14px}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.grid{display:grid;gap:14px}.grid>*,.docs>*{min-width:0}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
 .ic{width:16px;height:16px;flex:none}
 code,.mono{font-family:var(--mono)}
 
@@ -145,9 +146,7 @@ code,.mono{font-family:var(--mono)}
 .feat:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--line-strong)}
 .feat .tile{width:96px;height:96px;display:grid;place-items:center;margin:-6px 0 10px -8px}
 .feat .tile>*{width:96px;height:96px;object-fit:contain;mix-blend-mode:multiply;transition:transform .45s var(--spring)}
-.feat .tile img{animation:float 5s ease-in-out infinite}.feat:nth-child(2n) .tile img{animation-delay:-1.7s}.feat:nth-child(3n) .tile img{animation-delay:-3.1s}
-@keyframes float{50%{transform:translateY(-5px) rotate(-2deg)}}
-.feat:hover .tile>*{transform:translateY(-4px) rotate(-5deg) scale(1.08);animation-play-state:paused}
+.feat:hover .tile>*{transform:translateY(-4px) rotate(-5deg) scale(1.08)}
 .feat h4{font:700 17px/1.25 var(--display);letter-spacing:-.01em;margin:0 0 6px}
 .feat p{margin:0 0 14px;color:var(--muted);font-size:14.5px;line-height:1.55}
 .status{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px}
@@ -214,7 +213,7 @@ td.y{color:var(--success);font-weight:600}td.n{color:var(--muted)}
 .sectionhead p{color:var(--muted);margin:0;max-width:560px;line-height:1.6}
 .note{font-size:13px;color:var(--muted);margin-top:12px;line-height:1.5}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.btn::after{display:none}}
-@media(max-width:900px){.g2,.g3,.g4,.docs,.foot{grid-template-columns:1fr}.nav ul{display:none}.side{border-right:0;border-bottom:1px solid var(--line)}.cta{flex-direction:column;align-items:flex-start}.herobox h3{font-size:32px}}
+@media(max-width:900px){.cta{padding:32px 22px}.cta .deco{opacity:.18;width:160px;right:-40px;top:auto;bottom:-36px;transform:rotate(-12deg)}.spec{padding:18px}.stage{padding:16px}.phone{width:100%;max-width:360px}.art{padding:20px}.tablewrap{overflow-x:auto}.tablewrap table{min-width:520px}.g2,.g3,.g4,.docs,.foot{grid-template-columns:1fr}.navstage .nav .act .ver,.navstage .nav .act .btn.sec{display:none}.navstage .nav{padding:12px 14px}.navstage .nav .brandlink img{height:20px}.navstage .herobox{padding:36px 18px 0;height:260px}.sectionhead h3{font-size:28px}.nav ul{display:none}.side{border-right:0;border-bottom:1px solid var(--line)}.cta{flex-direction:column;align-items:flex-start}.herobox h3{font-size:32px}}
 """
 
 A = ASSETS
@@ -260,14 +259,14 @@ BODY = f"""
 <div class="callout info">{INFO}<div>Sıfır runtime bağımlılığı. Node.js 20+ ve edge runtime'larda çalışır.</div></div>
 </div></div></section>
 
-<section class="spec"><h2>4 · Özellik kartları</h2><p class="d">İkonlar artık zeminsiz ve daha büyük. "Tek event akışı" kartı Higgsfield ile üretilmiş gerçek döngü animasyonu (Kling 3.0, 5 sn döngü, 136 KB); diğerleri karşılaştırma için kodla hafifçe süzülüyor. Hover'da kart yükselir, ikon döner.</p>
+<section class="spec"><h2>4 · Özellik kartları</h2><p class="d">Zeminsiz, animasyonlu cam ikonlar (Higgsfield Kling 3.0, 5 sn dikişsiz döngü, 35–100 KB). Video beyaz zeminli kodlanır ve <code>mix-blend-mode: multiply</code> ile kartla kaynaşır. Hover&#39;da kart yükselir, ikon döner. Hareketi azalt açıkken poster karesi görünür.</p>
 <div class="grid g3">
-<article class="feat"><div class="tile"><img src="{A['i_unified-api']}" alt=""></div><h4>Tek API, dört sağlayıcı</h4><p>iyzico, PayTR, Parampos ve Akbank için aynı istek ve sonuç tipleri.</p><a class="link more" href="#">Sağlayıcılar {CHEV}</a></article>
-<article class="feat"><div class="tile"><img src="{A['i_callback']}" alt=""></div><h4>Callback'ler doğrulanır</h4><p>Her 3D Secure callback'i senin anahtarlarınla kontrol edilir, sonra güvenilir.</p><a class="link more" href="#">Güvenlik modeli {CHEV}</a></article>
-<article class="feat"><div class="tile"><video src="{A['v_events']}" poster="{A['p_events']}" autoplay muted loop playsinline aria-hidden="true"></video></div><h4>Tek event akışı <span class="badge brand" style="vertical-align:middle;margin-left:4px">animasyon testi</span></h4><p>Bütün sağlayıcılar için doğrulanmış sonuçlar tek listener'a düşer.</p><a class="link more" href="#">Events {CHEV}</a></article>
-<article class="feat"><div class="tile"><img src="{A['i_plugin']}" alt=""></div><h4>Plugin sistemi</h4><p>İşlem öncesi ve sonrası hook'lar, kendi endpoint'lerin.</p><a class="link more" href="#">Plugin yaz {CHEV}</a></article>
-<article class="feat"><div class="tile"><img src="{A['i_edge']}" alt=""></div><h4>Edge'de çalışır</h4><p>Yalnız fetch ve WebCrypto. Vercel Edge, Workers, Deno, Bun.</p><a class="link more" href="#">Edge rehberi {CHEV}</a></article>
-<article class="feat"><div class="tile"><img src="{A['i_sandbox']}" alt=""></div><h4>Test araçları</h4><p>MockProvider ile gerçek kart girmeden uçtan uca test.</p><a class="link more" href="#">Testing {CHEV}</a></article>
+<article class="feat"><div class="tile"><video src="{A['v_unified-api']}" poster="{A['p_unified-api']}" autoplay muted loop playsinline aria-hidden="true"></video></div><h4>Tek API, dört sağlayıcı</h4><p>iyzico, PayTR, Parampos ve Akbank için aynı istek ve sonuç tipleri.</p><a class="link more" href="#">Sağlayıcılar {CHEV}</a></article>
+<article class="feat"><div class="tile"><video src="{A['v_callback']}" poster="{A['p_callback']}" autoplay muted loop playsinline aria-hidden="true"></video></div><h4>Callback'ler doğrulanır</h4><p>Her 3D Secure callback'i senin anahtarlarınla kontrol edilir, sonra güvenilir.</p><a class="link more" href="#">Güvenlik modeli {CHEV}</a></article>
+<article class="feat"><div class="tile"><video src="{A['v_events']}" poster="{A['p_events']}" autoplay muted loop playsinline aria-hidden="true"></video></div><h4>Tek event akışı</h4><p>Bütün sağlayıcılar için doğrulanmış sonuçlar tek listener'a düşer.</p><a class="link more" href="#">Events {CHEV}</a></article>
+<article class="feat"><div class="tile"><video src="{A['v_plugin']}" poster="{A['p_plugin']}" autoplay muted loop playsinline aria-hidden="true"></video></div><h4>Plugin sistemi</h4><p>İşlem öncesi ve sonrası hook'lar, kendi endpoint'lerin.</p><a class="link more" href="#">Plugin yaz {CHEV}</a></article>
+<article class="feat"><div class="tile"><video src="{A['v_edge']}" poster="{A['p_edge']}" autoplay muted loop playsinline aria-hidden="true"></video></div><h4>Edge'de çalışır</h4><p>Yalnız fetch ve WebCrypto. Vercel Edge, Workers, Deno, Bun.</p><a class="link more" href="#">Edge rehberi {CHEV}</a></article>
+<article class="feat"><div class="tile"><video src="{A['v_sandbox']}" poster="{A['p_sandbox']}" autoplay muted loop playsinline aria-hidden="true"></video></div><h4>Test araçları</h4><p>MockProvider ile gerçek kart girmeden uçtan uca test.</p><a class="link more" href="#">Testing {CHEV}</a></article>
 </div></section>
 
 <section class="spec"><h2>5 · Durum kartları ve rozetler</h2><p class="d">SDK'nın gerçek dört durumu. <code>pending</code> noktası yavaşça nabız atar; diğerleri sabit.</p>
