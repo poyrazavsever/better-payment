@@ -33,8 +33,22 @@ Tek API · callback doğrulama · 3D Secure · iade · iptal · taksit · durum 
 
 | Yön | Model | Sonuç |
 |---|---|---|
-| A · Yumuşak mat | GPT Image 2 | kullanıcı değerlendirmesinde |
-| B · Buzlu cam | GPT Image 2 | kullanıcı değerlendirmesinde |
-| C · Düz geometrik | GPT Image 2 | kullanıcı değerlendirmesinde |
+| A · Yumuşak mat | GPT Image 2 | elendi |
+| B · Buzlu cam | GPT Image 2 | **seçildi** (2026-10-01): premium, şık, modern; 3D derinlik korunur |
+| C · Düz geometrik | GPT Image 2 | elendi |
 
 Teknik bulgu: `--background transparent` istenmesine rağmen GPT Image 2 alfa kanalı üretmedi, arka plana sahte dama deseni çizdi. Final üretim düz Canvas `#F8F8FC` zeminde yapılır, arka plan ayrı bir adımda temizlenir. Üç model de objeyi logonun 3D yorumu olarak çizdi; ikon setinde konu başına ayrı form tarif edilmeli. Maliyet: 3 × 6.5 = 19.5 kredi.
+
+## İkon seti v1 — ilk üç ikon
+
+Stil referansı: `Konsept/icon-style-test-B.jpg`. Üretim düz `#F8F8FC` zeminde, ardından `image_background_remover` ile gerçek alfa. Şeffaf masterlar `Ikon/Seffaf/`, job kayıtları `Ikon/Kaynak/jobs.md`, inceleme `QA/ikon-seti-v1.html`.
+
+| İkon | Form | Not |
+|---|---|---|
+| callback doğrulama | kapalı döngü, indigo mühür parçası | ilk deneme anahtar deliği ürettiği için (kilit klişesi) yeniden üretildi; zincir halkasını andırabilir |
+| iade | kendi üzerine dönen yol, indigo kare | geri al oku dili; en okunur |
+| taksit | dört kapsül, ilki dolu | ilk deneme düz ve küçük kaldı, yeniden üretildi; sinyal çubuğunu andırabilir |
+
+Bulgular: beyaz zeminde cam gövde soluk kalır, indigo çekirdek okunurluğu taşır; 40 px altında detay kaybolur. Docs'ta en az 40 px veya Lilac Tint kutucuk içinde kullanılması önerilir.
+
+Durum: kullanıcı onayı bekliyor. Maliyet: stil testi 19.5 + ikonlar 5 × 6.5 + temizleme 3 = 55 kredi.
