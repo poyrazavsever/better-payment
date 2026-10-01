@@ -18,6 +18,7 @@ Better Payment için plan, araştırma, ADR, review ve topluluk çalışmaların
 - Issue portföyü ve temel rehberler eklendi.
 - Yerel ignore, pre-commit/pre-push güvenliği ve vault doğrulama aracı hazırlandı.
 - Bilgisayarlar arası senkronizasyon için yalnız vault dosyalarını taşıyan bağımsız `personal/vault` branch politikası ve sert push korumaları hazırlandı.
+- Vault, fork'taki bağımsız [`personal/vault`](https://github.com/poyrazavsever/better-payment/tree/personal/vault) branch'ine gönderildi; doğru hedef ve yanlışlıkla `main`e push senaryoları hook testleriyle doğrulandı.
 - [#108](https://github.com/czaydev/better-payment/issues/108) için yaklaşımı açıklayan sahiplenme yorumu gönderildi.
 - [#108](https://github.com/czaydev/better-payment/issues/108) için `upstream/main` tabanlı `codex/issue-108-node24-actions` branch'i açıldı; action release note'ları doğrulanıp üç workflow güncellendi.
 - [#108](https://github.com/czaydev/better-payment/issues/108) için [PR #122](https://github.com/czaydev/better-payment/pull/122) açıldı; merge edildiğinde issue otomatik kapanacak.
