@@ -37,7 +37,7 @@ Kullanıcı kararı 2026-10-01.
 
 ## Bileşen seti (K7b)
 
-Durum: specimen v1 kullanıcı tarafından büyük ölçüde beğenildi (özellikle docs ikonları); özellik kartı ikonları güncellendi, animasyon kararı: tüm ikonlar animasyonlu. Prototip `Asset_Pipeline/Web/Bilesen/bilesen-seti-v1.html`, üretici `build_specimen.py`.
+Durum: **onaylandı** (2026-10-01). Kullanıcı: "bileşen setini detaylı inceledim, gayet hoşuma gitti"; animasyonlu ikonlar onaylı. Son düzeltme: kopyala butonunda "Kopyala" ve "Kopyalandı" birlikte görünüyordu (satır içi stil CSS'i eziyordu), giderildi. Prototip `Asset_Pipeline/Web/Bilesen/bilesen-seti-v1.html`, üretici `build_specimen.py`.
 
 | Bileşen | Önerilen karar |
 |---|---|
@@ -61,4 +61,38 @@ Radius: 10 / 12 / 16 / 20 px. Gölge: kartlarda yalnız hover'da yumuşak derin 
 
 ## Motion (K7c)
 
-Durum: K7b sonrası.
+Durum: prototip v1 kullanıcı değerlendirmesinde. `Asset_Pipeline/Web/Motion/motion-prototip-v1.html`, üretici `build_motion.py`.
+
+### Token'lar
+
+| Token | Değer | Kullanım |
+|---|---|---|
+| `--d-xs` / `--d-sm` | 120 / 200 ms | renk, kenarlık, tooltip |
+| `--d-md` | 320 ms | çip, navbar çizgisi, düğüm vurgusu |
+| `--d-lg` | 450 ms | metin girişi, bölüm reveal |
+| `--d-xl` | 750 ms | buton parıltısı |
+| `--e-std` | `cubic-bezier(.2,.7,.2,1)` | varsayılan |
+| `--e-spring` | `cubic-bezier(.34,1.56,.64,1)` | ikon, kart, çip |
+| `--e-exit` | `cubic-bezier(.4,0,1,1)` | çıkışlar |
+| `--rise` | 14 px | giriş mesafesi |
+
+### Hero açılışı
+
+Artwork 1.1 sn içinde 24 px aşağıdan ve hafif ölçekten gelir. Başlığın iki satırı 250 / 330 ms, açıklama 450, butonlar 560, kurulum komutu 650, ağ 700 ms gecikmeyle 14 px aşağıdan belirir. Prototipte "Açılışı tekrar oynat".
+
+### Sağlayıcı ağı
+
+- Kodla çizilir (SVG + HTML). Merkezde indigo `betterPayment()` düğümü (beyaz sembol), köşelerde dört sağlayıcı; bağlantılar kesikli lila.
+- Döngü: istek noktası (indigo) merkezden sağlayıcıya 0.9 sn; düğüm vurgulanır; doğrulanmış dönüş noktası (yeşil) 0.9 sn'de geri gelir; çip "istek → X" → "✓ doğrulandı · success · X". Sıra iyzico → PayTR → Parampos → Akbank, yaklaşık 3.6 sn.
+- Etkileşim: üzerine gelme / odak → yetenek balonu; tıklama → o sağlayıcının akışı hemen başlar.
+- Mobil: hero içeriğin altında ağ, altında 210 px şerit bandı; düğümler küçülür.
+
+### Diğer
+
+- Bölüm reveal: görünür olunca bir kez, 18 px, 450 ms, kademe 70–80 ms.
+- Navbar: kaydırınca alt çizgi belirir (320 ms).
+- `prefers-reduced-motion: reduce`: giriş ve reveal kapalı, her şey son halinde; akış noktaları gizli, çip statik "tek API · 4 sağlayıcı"; buton parıltısı kapalı; ikon videoları poster karesinde.
+
+### Doğrulama
+
+Gerçek tarayıcıda ölçüldü: akış sırası ve zamanlaması, art arda tıklamada tek akış, hareketi azalt modunda nokta kalmaması, mod kapanınca devam, 10/10 bölüm reveal, konsol hatası yok, 375 px'de taşma yok.

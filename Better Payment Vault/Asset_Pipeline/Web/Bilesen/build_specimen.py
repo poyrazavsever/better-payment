@@ -133,7 +133,7 @@ code,.mono{font-family:var(--mono)}
 .k{color:var(--indigo)}.s{color:var(--success)}.c{color:var(--muted);font-style:italic}.f{color:#6A3FD8}.n{color:#A86207}
 .copy{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 10px;border-radius:8px;border:1px solid transparent;background:none;color:var(--muted);font:500 12.5px var(--body);cursor:pointer;transition:background .2s,color .2s}
 .copy:hover{background:var(--tint);color:var(--indigo)}.copy.done{color:var(--success)}
-.copy .ok{display:none}.copy.done .ok{display:inline}.copy.done .cp{display:none}
+.copy .cp,.copy .ok{align-items:center;gap:6px}.copy .cp{display:inline-flex}.copy .ok{display:none}.copy.done .cp{display:none}.copy.done .ok{display:inline-flex}
 .tabs{position:relative;display:inline-flex;gap:2px;padding:3px;border-radius:10px;background:var(--canvas);border:1px solid var(--line)}
 .tabs button{position:relative;z-index:1;border:0;background:none;font:500 13px var(--mono);color:var(--muted);padding:6px 12px;border-radius:7px;cursor:pointer;transition:color .2s}
 .tabs button[aria-selected=true]{color:var(--ink)}
@@ -244,7 +244,7 @@ BODY = f"""
 
 <section class="spec"><h2>3 · Kod ve kurulum</h2><p class="d">Dosya adı başlıklı kod bloğu, kopyala butonu (tıklayınca onay), paket yöneticisi sekmeleri yaylı kayan seçim göstergesiyle.</p>
 <div class="grid g2">
-<div class="code"><div class="bar"><span class="file">lib/payment.ts</span><button class="copy" data-copy>{f'<span class="cp" style="display:inline-flex;gap:6px;align-items:center">{COPY}Kopyala</span><span class="ok" style="gap:6px;align-items:center">{DONE}Kopyalandı</span>'}</button></div>
+<div class="code"><div class="bar"><span class="file">lib/payment.ts</span><button class="copy" data-copy>{f'<span class="cp">{COPY}Kopyala</span><span class="ok">{DONE}Kopyalandı</span>'}</button></div>
 <pre><span class="k">import</span> {{ betterPayment, iyzico, paytr }} <span class="k">from</span> <span class="s">"better-payment"</span>;
 
 <span class="k">const</span> payment = <span class="f">betterPayment</span>({{
@@ -254,7 +254,7 @@ BODY = f"""
 <span class="c">// her sağlayıcıda aynı istek ve sonuç tipleri</span>
 <span class="k">const</span> result = <span class="k">await</span> payment.iyzico.<span class="f">initThreeDSPayment</span>(order);</pre></div>
 <div style="display:grid;gap:14px;align-content:start">
-<div class="code"><div class="bar"><div class="tabs" role="tablist" id="pm"><span class="tabind"></span><button role="tab" aria-selected="true" data-cmd="npm install better-payment">npm</button><button role="tab" aria-selected="false" data-cmd="pnpm add better-payment">pnpm</button><button role="tab" aria-selected="false" data-cmd="yarn add better-payment">yarn</button><button role="tab" aria-selected="false" data-cmd="bun add better-payment">bun</button></div><button class="copy" data-copy>{f'<span class="cp" style="display:inline-flex;gap:6px;align-items:center">{COPY}Kopyala</span><span class="ok" style="gap:6px;align-items:center">{DONE}Kopyalandı</span>'}</button></div>
+<div class="code"><div class="bar"><div class="tabs" role="tablist" id="pm"><span class="tabind"></span><button role="tab" aria-selected="true" data-cmd="npm install better-payment">npm</button><button role="tab" aria-selected="false" data-cmd="pnpm add better-payment">pnpm</button><button role="tab" aria-selected="false" data-cmd="yarn add better-payment">yarn</button><button role="tab" aria-selected="false" data-cmd="bun add better-payment">bun</button></div><button class="copy" data-copy>{f'<span class="cp">{COPY}Kopyala</span><span class="ok">{DONE}Kopyalandı</span>'}</button></div>
 <div class="install"><span><b>$</b><span id="cmd">npm install better-payment</span></span></div></div>
 <div class="callout info">{INFO}<div>Sıfır runtime bağımlılığı. Node.js 20+ ve edge runtime'larda çalışır.</div></div>
 </div></div></section>
