@@ -111,6 +111,13 @@ Kalan (Faz 5): tam ekran mobil menü (spesifikasyon), sağlayıcı sekme logolar
 
 Bilinen: `scripts/check-translations.mjs` Windows'ta `URL.pathname` yüzünden çalışmıyor (önceden var olan; CI Linux'ta sorunsuz). Geçici yolla çalıştırıldı, tüm sayfalar iki dilde eşleşiyor. Docs içerik metinlerinde ürün adı hâlâ `better-payment`; içerik değişikliği #121 ile çakışma riski taşıdığı için ayrı karar.
 
+## Faz 10 — PR hazırlığı (2026-10-02)
+
+- `dac3edb fix(docs): tidy the sidebar footer and mobile drawer links`: dil butonu ortalı ve esnek, GitHub kare 36 px.
+- Kontroller: lint, typecheck, test (438), translation check, production build (62/62) geçti. Diff yalnızca `apps/web` (104 dosya), kişisel dosya yok.
+- Ekran görüntüleri (önce/sonra, ana sayfa, docs, mobil) ürün checkout'unda `brandkit/pr-screenshots/`, PR taslağı `brandkit/pr-draft.md` (ikisi de yerel, git exclude).
+- Açık karar: CONTRIBUTING büyük değişiklik için önceden issue istiyor; takip issue'su ("Website launch readiness and visual refresh") açılıp PR `Closes #` ile bağlanacak. PR kullanıcı onayıyla açılacak.
+
 ## Faz 4.5 — Bileşen ve motion tasarımı
 
 Amaç: kod yazılmadan önce her bileşenin görünümü, durumları ve hareketi tıklanabilir HTML prototiplerle onaylanır. Prototipler vault'ta `Asset_Pipeline/Web/Bilesen/` altında tutulur, ürün repo'suna girmez.
