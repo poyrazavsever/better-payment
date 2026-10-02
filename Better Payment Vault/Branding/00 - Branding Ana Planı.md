@@ -43,7 +43,7 @@ Kullanıcı kararı: **önce palet ve tipografi, sonra logo.**
 | **4.5** | **Bileşen ve motion tasarımı (koddan önce)** | yok | Faz 1, 2, 4 | tamamlandı: K7a, K7b, K7c onaylı (2026-10-02) |
 | 3 | Light design system (kod) | yok | Faz 4.5 | tamamlandı (2026-10-02): `codex/branding-refresh` üzerinde `c7afbe2`, `025e601` |
 | 5 | Hero ve homepage | yok | Faz 3–4 | uygulandı (2026-10-02): `7a23a49`, `fcd1dc8`; revize 1: `4b62992`, `e14a73b`; K11 kullanıcı incelemesi bekliyor |
-| 6 | Docs teması | yok | Faz 3–4 | K12 docs ekranları |
+| 6 | Docs teması | yok | Faz 3–4 | uygulandı (2026-10-02): `6064942`; K12 kullanıcıyla birlikte incelenecek |
 | 7 | Çok dilli mimari (#111) | yok | Faz 5–6 | K13 locale davranışı |
 | 8 | Motion polish | yok | Faz 5–7 | K14 motion davranışı |
 | 9 | Lansman görselleri ve metadata | var | Faz 2, 4 | K15 launch kit |
@@ -95,6 +95,21 @@ Kalan (Faz 5): tam ekran mobil menü (spesifikasyon), sağlayıcı sekme logolar
 - Onay işaretleri (ör. Introduction > Supported providers tablosu) paletimizden özel SVG.
 - Uyarı kutuları (info, warning...) yeniden tasarlanacak: soldaki yarım çizgi, kesik ikon, sıkışık satırlar sorunlu.
 - Kod kutuları homepage'deki gibi olacak: düzgün "Kopyalandı" durumu, marka sözdizimi renkleri.
+
+## Faz 6 — Uygulama kaydı (2026-10-02)
+
+`6064942 feat(docs): brand theme for the documentation` (branch fork'a push edildi):
+
+- Kenar menü: separator yerine klasör grupları, `defaultOpen: true`, açılıp kapanır. Giriş sayfaları `content/docs/(get-started)/` klasör grubuna taşındı; Fumadocs parantezli klasörü slug'a katmadığı için URL'ler aynı (doğrulandı: /docs, /docs/installation, /docs/whats-new 200).
+- Grup ikonları: `lib/source.ts` içinde `brandIconsPlugin` (Fumadocs iç `iconPlugin` ile aynı mantık), `public/brand/docs-icons/*.webp`. Eşleme: get-started→tek API, concepts→event, payments→taksit, providers→3D Secure, banks→handler, integrations→edge, plugins→plugin, guides→docs, reference→çok dil. İkon öğesine `key` verildi (React liste uyarısı).
+- Alt sayfalar: CSS mask ile marka chevron'u; aktif sayfada Fumadocs'un ince çizgisi kaldırıldı.
+- ✅ → `.bp-check` (source.config.ts rehype eklentisi, içerik dosyalarına dokunulmadı; giriş sayfasında 26 adet).
+- Callout: `DocsCallout` (tam kenarlık, dolu ikon, rahat satır), Fumadocs `type` değerleriyle uyumlu (info, warn, warning, error, success, idea).
+- Kod: marka Shiki teması (anahtar kelime indigo, string yeşil, fonksiyon mor, sayı amber, yorum soluk italik); `DocsCodeBlock` istemci sarmalayıcı + `DocsCopyButton` (Kopyala/Kopyalandı, iki dil); npm sekmeleri çalışıyor.
+- Inline code: Lilac Tint zemin, indigo metin.
+- Kullanılmayan `components/docs/Callout.tsx` ve `CodeBlock.tsx` silindi; lint uyarısı sıfır.
+
+Bilinen: `scripts/check-translations.mjs` Windows'ta `URL.pathname` yüzünden çalışmıyor (önceden var olan; CI Linux'ta sorunsuz). Geçici yolla çalıştırıldı, tüm sayfalar iki dilde eşleşiyor. Docs içerik metinlerinde ürün adı hâlâ `better-payment`; içerik değişikliği #121 ile çakışma riski taşıdığı için ayrı karar.
 
 ## Faz 4.5 — Bileşen ve motion tasarımı
 
