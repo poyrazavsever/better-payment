@@ -40,7 +40,7 @@ Kullanıcı kararı: **önce palet ve tipografi, sonra logo.**
 | 1 | Brand Lock taslağı + palet + tipografi | yok (yerel HTML önizleme) | Faz 0 | tamamlandı: K1 Better Payment, K2 İndigo Sinyal, K3 Manrope + Inter + JetBrains Mono |
 | 2 | Logo: sembol, favicon ailesi, wordmark, lockup | var (Recraft ×3) | K2, K3 | tamamlandı: K4 yeniden tasarım, K5 Birleşen yollar, K6 Manrope lockup |
 | 4 | Görsel evren: hero artwork + ikon seti | var | Faz 1–2 | K8 hero A3 · Alt bant onaylı, K9 15 ikon + animasyonlar onaylı |
-| **4.5** | **Bileşen ve motion tasarımı (koddan önce)** | yok | Faz 1, 2, 4 | K7a onaylı, K7b onaylı, K7c prototip değerlendirmede |
+| **4.5** | **Bileşen ve motion tasarımı (koddan önce)** | yok | Faz 1, 2, 4 | tamamlandı: K7a, K7b, K7c onaylı (2026-10-02) |
 | 3 | Light design system (kod) | yok | Faz 4.5 + PR #121/#122 | K7 token ve bileşenlerin koda birebir aktarımı |
 | 5 | Hero ve homepage | yok | Faz 3–4 | K10 hero prototipi, K11 tam homepage |
 | 6 | Docs teması | yok | Faz 3–4 | K12 docs ekranları |

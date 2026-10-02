@@ -33,8 +33,8 @@ CSS = r"""
 --success:#087A55;--success-bg:#E6F5EF;--warning:#A86207;--warning-bg:#FDF3E3;
 --display:"Manrope",sans-serif;--body:"Inter",sans-serif;--mono:"JetBrains Mono",monospace;
 /* motion tokens */
---d-xs:120ms;--d-sm:200ms;--d-md:320ms;--d-lg:450ms;--d-xl:750ms;
---e-std:cubic-bezier(.2,.7,.2,1);--e-spring:cubic-bezier(.34,1.56,.64,1);--e-exit:cubic-bezier(.4,0,1,1);--rise:14px}
+--d-xs:140ms;--d-sm:240ms;--d-md:450ms;--d-lg:700ms;--d-xl:900ms;--d-art:1600ms;
+--e-std:cubic-bezier(.16,1,.3,1);--e-spring:cubic-bezier(.34,1.56,.64,1);--e-exit:cubic-bezier(.4,0,1,1);--rise:18px}
 *{box-sizing:border-box}html,body{margin:0}body{background:var(--canvas);color:var(--ink);font-family:var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 .ic{width:16px;height:16px;flex:none}
 /* buttons (K7a) */
@@ -74,7 +74,7 @@ CSS = r"""
 /* load sequence */
 .seq{opacity:0;transform:translateY(var(--rise))}
 .play .seq{animation:enter var(--d-lg) var(--e-std) forwards;animation-delay:var(--at,0ms)}
-.play .art{animation:art 1.1s var(--e-std) both}
+.play .art{animation:art var(--d-art) var(--e-std) both}
 @keyframes enter{to{opacity:1;transform:none}}
 @keyframes art{from{opacity:0;transform:translateY(24px) scale(1.02)}to{opacity:1;transform:none}}
 
@@ -109,7 +109,7 @@ section.s{max-width:1180px;margin:0 auto;padding:96px 20px}
 .feat video{width:96px;height:96px;mix-blend-mode:multiply;margin:-6px 0 10px -8px;display:block}
 .feat h3{font:700 17px var(--display);margin:0 0 6px}.feat p{margin:0;color:var(--muted);line-height:1.55;font-size:14.5px}
 /* scroll reveal */
-.rv{opacity:0;transform:translateY(18px);transition:opacity var(--d-lg) var(--e-std),transform var(--d-lg) var(--e-std);transition-delay:var(--at,0ms)}
+.rv{opacity:0;transform:translateY(22px);transition:opacity var(--d-lg) var(--e-std),transform var(--d-lg) var(--e-std);transition-delay:var(--at,0ms)}
 .rv.in{opacity:1;transform:none}
 .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}.step small{font:600 12px var(--mono);color:var(--indigo)}.step h4{font:700 15px var(--display);margin:6px 0 4px}.step p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.5}
@@ -140,34 +140,34 @@ BODY = f"""
 <div class="act"><a class="btn sec sm" href="#">{GH}<span>GitHub</span></a><a class="btn pri sm" href="#"><span>Başla</span>{CHEV}</a></div></nav>
 <header class="hero" id="hero"><div class="art" style="background-image:url({A['hero']})"></div>
 <div class="in"><div>
-<h1><span class="l seq" style="--at:250ms">Türkiye'nin ödeme sağlayıcıları.</span><span class="l l2 seq" style="--at:330ms">Tek TypeScript API'si.</span></h1>
-<p class="lead seq" style="--at:450ms">iyzico, PayTR, Parampos ve Akbank için aynı istek ve sonuç tipleri. Her callback senin anahtarlarınla doğrulanır.</p>
-<div class="btns seq" style="--at:560ms"><a class="btn pri" href="#"><span>Dokümantasyonu aç</span>{CHEV}</a><a class="btn sec" href="#">{GH}<span>GitHub'da incele</span></a></div>
-<div class="install seq" style="--at:650ms"><b>$</b>npm install better-payment</div></div>
-<div class="net seq" id="net" style="--at:700ms"><svg viewBox="0 0 470 400" aria-hidden="true"><g id="wires"></g><g id="dots"></g></svg>
+<h1><span class="l seq" style="--at:300ms">Türkiye'nin ödeme sağlayıcıları.</span><span class="l l2 seq" style="--at:440ms">Tek TypeScript API'si.</span></h1>
+<p class="lead seq" style="--at:600ms">iyzico, PayTR, Parampos ve Akbank için aynı istek ve sonuç tipleri. Her callback senin anahtarlarınla doğrulanır.</p>
+<div class="btns seq" style="--at:760ms"><a class="btn pri" href="#"><span>Dokümantasyonu aç</span>{CHEV}</a><a class="btn sec" href="#">{GH}<span>GitHub'da incele</span></a></div>
+<div class="install seq" style="--at:900ms"><b>$</b>npm install better-payment</div></div>
+<div class="net seq" id="net" style="--at:1000ms"><svg viewBox="0 0 470 400" aria-hidden="true"><g id="wires"></g><g id="dots"></g></svg>
 <div class="hub"><img src="{A['symbolWhite']}" alt="">betterPayment()</div><div class="chip" id="chip"></div>{nodes}<div class="tip" id="tip"></div></div>
 </div></header>
 
 <section class="s"><div class="sh rv"><h2>Callback'e güvenme, doğrula.</h2><p>Her bildirim senin anahtarlarınla kontrol edilir; eşleşmeyen hiçbir şey başarılı sayılmaz.</p></div>
 <div class="cards">
 <article class="feat rv" style="--at:0ms"><video src="{A['v_unified-api']}" poster="{A['p_unified-api']}" autoplay muted loop playsinline aria-hidden="true"></video><h3>Tek API, dört sağlayıcı</h3><p>Aynı istek ve sonuç tipleri, her sağlayıcıda.</p></article>
-<article class="feat rv" style="--at:80ms"><video src="{A['v_callback']}" poster="{A['p_callback']}" autoplay muted loop playsinline aria-hidden="true"></video><h3>Callback'ler doğrulanır</h3><p>İmza senin kimlik bilgilerinle kontrol edilir.</p></article>
-<article class="feat rv" style="--at:160ms"><video src="{A['v_events']}" poster="{A['p_events']}" autoplay muted loop playsinline aria-hidden="true"></video><h3>Tek event akışı</h3><p>Doğrulanmış sonuçlar tek listener'a düşer.</p></article>
+<article class="feat rv" style="--at:110ms"><video src="{A['v_callback']}" poster="{A['p_callback']}" autoplay muted loop playsinline aria-hidden="true"></video><h3>Callback'ler doğrulanır</h3><p>İmza senin kimlik bilgilerinle kontrol edilir.</p></article>
+<article class="feat rv" style="--at:220ms"><video src="{A['v_events']}" poster="{A['p_events']}" autoplay muted loop playsinline aria-hidden="true"></video><h3>Tek event akışı</h3><p>Doğrulanmış sonuçlar tek listener'a düşer.</p></article>
 </div></section>
 
 <section class="s" style="padding-top:0"><div class="sh rv"><h2>Bir ödemenin yolculuğu.</h2><p>Hero'daki akışın adım adım hali; her adım kaydırdıkça sırayla belirir.</p></div>
 <div class="flow">
 <div class="step rv" style="--at:0ms"><small>01 · istek</small><h4>initThreeDSPayment()</h4><p>Aynı tiple sağlayıcıya gider.</p></div>
-<div class="step rv" style="--at:70ms"><small>02 · pending</small><h4>3D Secure</h4><p>Müşteri bankada doğrular.</p></div>
-<div class="step rv" style="--at:140ms"><small>03 · callback</small><h4>İmza kontrolü</h4><p>Senin anahtarlarınla doğrulanır.</p></div>
-<div class="step rv" style="--at:210ms"><small>04 · success</small><h4>payment.succeeded</h4><p>Tek listener'a düşer.</p></div>
+<div class="step rv" style="--at:110ms"><small>02 · pending</small><h4>3D Secure</h4><p>Müşteri bankada doğrular.</p></div>
+<div class="step rv" style="--at:220ms"><small>03 · callback</small><h4>İmza kontrolü</h4><p>Senin anahtarlarınla doğrulanır.</p></div>
+<div class="step rv" style="--at:330ms"><small>04 · success</small><h4>payment.succeeded</h4><p>Tek listener'a düşer.</p></div>
 </div></section>
 
 <div class="spec rv"><table><thead><tr><th>Hareket</th><th>Süre / easing</th><th>Not</th></tr></thead><tbody>
-<tr><td>Hero açılışı</td><td><code>art 1100ms std · metin 450ms std, 80–120ms aralık</code></td><td>artwork yükselerek, metin 14 px aşağıdan</td></tr>
-<tr><td>Sağlayıcı akışı</td><td><code>istek 900ms · dönüş 900ms · döngü 3.6s</code></td><td>sırayla dört sağlayıcı; hover/focus o sağlayıcıyı hemen oynatır</td></tr>
-<tr><td>Durum çipi</td><td><code>320ms std + spring</code></td><td>istek: gri · dönüş: yeşil "doğrulandı"</td></tr>
-<tr><td>Bölüm reveal</td><td><code>450ms std, 70–80ms kademe</code></td><td>görünür olunca bir kez; 18 px</td></tr>
+<tr><td>Hero açılışı</td><td><code>art 1600ms · metin 700ms, 130–160ms aralık · ease-out-expo</code></td><td>artwork yükselerek, metin 18 px aşağıdan</td></tr>
+<tr><td>Sağlayıcı akışı</td><td><code>istek 1300ms · bekleme 600ms · dönüş 1300ms · ara 2200ms · döngü ~5.4s</code></td><td>sırayla dört sağlayıcı; hover/focus o sağlayıcıyı hemen oynatır</td></tr>
+<tr><td>Durum çipi</td><td><code>450ms + spring</code></td><td>istek: gri · dönüş: yeşil "doğrulandı"</td></tr>
+<tr><td>Bölüm reveal</td><td><code>700ms, 110ms kademe</code></td><td>görünür olunca bir kez; 22 px</td></tr>
 <tr><td>Navbar</td><td><code>320ms</code></td><td>kaydırınca alt çizgi belirir</td></tr>
 <tr><td>Hareketi azalt</td><td>—</td><td>her şey son halinde, akış noktaları gizli, çip statik</td></tr>
 </tbody></table></div>
@@ -203,13 +203,13 @@ async function run(i,my){
  const rm=root.classList.contains('rm');nodes.forEach(n=>n.classList.remove('on','ok'));wires.forEach(w=>w.classList.remove('on'));
  if(rm){setChip('ok','tek API · 4 sağlayıcı');return}
  const w=wires[i],n=nodes[i];w.classList.add('on');setChip('req','istek → '+names[i]);
- if(!await travel(w,false,'',900,my))return;n.classList.add('on');await new Promise(r=>setTimeout(r,350));if(my!==gen)return;
- n.classList.remove('on');n.classList.add('ok');if(!await travel(w,true,'back',900,my))return;
+ if(!await travel(w,false,'',1300,my))return;n.classList.add('on');await new Promise(r=>setTimeout(r,600));if(my!==gen)return;
+ n.classList.remove('on');n.classList.add('ok');if(!await travel(w,true,'back',1300,my))return;
  setChip('ok','✓ doğrulandı · success · '+names[i]);w.classList.remove('on');
 }
-async function loop(my){await run(idx,my);if(my!==gen)return;idx=(idx+1)%4;timer=setTimeout(()=>loop(my),1450)}
+async function loop(my){await run(idx,my);if(my!==gen)return;idx=(idx+1)%4;timer=setTimeout(()=>loop(my),2200)}
 function startAt(i,delay){gen++;const my=gen;clearTimeout(timer);dotsG.innerHTML='';idx=i;timer=setTimeout(()=>loop(my),delay)}
-function restartFlow(){startAt(0,root.classList.contains('rm')?0:1300)}
+function restartFlow(){startAt(0,root.classList.contains('rm')?0:1900)}
 restartFlow();
 nodes.forEach((n,i)=>{const show=()=>{const r=n.getBoundingClientRect(),q=net.getBoundingClientRect();tip.textContent=n.dataset.caps;tip.style.left=(r.left-q.left)+'px';tip.style.top=(r.bottom-q.top+8)+'px';tip.classList.add('show')};
  const hide=()=>tip.classList.remove('show');

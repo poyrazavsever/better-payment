@@ -61,36 +61,39 @@ Radius: 10 / 12 / 16 / 20 px. Gölge: kartlarda yalnız hover'da yumuşak derin 
 
 ## Motion (K7c)
 
-Durum: prototip v1 kullanıcı değerlendirmesinde. `Asset_Pipeline/Web/Motion/motion-prototip-v1.html`, üretici `build_motion.py`.
+Durum: **onaylandı** (2026-10-02). Kullanıcı: "mükemmel olmuş"; tek istek tempoyu daha ağır ve yumuşak yapmaktı ("ne kadar ağır olursa o kadar profesyonel"), aşağıdaki değerler bu ayarlamadan sonraki son hal. `Asset_Pipeline/Web/Motion/motion-prototip-v1.html`, üretici `build_motion.py`.
 
 ### Token'lar
 
 | Token | Değer | Kullanım |
 |---|---|---|
-| `--d-xs` / `--d-sm` | 120 / 200 ms | renk, kenarlık, tooltip |
-| `--d-md` | 320 ms | çip, navbar çizgisi, düğüm vurgusu |
-| `--d-lg` | 450 ms | metin girişi, bölüm reveal |
-| `--d-xl` | 750 ms | buton parıltısı |
-| `--e-std` | `cubic-bezier(.2,.7,.2,1)` | varsayılan |
+| `--d-xs` / `--d-sm` | 140 / 240 ms | renk, kenarlık, tooltip |
+| `--d-md` | 450 ms | çip, navbar çizgisi, düğüm vurgusu |
+| `--d-lg` | 700 ms | metin girişi, bölüm reveal |
+| `--d-xl` | 900 ms | buton parıltısı |
+| `--d-art` | 1600 ms | hero artwork girişi |
+| `--e-std` | `cubic-bezier(.16,1,.3,1)` (ease-out-expo) | varsayılan |
 | `--e-spring` | `cubic-bezier(.34,1.56,.64,1)` | ikon, kart, çip |
 | `--e-exit` | `cubic-bezier(.4,0,1,1)` | çıkışlar |
-| `--rise` | 14 px | giriş mesafesi |
+| `--rise` | 18 px | giriş mesafesi |
 
 ### Hero açılışı
 
-Artwork 1.1 sn içinde 24 px aşağıdan ve hafif ölçekten gelir. Başlığın iki satırı 250 / 330 ms, açıklama 450, butonlar 560, kurulum komutu 650, ağ 700 ms gecikmeyle 14 px aşağıdan belirir. Prototipte "Açılışı tekrar oynat".
+Artwork 1.6 sn içinde 24 px aşağıdan ve hafif ölçekten gelir. Başlığın iki satırı 300 / 440 ms, açıklama 600, butonlar 760, kurulum komutu 900, ağ 1000 ms gecikmeyle 18 px aşağıdan, 700 ms'de belirir. Prototipte "Açılışı tekrar oynat".
+
+Uygulama notu: açılış CSS ile başlar, JavaScript'e bağlanmaz. Prototipte sınıf `requestAnimationFrame` ile ekleniyordu; arka planda açılan sekmede kare çizilmediği için içerik görünmez kalabiliyor. Kodda içerik varsayılan olarak görünür, animasyon yalnız ilerletici iyileştirmedir.
 
 ### Sağlayıcı ağı
 
 - Kodla çizilir (SVG + HTML). Merkezde indigo `betterPayment()` düğümü (beyaz sembol), köşelerde dört sağlayıcı; bağlantılar kesikli lila.
-- Döngü: istek noktası (indigo) merkezden sağlayıcıya 0.9 sn; düğüm vurgulanır; doğrulanmış dönüş noktası (yeşil) 0.9 sn'de geri gelir; çip "istek → X" → "✓ doğrulandı · success · X". Sıra iyzico → PayTR → Parampos → Akbank, yaklaşık 3.6 sn.
+- Döngü: istek noktası (indigo) merkezden sağlayıcıya 1.3 sn; düğüm 0.6 sn vurgulanır; doğrulanmış dönüş noktası (yeşil) 1.3 sn'de geri gelir; çip "istek → X" → "✓ doğrulandı · success · X"; sonraki sağlayıcıya 2.2 sn ara. Sıra iyzico → PayTR → Parampos → Akbank, sağlayıcı başına yaklaşık 5.4 sn. İlk akış açılıştan 1.9 sn sonra başlar.
 - Etkileşim: üzerine gelme / odak → yetenek balonu; tıklama → o sağlayıcının akışı hemen başlar.
 - Mobil: hero içeriğin altında ağ, altında 210 px şerit bandı; düğümler küçülür.
 
 ### Diğer
 
-- Bölüm reveal: görünür olunca bir kez, 18 px, 450 ms, kademe 70–80 ms.
-- Navbar: kaydırınca alt çizgi belirir (320 ms).
+- Bölüm reveal: görünür olunca bir kez, 22 px, 700 ms, kademe 110 ms.
+- Navbar: kaydırınca alt çizgi belirir (450 ms).
 - `prefers-reduced-motion: reduce`: giriş ve reveal kapalı, her şey son halinde; akış noktaları gizli, çip statik "tek API · 4 sağlayıcı"; buton parıltısı kapalı; ikon videoları poster karesinde.
 
 ### Doğrulama
