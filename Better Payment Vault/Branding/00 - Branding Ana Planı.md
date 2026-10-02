@@ -42,7 +42,7 @@ Kullanıcı kararı: **önce palet ve tipografi, sonra logo.**
 | 4 | Görsel evren: hero artwork + ikon seti | var | Faz 1–2 | K8 hero A3 · Alt bant onaylı, K9 15 ikon + animasyonlar onaylı |
 | **4.5** | **Bileşen ve motion tasarımı (koddan önce)** | yok | Faz 1, 2, 4 | tamamlandı: K7a, K7b, K7c onaylı (2026-10-02) |
 | 3 | Light design system (kod) | yok | Faz 4.5 | tamamlandı (2026-10-02): `codex/branding-refresh` üzerinde `c7afbe2`, `025e601` |
-| 5 | Hero ve homepage | yok | Faz 3–4 | uygulandı (2026-10-02): `7a23a49`, `fcd1dc8`; K11 kullanıcı incelemesi bekliyor |
+| 5 | Hero ve homepage | yok | Faz 3–4 | uygulandı (2026-10-02): `7a23a49`, `fcd1dc8`; revize 1: `4b62992`, `e14a73b`; K11 kullanıcı incelemesi bekliyor |
 | 6 | Docs teması | yok | Faz 3–4 | K12 docs ekranları |
 | 7 | Çok dilli mimari (#111) | yok | Faz 5–6 | K13 locale davranışı |
 | 8 | Motion polish | yok | Faz 5–7 | K14 motion davranışı |
@@ -75,6 +75,26 @@ Doğrulama: tsc ve lint temiz (yalnız önceden var olan uyarı); production bui
 Bilinen: dev sunucusu açıkken `next build` çalıştırmak aynı `.next` klasörünü kullandığı için dev HMR'ını bozar; derlemeden önce dev durdurulur.
 
 Kalan (Faz 5): tam ekran mobil menü (spesifikasyon), sağlayıcı sekme logolarının büyütülmesi, docs teması (Faz 6).
+
+## Faz 5 — Revize 1 (2026-10-02, kullanıcı geri bildirimi)
+
+- Hero akışı toplu: istekler dört sağlayıcıya aynı anda, dönüşler aynı anda ("tek tek çok yavaş, takip edilemiyor"). Çip mobilde düğümlerin arkasında kalıyordu; z-index ve konum düzeltildi.
+- "Node.js ve edge ortamlarında çalışır" şeridi kaldırıldı.
+- "API'si bambaşka" ve sağlayıcı sekmeleri tek bölüm (`Integrations` + `CompareSlider`): dört sağlayıcı sekmesi, yetenek kartı, tek kod kutusunda sürüklenebilir ayırıcı (sol: sağlayıcının ham API'si, sağ: Better Payment; iki taraf da satır başından okunur; klavye ve dokunma destekli).
+- Özellik kartları 8 → 5 ("çok fazla box"): TypeScript, iyzico ekstraları ve "birden çok sağlayıcı" çıkarıldı.
+- Banka bölümü: Akbank kartı + eşit yükseklikte 4 özellik; yol haritası kesikli dalga üzerinde Garanti BBVA, Yapı Kredi, İş Bankası, Ziraat (logolar %80 gri, hover'da renk; mobilde dikey). Logo kaynakları `apps/web/public/brand/banks/SOURCES.md`; Yapı Kredi SVG'si Wikipedia'da non-free (fair use), diğerleri public domain.
+- Navbar bağlantıları `#` olmadan kaydırır (başka sayfadan gelince `sessionStorage` ile).
+- Konsol hatası ("Encountered a script tag"): `next-themes` inline script'i, tr/en geçişinde `[lang]` layout'u istemcide yeniden render edilince React uyarıyordu. Site light-only olduğu için `RootProvider theme={{ enabled: false }}`; doğrulandı (tr → en → tr, 0 hata).
+- Navbar sürüm rozeti 1280 px altında gizli (bağlantılarla çakışıyordu).
+
+## Faz 6 — Docs teması: kullanıcı notları (2026-10-02)
+
+- Kenar menü grupları (Get Started, Concepts, Payments, Providers...) açılıp kapanabilir, varsayılan olarak açık.
+- Grup ikonları kendi cam ikon dilimizde tasarlanacak (şu anki lucide ikonları uymuyor).
+- Alt sayfalara (Introduction, Installation, Quick Start...) küçük, kendi tasarımımız chevron-right ikonu.
+- Onay işaretleri (ör. Introduction > Supported providers tablosu) paletimizden özel SVG.
+- Uyarı kutuları (info, warning...) yeniden tasarlanacak: soldaki yarım çizgi, kesik ikon, sıkışık satırlar sorunlu.
+- Kod kutuları homepage'deki gibi olacak: düzgün "Kopyalandı" durumu, marka sözdizimi renkleri.
 
 ## Faz 4.5 — Bileşen ve motion tasarımı
 
