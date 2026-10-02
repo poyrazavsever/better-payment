@@ -41,7 +41,7 @@ Kullanıcı kararı: **önce palet ve tipografi, sonra logo.**
 | 2 | Logo: sembol, favicon ailesi, wordmark, lockup | var (Recraft ×3) | K2, K3 | tamamlandı: K4 yeniden tasarım, K5 Birleşen yollar, K6 Manrope lockup |
 | 4 | Görsel evren: hero artwork + ikon seti | var | Faz 1–2 | K8 hero A3 · Alt bant onaylı, K9 15 ikon + animasyonlar onaylı |
 | **4.5** | **Bileşen ve motion tasarımı (koddan önce)** | yok | Faz 1, 2, 4 | tamamlandı: K7a, K7b, K7c onaylı (2026-10-02) |
-| 3 | Light design system (kod) | yok | Faz 4.5 + PR #121/#122 | K7 token ve bileşenlerin koda birebir aktarımı |
+| 3 | Light design system (kod) | yok | Faz 4.5 | tamamlandı (2026-10-02): `codex/branding-refresh` üzerinde `c7afbe2`, `025e601` |
 | 5 | Hero ve homepage | yok | Faz 3–4 | K10 hero prototipi, K11 tam homepage |
 | 6 | Docs teması | yok | Faz 3–4 | K12 docs ekranları |
 | 7 | Çok dilli mimari (#111) | yok | Faz 5–6 | K13 locale davranışı |
@@ -50,6 +50,20 @@ Kullanıcı kararı: **önce palet ve tipografi, sonra logo.**
 | 10 | QA, tek branding PR, temizlik | yok | hepsi | PR review |
 
 Sıra değişikliği (2026-10-01, kullanıcı kararı): koda geçmeden önce bileşenler ve animasyonlar tasarlanır. Faz 4.5, Faz 3'ten önce gelir; Faz 3 yalnız onaylı spesifikasyonu koda aktarır.
+
+## Faz 3 — Uygulama kaydı (2026-10-02)
+
+Kullanıcı kararıyla PR #121/#122 beklenmeden `upstream/main` (`e5af998`) üzerinden `codex/branding-refresh` açıldı; PR'lar merge edildikçe rebase edilecek. #121 docs içerikleri, `Since.tsx` ve `mdx-components.tsx`'e dokunuyor; çakışma riski düşük.
+
+1. `c7afbe2 brand: add Better Payment logo, favicon and app icons`: `public/brand/` (lockup ve sembol, renkli ve beyaz; 192/512 PNG), `app/icon.svg`, `favicon.ico`, `apple-icon.png`; navbar, footer ve docs başlığında lockup; eski `public/logo.svg` silindi.
+2. `025e601 refactor(web): light-only brand design system`: `globals.css` İndigo Sinyal token'ları (light only, `.dark` kaldırıldı), Fumadocs aynı değişkenleri kullanır; Manrope / Inter / JetBrains Mono (`next/font`, latin + latin-ext); `RootProvider` light'a kilitli, navbar tema düğmesi ve docs tema anahtarı kaldırıldı, kullanılmayan `ThemeProvider` silindi; motion token'ları; `.btn-fx` (hover parıltısı) ve `.btn-fx-idle` (primary sürekli ışıltı), `data-icon="chevron|brand"` ikon hareketi; oklar chevron; callout'lar marka semantik renkleri.
+
+Doğrulama: `tsc` temiz; değişen dosyalarda lint temiz (yalnız önceden var olan `CodeBlock.tsx` uyarısı); production build 62/62 sayfa; dev sunucusunda fontlar, renkler, light kilidi, primary sürekli ışıltı ve ikon etiketleri ölçüldü; konsol hatası yok.
+
+Notlar:
+- Önceden var olan sorun: build sonrası `pnpm lint`, üretilen `.source/` dosyalarında 6 hata veriyor (eslint ignore listesinde değil). Branding kapsamı dışında; ayrı küçük PR adayı.
+- Kiril (`cyrillic`) font alt kümesi #111/#113 ile eklenecek.
+- Hero butonları şimdilik 44 px (hero'nun kendi sınıfı); Faz 5'te 46 px'e çekilir.
 
 ## Faz 4.5 — Bileşen ve motion tasarımı
 
