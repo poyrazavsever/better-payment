@@ -42,7 +42,7 @@ Kullanıcı kararı: **önce palet ve tipografi, sonra logo.**
 | 4 | Görsel evren: hero artwork + ikon seti | var | Faz 1–2 | K8 hero A3 · Alt bant onaylı, K9 15 ikon + animasyonlar onaylı |
 | **4.5** | **Bileşen ve motion tasarımı (koddan önce)** | yok | Faz 1, 2, 4 | tamamlandı: K7a, K7b, K7c onaylı (2026-10-02) |
 | 3 | Light design system (kod) | yok | Faz 4.5 | tamamlandı (2026-10-02): `codex/branding-refresh` üzerinde `c7afbe2`, `025e601` |
-| 5 | Hero ve homepage | yok | Faz 3–4 | K10 hero prototipi, K11 tam homepage |
+| 5 | Hero ve homepage | yok | Faz 3–4 | uygulandı (2026-10-02): `7a23a49`, `fcd1dc8`; K11 kullanıcı incelemesi bekliyor |
 | 6 | Docs teması | yok | Faz 3–4 | K12 docs ekranları |
 | 7 | Çok dilli mimari (#111) | yok | Faz 5–6 | K13 locale davranışı |
 | 8 | Motion polish | yok | Faz 5–7 | K14 motion davranışı |
@@ -64,6 +64,17 @@ Notlar:
 - Önceden var olan sorun: build sonrası `pnpm lint`, üretilen `.source/` dosyalarında 6 hata veriyor (eslint ignore listesinde değil). Branding kapsamı dışında; ayrı küçük PR adayı.
 - Kiril (`cyrillic`) font alt kümesi #111/#113 ile eklenecek.
 - Hero butonları şimdilik 44 px (hero'nun kendi sınıfı); Faz 5'te 46 px'e çekilir.
+
+## Faz 5 — Uygulama kaydı (2026-10-02)
+
+1. `7a23a49 feat(web): new hero with provider network and animated feature icons`: A3 artwork (`public/brand/hero/hero-a3.jpg`, 83 KB); `ProviderNetwork` (istek → doğrulanmış dönüş, yetenek balonu, tıklayınca o sağlayıcı, reduced-motion, ekran dışında duraklama); akış zamanlayıcıyla ilerler, animasyon kareleri yalnız noktayı çizer (kare atlanırsa sıra bozulmaz); açılış CSS ile (`.bp-enter`, `.bp-art`); kaydırma reveal'ı scroll-driven CSS (`.bp-reveal`, desteklenmeyen tarayıcıda içerik direkt görünür); özellik kartlarında `AnimatedIcon` (8 ikon, WebM/MP4 + WebP poster, multiply); navbar GitHub + Başlayın, masaüstü menü 1024 px'ten itibaren; hero rozet ve istatistikleri kaldırıldı.
+2. `fcd1dc8 feat(web): restyle homepage sections to the brand system`: ortak `SectionHeading`; tüm eyebrow ve uppercase mikro etiketler kaldırıldı; kod blokları marka sözdizimi renkleri + iki dilli Kopyala/Kopyalandı; CTA indigo bant, beyaz sürekli ışıltılı buton, cam dekor (< 1024 px'de %20 opaklık, köşede); düz metin ve metadata'da "Better Payment".
+
+Doğrulama: tsc ve lint temiz (yalnız önceden var olan uyarı); production build 62/62; tarayıcıda akış zamanlaması ölçüldü (1.9 sn'de istek, 3.2 sn sonra doğrulandı, 2.2 sn ara); 8 ikon videosu oynuyor ve multiply uygulanıyor; 375 px mobil hero ve ağ kontrol edildi; `#features` bağlantısı doğru konumda.
+
+Bilinen: dev sunucusu açıkken `next build` çalıştırmak aynı `.next` klasörünü kullandığı için dev HMR'ını bozar; derlemeden önce dev durdurulur.
+
+Kalan (Faz 5): tam ekran mobil menü (spesifikasyon), sağlayıcı sekme logolarının büyütülmesi, docs teması (Faz 6).
 
 ## Faz 4.5 — Bileşen ve motion tasarımı
 
