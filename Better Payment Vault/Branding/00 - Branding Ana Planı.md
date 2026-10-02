@@ -118,6 +118,13 @@ Bilinen: `scripts/check-translations.mjs` Windows'ta `URL.pathname` yüzünden �
 - Ekran görüntüleri (önce/sonra, ana sayfa, docs, mobil) ürün checkout'unda `brandkit/pr-screenshots/`, PR taslağı `brandkit/pr-draft.md` (ikisi de yerel, git exclude).
 - Açık karar: CONTRIBUTING büyük değişiklik için önceden issue istiyor; takip issue'su ("Website launch readiness and visual refresh") açılıp PR `Closes #` ile bağlanacak. PR kullanıcı onayıyla açılacak.
 
+## Faz 10 — PR ve merge (2026-10-02)
+
+- Issue czaydev/better-payment#123 açıldı, PR czaydev/better-payment#124 açıldı ve czaydev tarafından merge edildi (07:38 UTC); canlı site yeni markayla yayında.
+- PR sonrası iki commit merge'e girdi: `c6aa2c8` (hero 4K Topaz upscale + WebP q90, CSS scroll-timeline parallax, navbar ayırıcı ortalandı, butonlardan `bg-clip-padding` kaldırılarak primary butonlardaki açık halka giderildi) ve `b49c251` (bölümler ekrana girince hero hızında fade/rise, IntersectionObserver ile tek seferlik; reduced motion ve JS yokken içerik görünür).
+- README için önce/sonra görselleri: ürün checkout'unda `brandkit/pr-screenshots/final/`.
+- Sonraki: vault'taki üçüncü taraf referans görsellerini kaldırmak, `backup/before-trailer-cleanup` dalını silmek.
+
 ## Faz 4.5 — Bileşen ve motion tasarımı
 
 Amaç: kod yazılmadan önce her bileşenin görünümü, durumları ve hareketi tıklanabilir HTML prototiplerle onaylanır. Prototipler vault'ta `Asset_Pipeline/Web/Bilesen/` altında tutulur, ürün repo'suna girmez.
