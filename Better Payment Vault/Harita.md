@@ -1,7 +1,7 @@
 ---
 tur: harita
 alan: sistem
-guncelleme: 2026-10-01
+guncelleme: 2026-10-03
 ozet: "Vault içindeki kanonik notların ana haritası."
 durum: aktif
 ---
@@ -20,6 +20,10 @@ durum: aktif
 
 - [[Planlama/Issue Portföyü]]
 - [[Planlama/90 Günlük Maintainer Yol Haritası]]
+
+## Öğrenme
+
+- [[Öğrenme/00 - Kod Tabanı Öğrenme Planı]]
 
 ## Kararlar
 
