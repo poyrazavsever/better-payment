@@ -43,7 +43,7 @@ Kapsam ölçümü 2026-10-04'te yapıldı (`vitest --coverage`; toplam satır ka
 | 15 | 11-01 → 11-02 | localizedErrors: Fransızca (fr) | #84'ün aynısı: `fr.ts`, kayıt, test, doküman, README, changeset. (`es` testte özel dil örneği olarak kullanıldığından seçilmedi) | Çok düşük | hazir (önce issue) |
 | 16 | 11-03 → 11-04 | Örnek: iade ve iptal | `examples/refund-and-cancel.ts`: `refund`, `cancel`, `getPayment` kullanımı; `typecheck:examples` ile CI'da derlenir | Çok düşük | hazir (önce issue) |
 | 17 | 11-05 → 11-06 | Web: erişilebilirlik küçük düzeltmeleri | "İçeriğe atla" (skip link) bağlantısı, `main` landmark kontrolü, odak halkaları; EN ve TR metin `dictionary.ts`'te | Düşük | hazir (önce issue) |
-| 18 | 11-07 → 11-08 | Doküman: SSS ve sorun giderme sayfası | `guides/troubleshooting(.tr).mdx`: iyzico sepet toplamı uyuşmazlığı, callback URL ve CSRF, `NETWORK_ERROR` ile "tekrar ödeme", test kartları, Windows'ta format uyarısı yok. Mevcut sayfalara link verir | Düşük | hazir (önce issue) |
+| 18 | 11-07 → 11-08 | Doküman: SSS ve sorun giderme sayfası | `guides/troubleshooting(.tr).mdx`: iyzico sepet toplamı uyuşmazlığı, callback URL ve CSRF, `NETWORK_ERROR` ile "tekrar ödeme" ve test kartları. Mevcut sayfalara link verir | Düşük | hazir (önce issue) |
 
 ## Yeni subpath kontrol listesi (8. ve 9. işler için)
 
