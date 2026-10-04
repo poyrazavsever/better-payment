@@ -1,20 +1,15 @@
 ---
 tur: portfoy
 alan: planlama
-guncelleme: 2026-10-03
+guncelleme: 2026-10-04
 ozet: "Açık issue'ların bağımlılık, risk ve katkı sırasına göre kanonik sınıflandırması."
 durum: aktif
 ---
 # Issue Portföyü
 
-## Sıradaki işler (Poyraz'a atanmış)
+## Sıradaki işler
 
-| Issue | Durum | Sonraki adım |
-|---|---|---|
-| [#95 SvelteKit adapter](https://github.com/czaydev/better-payment/issues/95) | bekliyor | [[Öğrenme/00 - Kod Tabanı Öğrenme Planı]] Faz 0, 4, 6 ve 7 bitince başlanır; CSRF (`csrf.checkOrigin`) notu dahil |
-| [#93 NestJS adapter](https://github.com/czaydev/better-payment/issues/93) | bekliyor | #95 kapandıktan sonra; önce issue'da module ya da controller helper yaklaşımı tartışılır |
-
-Öğrenme planı bitmeden kodlamaya başlanmaz (WIP kuralı).
+Önce [[Öğrenme/00 - Kod Tabanı Öğrenme Planı]]; ardından daha basit, "good first issue" seviyesinde işler seçilecek. #95 ve #93'ten 2026-10-04'te vazgeçildi.
 
 ## Öncelik 0: güvenilirlik
 
@@ -57,7 +52,7 @@ durum: aktif
 - #59 TR/EN altyapısını tamamladı ve kapandı; ilk lansman için dil tabanı hazır.
 - #98 Next.js + Prisma uçtan uca örnek uygulama, lansman için en güçlü açık demo/proof issue'su; yüksek öncelik adayı.
 - #111 ve #112–#115 uluslararası erişimi genişletir fakat ilk TR/EN lansmanını bloklamaz.
-- #94 Nuxt, #96 React Router. #93 ve #95 bana atandı (yukarıda).
+- #93 NestJS, #94 Nuxt, #95 SvelteKit, #96 React Router. #93 ve #95'i üstlenmiştim, 2026-10-04'te bıraktım (daha basit işlerle ilerleme kararı).
 - #97 Elysia: [PR #128](https://github.com/czaydev/better-payment/pull/128) ile merge edildi; `exports` ve `parse: 'none'` düzeltmelerini biz push ettik (e97de06).
 - #107 release PR otomasyonu.
 - #84 Arapça localized errors.

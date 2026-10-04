@@ -1,7 +1,7 @@
 ---
 tur: plan
 alan: ogrenme
-guncelleme: 2026-10-03
+guncelleme: 2026-10-04
 ozet: "better-payment kod tabanını (SDK paketi, testler, web uygulaması) faz faz öğrenme ve review edebilir hale gelme planı."
 durum: aktif
 ---
@@ -9,7 +9,7 @@ durum: aktif
 
 ## Amaç
 
-Yazılan kodu kendim anlayabilmek ve PR'ları kendim, gerekçesiyle review edebilmek. Bu plan bitmeden yeni implementasyona başlanmaz. Sıradaki iş, plan bitince [#95 SvelteKit](https://github.com/czaydev/better-payment/issues/95) ve ardından [#93 NestJS](https://github.com/czaydev/better-payment/issues/93) olacak; durumları [[Planlama/Issue Portföyü]] içinde tutulur.
+Yazılan kodu kendim anlayabilmek ve PR'ları kendim, gerekçesiyle review edebilmek. Bu plan bitmeden yeni implementasyona başlanmaz. Plan bitince daha basit issue'larla ilerlenecek (#95 ve #93'ten 2026-10-04'te vazgeçildi); seçim [[Planlama/Issue Portföyü]] içinde tutulur.
 
 Referans nokta: `upstream/main` @ `a215089` (2026-10-03). Satır sayıları bu commit'e göredir.
 
@@ -133,7 +133,7 @@ apps/web (Next.js 16 + Fumadocs, site ve dokümantasyon)
 
 ---
 
-## Faz 4: HTTP handler ve adapter'lar (#95 ve #93'ün temeli)
+## Faz 4: HTTP handler ve adapter'lar
 
 **Hedef:** Bir HTTP isteğinin framework'ten provider'a nasıl ulaştığını ve cevabın nasıl döndüğünü anlamak.
 
@@ -156,8 +156,6 @@ apps/web (Next.js 16 + Fumadocs, site ve dokümantasyon)
 
 **Alıştırma**
 - `complete-3ds` form callback'inin isteğini Express adapter'ından provider'a kadar satır satır izle.
-- #95 hazırlığı: SvelteKit `+server.ts` imzasını (`{ request }` → `Response`) ve `csrf.checkOrigin` davranışını resmi dokümandan oku, nota özetle.
-- #93 hazırlığı: NestJS'in Express ve Fastify platformlarında body parser'ın varsayılan davranışını oku.
 
 **Bitti:** Bir isteğin yaşam döngüsünü (adapter → handler → core → provider → event → response) beyaz tahtada anlatabiliyorum.
 
@@ -223,7 +221,7 @@ apps/web (Next.js 16 + Fumadocs, site ve dokümantasyon)
 
 **Okunacaklar:** `tsup.config.ts` (entry'ler, cjs ve esm, dts), `package.json` `exports`, `scripts/check-size.mjs`, `.changeset/`, `publish.yml`, `CHANGELOG.md`
 
-**Yeni subpath kontrol listesi** (#128'den çıkan ders; #95 ve #93'te bunu kullanacağım)
+**Yeni subpath kontrol listesi** (#128'den çıkan ders)
 1. `src/adapters/<ad>.ts` (yapısal tipler, framework bağımlılığı yok)
 2. `tsup.config.ts` entry
 3. `package.json` `exports` (types, import, require)
@@ -270,10 +268,9 @@ apps/web (Next.js 16 + Fumadocs, site ve dokümantasyon)
 
 1. [[Rehberler/Rehber - PR Review]] ve [[Şablonlar/Şablon - PR Review]] üzerinden kendi review kontrol listemi güncelle (Faz 6 ve Faz 7 dersleriyle).
 2. **Pratik:** #128'in (Elysia) ilk halini Claude'un bulgularına bakmadan kendim review et; sonra karşılaştır.
-3. **#95 SvelteKit:** Daha basit bir iş; web `Request`/`Response` ile çalışır. Kontrol listesine ek olarak CSRF (`csrf.checkOrigin`) notu gerekiyor.
-4. **#93 NestJS:** Tasarım sorusu var (module mü, controller helper mı). Önce issue'da yaklaşım yazılır, sonra kod. Express ve Fastify platformlarının ikisi de test edilir.
+3. Portföyden basit bir issue seç (core yardımcı, doküman, test eksikliği gibi), yaklaşımı nota yaz, sonra kodla.
 
-**Bitti:** #95 için PR'ı kendim yazıp kendim review ederek açabiliyorum.
+**Bitti:** Seçtiğim ilk issue için PR'ı kendim yazıp kendim review ederek açabiliyorum.
 
 ---
 
@@ -281,7 +278,7 @@ apps/web (Next.js 16 + Fumadocs, site ve dokümantasyon)
 
 | Faz | Konu | Durum | Not dosyası |
 |---|---|---|---|
-| 0 | Kurulum ve CI | bekliyor | |
+| 0 | Kurulum ve CI | aktif | [[Öğrenme/Notlar/Faz 0 - Kurulum ve CI]] |
 | 1 | Ödeme alanı | bekliyor | |
 | 2 | Core | bekliyor | |
 | 3 | Provider'lar | bekliyor | |
@@ -290,6 +287,6 @@ apps/web (Next.js 16 + Fumadocs, site ve dokümantasyon)
 | 6 | Test stratejisi | bekliyor | |
 | 7 | Build ve yayın | bekliyor | |
 | 8 | Web uygulaması | bekliyor | |
-| 9 | Review pratiği → #95, #93 | bekliyor | |
+| 9 | Review pratiği → ilk basit issue | bekliyor | |
 
-Tahmini süre: günde 1–2 saatle Faz 0–4 bir hafta, Faz 5–9 bir hafta. #95 için Faz 0, 4, 6 ve 7'nin bitmiş olması yeterli; geri kalanlar paralel ilerleyebilir.
+Tahmini süre: günde 1–2 saatle Faz 0–4 bir hafta, Faz 5–9 bir hafta.
