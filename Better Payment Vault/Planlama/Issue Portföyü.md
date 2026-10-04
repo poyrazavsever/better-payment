@@ -9,7 +9,7 @@ durum: aktif
 
 ## Sıradaki işler
 
-Önce [[Öğrenme/00 - Kod Tabanı Öğrenme Planı]]; ardından daha basit, "good first issue" seviyesinde işler seçilecek. #95 ve #93'ten 2026-10-04'te vazgeçildi.
+Günde bir küçük, düşük riskli iş: [[Planlama/Günlük Basit İşler]]. #95 ve #93 2026-10-04'te bırakıldı.
 
 ## Öncelik 0: güvenilirlik
 
