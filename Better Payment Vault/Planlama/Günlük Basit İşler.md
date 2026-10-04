@@ -19,7 +19,7 @@ durum: aktif
 
 | # | Tarih | İş | Kapsam | Risk | Durum |
 |---|---|---|---|---|---|
-| 1 | 10-04 → 10-05 | [#84 localizedErrors: Arapça (ar)](https://github.com/czaydev/better-payment/issues/84) | `ar.ts` (15 mesaj), `index.ts`'e bir satır, testteki `locales` listesi, patch changeset; gerekirse `dist/plugins` boyut bütçesi | Çok düşük | aktif |
+| 1 | 10-04 → 10-05 | [#84 localizedErrors: Arapça (ar)](https://github.com/czaydev/better-payment/issues/84) → [PR #136](https://github.com/czaydev/better-payment/pull/136) | `ar.ts` (15 mesaj), `index.ts`'e bir satır, testteki `locales` listesi, patch changeset; gerekirse `dist/plugins` boyut bütçesi | Çok düşük | review bekliyor |
 | 2 | 10-06 → 10-07 | `tests/README.md` güncelleme | Klasör ağacı gerçeğe uydurulur (`e2e/` ve PayTR integration testi yok; sandbox, helpers ve fixtures güncel); ölü `test:e2e` script'i kaldırılır | Çok düşük | hazir (önce issue) |
 | 3 | 10-08 → 10-09 | CI: adapter subpath smoke testi | Build sonrası `next`, `express`, `hono`, `fastify` ve `elysia` için `require` ve `import` denemesi; "Check package contents"e adapter dosyaları. #128'deki `exports` hatasını CI yakalar | Düşük | hazir (önce issue) |
 | 4 | 10-10 → 10-11 | Doküman: ürün adı | Prose'da "better-payment" → "Better Payment" (186 yer, EN ve TR, tek PR). Kod, import ve paket adı değişmez; çeviri kontrolü kod bloklarını korur | Düşük | hazir (önce issue, #123 devamı) |
@@ -28,6 +28,22 @@ durum: aktif
 | 7 | 10-16 → 10-17 | Web: sosyal paylaşım görseli | Higgsfield ile marka OG görseli (1200×630, EN ve TR); `openGraph.images` ve Twitter card metadata. Branding Faz 9'un devamı | Düşük | hazir (önce issue) |
 | 8 | 10-18 → 10-19 | [#96 React Router adapter](https://github.com/czaydev/better-payment/issues/96) | `next.ts` gibi web `Request`/`Response` adapter'ı; subpath adımları (exports, tsup, alias, size, ortak testler, örnek, doküman, changeset) | Düşük-orta | bekliyor |
 | 9 | 10-20 → 10-21 | [#94 Nuxt / h3 adapter](https://github.com/czaydev/better-payment/issues/94) | #96 ile aynı kalıp; h3 v1 ve v2 `Request` erişimi farkı | Düşük-orta | bekliyor |
+
+### İkinci dalga (eklendi 2026-10-04, henüz başlanmadı)
+
+Kapsam ölçümü 2026-10-04'te yapıldı (`vitest --coverage`; toplam satır kapsamı %92,8, branch kapsamı %79,4).
+
+| # | Tarih | İş | Kapsam | Risk | Durum |
+|---|---|---|---|---|---|
+| 10 | 10-22 → 10-23 | Test: `iyzico/utils.ts` | Kapsamı en düşük dosya (satır %71, branch %50). Eksik dallar için unit test; davranış değişmez | Çok düşük (yalnızca test) | hazir (önce issue) |
+| 11 | 10-24 → 10-25 | Test: `core/crypto.ts` | Satır %81, fonksiyon %80. Kullanılmayan yardımcılar ve hata yolları için test; Node ve edge'de aynı sonuç | Çok düşük (yalnızca test) | hazir (önce issue) |
+| 12 | 10-26 → 10-27 | Test: Express ve Fastify adapter dalları | Branch kapsamı %64 ve %60. `next(error)` yolu, `next` yokken 500, GET/HEAD gövdesiz istek, string chunk okuma. Testler bitince `vitest.config.ts` eşikleri yeni değerlerin hemen altına çekilir | Düşük (yalnızca test ve eşik) | hazir (önce issue) |
+| 13 | 10-28 → 10-29 | Paket metadata ve README rozetleri | `keywords`'e eksikler (`hono`, `express`, `fastify`, `elysia`, `virtual-pos`, `sanal-pos`); kök ve paket README'sine CI ve Docs rozetleri | Çok düşük | hazir (önce issue) |
+| 14 | 10-30 → 10-31 | Doküman issue şablonu | `.github/ISSUE_TEMPLATE/docs.yml`: sayfa linki, sorun, dil (EN/TR). Mevcut şablonlarla aynı yapı | Çok düşük | hazir (önce issue) |
+| 15 | 11-01 → 11-02 | localizedErrors: Fransızca (fr) | #84'ün aynısı: `fr.ts`, kayıt, test, doküman, README, changeset. (`es` testte özel dil örneği olarak kullanıldığından seçilmedi) | Çok düşük | hazir (önce issue) |
+| 16 | 11-03 → 11-04 | Örnek: iade ve iptal | `examples/refund-and-cancel.ts`: `refund`, `cancel`, `getPayment` kullanımı; `typecheck:examples` ile CI'da derlenir | Çok düşük | hazir (önce issue) |
+| 17 | 11-05 → 11-06 | Web: erişilebilirlik küçük düzeltmeleri | "İçeriğe atla" (skip link) bağlantısı, `main` landmark kontrolü, odak halkaları; EN ve TR metin `dictionary.ts`'te | Düşük | hazir (önce issue) |
+| 18 | 11-07 → 11-08 | Doküman: SSS ve sorun giderme sayfası | `guides/troubleshooting(.tr).mdx`: iyzico sepet toplamı uyuşmazlığı, callback URL ve CSRF, `NETWORK_ERROR` ile "tekrar ödeme", test kartları, Windows'ta format uyarısı yok. Mevcut sayfalara link verir | Düşük | hazir (önce issue) |
 
 ## Yeni subpath kontrol listesi (8. ve 9. işler için)
 
