@@ -1,7 +1,7 @@
 ---
 tur: plan
 alan: planlama
-guncelleme: 2026-10-04
+guncelleme: 2026-10-06
 ozet: "İki günde bir kapatılacak, küçük ve hata riski düşük işlerin tarihli sırası."
 durum: aktif
 ---
@@ -19,8 +19,8 @@ durum: aktif
 
 | # | Tarih | İş | Kapsam | Risk | Durum |
 |---|---|---|---|---|---|
-| 1 | 10-04 → 10-05 | [#84 localizedErrors: Arapça (ar)](https://github.com/czaydev/better-payment/issues/84) → [PR #136](https://github.com/czaydev/better-payment/pull/136) | `ar.ts` (15 mesaj), `index.ts`'e bir satır, testteki `locales` listesi, patch changeset; gerekirse `dist/plugins` boyut bütçesi | Çok düşük | review bekliyor |
-| 2 | 10-06 → 10-07 | `tests/README.md` güncelleme | Klasör ağacı gerçeğe uydurulur (`e2e/` ve PayTR integration testi yok; sandbox, helpers ve fixtures güncel); ölü `test:e2e` script'i kaldırılır | Çok düşük | hazir (önce issue) |
+| 1 | 10-04 → 10-05 | [#84 localizedErrors: Arapça (ar)](https://github.com/czaydev/better-payment/issues/84) → [PR #136](https://github.com/czaydev/better-payment/pull/136) | `ar.ts` (15 mesaj), `index.ts`'e bir satır, testteki `locales` listesi, patch changeset; gerekirse `dist/plugins` boyut bütçesi | Çok düşük | [[Planlama/Issue Portföyü#Güncel küçük iş durumu]] |
+| 2 | 10-06 → 10-07 | [#139 test rehberi](https://github.com/czaydev/better-payment/issues/139) → [PR #140](https://github.com/czaydev/better-payment/pull/140) | Klasör ağacı gerçeğe uydurulur (`e2e/` ve PayTR integration testi yok; sandbox, helpers ve fixtures güncel); ölü `test:e2e` script'i kaldırılır | Çok düşük | [[Planlama/Issue Portföyü#Güncel küçük iş durumu]] |
 | 3 | 10-08 → 10-09 | CI: adapter subpath smoke testi | Build sonrası `next`, `express`, `hono`, `fastify` ve `elysia` için `require` ve `import` denemesi; "Check package contents"e adapter dosyaları. #128'deki `exports` hatasını CI yakalar | Düşük | hazir (önce issue) |
 | 4 | 10-10 → 10-11 | Doküman: ürün adı | Prose'da "better-payment" → "Better Payment" (186 yer, EN ve TR, tek PR). Kod, import ve paket adı değişmez; çeviri kontrolü kod bloklarını korur | Düşük | hazir (önce issue, #123 devamı) |
 | 5 | 10-12 → 10-13 | Web: marka 404 sayfası | `app/[lang]/not-found.tsx`, EN ve TR metinleri `dictionary.ts`'te, ana sayfa ve docs'a dönüş butonları | Düşük | hazir (önce issue) |
@@ -72,5 +72,4 @@ Kapsam ölçümü 2026-10-04'te yapıldı (`vitest --coverage`; toplam satır ka
 
 ## Kapanan işler
 
-| Tarih | İş | PR |
-|---|---|---|
+Kapanış durumları ve kanıtları [[Planlama/Issue Portföyü#Güncel küçük iş durumu]] içinde tutulur.

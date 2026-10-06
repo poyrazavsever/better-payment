@@ -1,7 +1,7 @@
 ---
 tur: portfoy
 alan: planlama
-guncelleme: 2026-10-04
+guncelleme: 2026-10-06
 ozet: "Açık issue'ların bağımlılık, risk ve katkı sırasına göre kanonik sınıflandırması."
 durum: aktif
 ---
@@ -9,7 +9,21 @@ durum: aktif
 
 ## Sıradaki işler
 
-Günde bir küçük, düşük riskli iş: [[Planlama/Günlük Basit İşler]]. #95 ve #93 2026-10-04'te bırakıldı.
+İki günde bir küçük, düşük riskli iş: [[Planlama/Günlük Basit İşler]]. #95 ve #93 2026-10-04'te bırakıldı.
+
+## Güncel küçük iş durumu
+
+- #84 tamamlandi: [PR #136](https://github.com/czaydev/better-payment/pull/136) 2026-10-04'te merge edildi ve [issue](https://github.com/czaydev/better-payment/issues/84) kapandı.
+- [#139](https://github.com/czaydev/better-payment/issues/139) aktif: test rehberi ve ölü E2E script temizliği için [PR #140](https://github.com/czaydev/better-payment/pull/140) açıldı. Uygulama tamamlandı, maintainer review/merge bekleniyor. Merge issue'yu otomatik kapatacak.
+- Sonraki iş: takvimdeki 3. iş, CI adapter subpath smoke testi. Önce issue açılacak.
+
+### #139 uygulama kaydı — 2026-10-06
+
+- Upstream `main` @ `84e6a6e` üzerinden `codex/test-guide-cleanup`; commit [874a8b6](https://github.com/poyrazavsever/better-payment/commit/874a8b6).
+- Test rehberi mevcut dosyalar, pnpm komutları, mock/sandbox ayrımı, coverage ve CI kaynaklarına göre yenilendi; kullanılmayan `test:e2e` kaldırıldı.
+- pnpm 10.33.0 ile `corepack pnpm --filter better-payment lint`, `typecheck`, `test`, `build` geçti. 29 dosyada 461 test, 30 ağaç girdisi, göreli linkler ve script adları doğrulandı. Global pnpm çakışması nedeniyle doğrudan paket komutları kullanıldı.
+- [CI](https://github.com/czaydev/better-payment/actions/runs/37431310232): Node 20/22/24 ve EN/TR çeviri kontrolleri başarılı. GitGuardian başarılı. Vercel önizlemesi `Authorization required to deploy` ile proje sahibinin yetkilendirmesini bekliyor.
+- PR yalnız iki ürün dosyası içerir. Runtime değişikliği ve changeset yok. Vault yalnız `personal/vault` branch'inde senkronlanır.
 
 ## Öncelik 0: güvenilirlik
 
@@ -55,7 +69,7 @@ Günde bir küçük, düşük riskli iş: [[Planlama/Günlük Basit İşler]]. #
 - #93 NestJS, #94 Nuxt, #95 SvelteKit, #96 React Router. #93 ve #95'i üstlenmiştim, 2026-10-04'te bıraktım (daha basit işlerle ilerleme kararı).
 - #97 Elysia: [PR #128](https://github.com/czaydev/better-payment/pull/128) ile merge edildi; `exports` ve `parse: 'none'` düzeltmelerini biz push ettik (e97de06).
 - #107 release PR otomasyonu.
-- #84 Arapça localized errors.
+- #84 Arapça localized errors tamamlandı; kanonik durum yukarıda.
 
 Ayrıntılı değerlendirme: [[Araştırma/İnceleme - 2026-10-01 Lansman ve Web Sitesi Önceliği]].
 
