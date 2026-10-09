@@ -1,7 +1,7 @@
 ---
 tur: portfoy
 alan: planlama
-guncelleme: 2026-10-06
+guncelleme: 2026-10-09
 ozet: "Açık issue'ların bağımlılık, risk ve katkı sırasına göre kanonik sınıflandırması."
 durum: aktif
 ---
@@ -14,8 +14,17 @@ durum: aktif
 ## Güncel küçük iş durumu
 
 - #84 tamamlandi: [PR #136](https://github.com/czaydev/better-payment/pull/136) 2026-10-04'te merge edildi ve [issue](https://github.com/czaydev/better-payment/issues/84) kapandı.
-- [#139](https://github.com/czaydev/better-payment/issues/139) aktif: test rehberi ve ölü E2E script temizliği için [PR #140](https://github.com/czaydev/better-payment/pull/140) açıldı. Uygulama tamamlandı, maintainer review/merge bekleniyor. Merge issue'yu otomatik kapatacak.
-- Sonraki iş: takvimdeki 3. iş, CI adapter subpath smoke testi. Önce issue açılacak.
+- #139 tamamlandi: [PR #140](https://github.com/czaydev/better-payment/pull/140) 2026-10-06'da merge edildi.
+- Takvim dışı: [PR #141](https://github.com/czaydev/better-payment/pull/141) (scroll'a bağlı roadmap rotası ve katkıcılar bölümü) 2026-10-06'da merge edildi; bağlı issue'su yoktu.
+- 3. iş tamamlandi: [#148](https://github.com/czaydev/better-payment/issues/148) → [PR #149](https://github.com/czaydev/better-payment/pull/149) (adapter subpath smoke testi, CJS ve ESM) 2026-10-08'de merge edildi.
+- 8. iş düştü: React Router adapter'ını maintainer yaptı ([PR #142](https://github.com/czaydev/better-payment/pull/142), 0.8.0).
+- Maintainer dark mode'u ekledi ([PR #147](https://github.com/czaydev/better-payment/pull/147)). Bundan sonraki web işleri (404, OG görseli, erişilebilirlik) iki temada da kontrol edilir.
+- Sonraki iş: 4. iş, dokümanda ürün adı. Önce issue açılacak (inceleme 2026-10-09, aşağıda).
+
+### 2026-10-09 inceleme notları
+
+- **#149 (CI smoke):** Doğru çalışıyor; paket adıyla çözümleme `exports` eksikliğini yakalıyor. İyileştirme fikri: adapter listesi elle yazılı, yeni adapter'da güncellenmesi unutulabilir. Liste `package.json` `exports` anahtarlarından türetilebilir. Ayrı, küçük bir iş adayı.
+- **#141 (RoadmapScroller):** Reduced motion, küçük ekran ve klavye odağı düşünülmüş. Küçük performans notu: `update()` her scroll karesinde önce `style.height` yazıp sonra `getBoundingClientRect()` okuyor; bu her karede zorunlu layout hesabı demek. Height yalnızca `configure` ve `resize`'da yazılabilir. Süreç notu: CONTRIBUTING her PR için bir issue istiyor; #141'in issue'su yoktu.
 
 ### #139 uygulama kaydı — 2026-10-06
 

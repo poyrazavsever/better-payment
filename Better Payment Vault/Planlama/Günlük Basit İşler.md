@@ -1,7 +1,7 @@
 ---
 tur: plan
 alan: planlama
-guncelleme: 2026-10-06
+guncelleme: 2026-10-09
 ozet: "İki günde bir kapatılacak, küçük ve hata riski düşük işlerin tarihli sırası."
 durum: aktif
 ---
@@ -21,12 +21,12 @@ durum: aktif
 |---|---|---|---|---|---|
 | 1 | 10-04 → 10-05 | [#84 localizedErrors: Arapça (ar)](https://github.com/czaydev/better-payment/issues/84) → [PR #136](https://github.com/czaydev/better-payment/pull/136) | `ar.ts` (15 mesaj), `index.ts`'e bir satır, testteki `locales` listesi, patch changeset; gerekirse `dist/plugins` boyut bütçesi | Çok düşük | [[Planlama/Issue Portföyü#Güncel küçük iş durumu]] |
 | 2 | 10-06 → 10-07 | [#139 test rehberi](https://github.com/czaydev/better-payment/issues/139) → [PR #140](https://github.com/czaydev/better-payment/pull/140) | Klasör ağacı gerçeğe uydurulur (`e2e/` ve PayTR integration testi yok; sandbox, helpers ve fixtures güncel); ölü `test:e2e` script'i kaldırılır | Çok düşük | [[Planlama/Issue Portföyü#Güncel küçük iş durumu]] |
-| 3 | 10-08 → 10-09 | CI: adapter subpath smoke testi | Build sonrası `next`, `express`, `hono`, `fastify` ve `elysia` için `require` ve `import` denemesi; "Check package contents"e adapter dosyaları. #128'deki `exports` hatasını CI yakalar | Düşük | hazir (önce issue) |
-| 4 | 10-10 → 10-11 | Doküman: ürün adı | Prose'da "better-payment" → "Better Payment" (186 yer, EN ve TR, tek PR). Kod, import ve paket adı değişmez; çeviri kontrolü kod bloklarını korur | Düşük | hazir (önce issue, #123 devamı) |
+| 3 | 10-08 → 10-09 | [#148 CI: adapter subpath smoke testi](https://github.com/czaydev/better-payment/issues/148) → [PR #149](https://github.com/czaydev/better-payment/pull/149) | Build sonrası `next`, `express`, `hono`, `fastify` ve `elysia` için `require` ve `import` denemesi; "Check package contents"e adapter dosyaları. #128'deki `exports` hatasını CI yakalar | Düşük | tamamlandi |
+| 4 | 10-10 → 10-11 | Doküman: ürün adı | Prose'da "better-payment" → "Better Payment". 2026-10-09 sayımı: kod, import, link ve backtick dışında yaklaşık 30 yer (sayfa açıklamaları, giriş sayfası, birkaç cümle), EN ve TR, tek PR. `reference/changelog` hariç (artık changeset'ten üretiliyor). Başlık id'leri değişmez (`why-better-payment`, `add-a-language-to-better-payment` slug'ları aynı kalır). TR ekleri mevcut kullanım gibi ('i, 'e, 'in) | Düşük | hazir (önce issue, #123 devamı) |
 | 5 | 10-12 → 10-13 | Web: marka 404 sayfası | `app/[lang]/not-found.tsx`, EN ve TR metinleri `dictionary.ts`'te, ana sayfa ve docs'a dönüş butonları | Düşük | hazir (önce issue) |
 | 6 | 10-14 → 10-15 | Web: README ve kullanılmayan bağımlılıklar | `apps/web/README.md` create-next-app varsayılanından projeye özel kurulum notuna; kullanılmayan `next-themes` ve `zod` kaldırılır (import yok, doğrulandı) | Çok düşük | hazir (önce issue) |
 | 7 | 10-16 → 10-17 | Web: sosyal paylaşım görseli | Higgsfield ile marka OG görseli (1200×630, EN ve TR); `openGraph.images` ve Twitter card metadata. Branding Faz 9'un devamı | Düşük | hazir (önce issue) |
-| 8 | 10-18 → 10-19 | [#96 React Router adapter](https://github.com/czaydev/better-payment/issues/96) | `next.ts` gibi web `Request`/`Response` adapter'ı; subpath adımları (exports, tsup, alias, size, ortak testler, örnek, doküman, changeset) | Düşük-orta | bekliyor |
+| 8 | ~~10-18 → 10-19~~ | ~~[#96 React Router adapter](https://github.com/czaydev/better-payment/issues/96)~~ maintainer yaptı ([PR #142](https://github.com/czaydev/better-payment/pull/142)) | `next.ts` gibi web `Request`/`Response` adapter'ı; subpath adımları (exports, tsup, alias, size, ortak testler, örnek, doküman, changeset) | — | düştü |
 | 9 | 10-20 → 10-21 | [#94 Nuxt / h3 adapter](https://github.com/czaydev/better-payment/issues/94) | #96 ile aynı kalıp; h3 v1 ve v2 `Request` erişimi farkı | Düşük-orta | bekliyor |
 
 ### İkinci dalga (eklendi 2026-10-04, henüz başlanmadı)
