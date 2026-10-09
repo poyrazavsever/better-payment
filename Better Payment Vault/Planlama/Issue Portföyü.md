@@ -19,7 +19,8 @@ durum: aktif
 - 3. iş tamamlandi: [#148](https://github.com/czaydev/better-payment/issues/148) → [PR #149](https://github.com/czaydev/better-payment/pull/149) (adapter subpath smoke testi, CJS ve ESM) 2026-10-08'de merge edildi.
 - 8. iş düştü: React Router adapter'ını maintainer yaptı ([PR #142](https://github.com/czaydev/better-payment/pull/142), 0.8.0).
 - Maintainer dark mode'u ekledi ([PR #147](https://github.com/czaydev/better-payment/pull/147)). Bundan sonraki web işleri (404, OG görseli, erişilebilirlik) iki temada da kontrol edilir.
-- Sonraki iş: 4. iş, dokümanda ürün adı. Önce issue açılacak (inceleme 2026-10-09, aşağıda).
+- 4. iş aktif: [#158](https://github.com/czaydev/better-payment/issues/158) → [PR #159](https://github.com/czaydev/better-payment/pull/159) (2026-10-09). 24 dosyada 30 yer, yalnızca prose ve `description`; kod, import, link ve başlık id'leri değişmedi. Çeviri kontrolü ve web `next build` (64 sayfa) geçti; id'ler build HTML'inde doğrulandı. Changeset yok (yalnızca doküman). Maintainer review bekleniyor.
+- Sonraki iş: 5. iş, marka 404 sayfası (dark mode ile birlikte kontrol edilecek).
 
 ### 2026-10-09 inceleme notları
 
